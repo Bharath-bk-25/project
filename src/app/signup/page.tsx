@@ -13,6 +13,7 @@ import { useState } from 'react';
 import { createUser } from '@/ai/flows/createUserFlow';
 import { useToast } from '@/hooks/use-toast';
 import { useRouter } from 'next/navigation';
+import type { CreateUserInput } from '@/ai/schemas/userSchema';
 
 export default function SignupPage() {
   const [userType, setUserType] = useState('farmer');
@@ -33,7 +34,7 @@ export default function SignupPage() {
   const router = useRouter();
 
   const handleSubmit = async () => {
-    let userData;
+    let userData: CreateUserInput;
     if (userType === 'farmer') {
       userData = {
         type: 'farmer',

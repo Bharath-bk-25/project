@@ -3,36 +3,15 @@
  * @fileOverview A flow for creating a new user and saving to a file.
  *
  * - createUser - A function that handles creating a user.
- * - CreateUserInput - The input type for the createUser function.
  */
 import { ai } from '@/ai/genkit';
 import { z } from 'zod';
 import * as fs from 'fs/promises';
 import path from 'path';
+import { CreateUserInputSchema, type CreateUserInput } from '@/ai/schemas/userSchema';
 
 const USER_DATA_PATH = path.resolve(process.cwd(), 'data', 'users.json');
 
-const FarmerSchema = z.object({
-  type: z.literal('farmer'),
-  name: z.string(),
-  age: z.string(),
-  gender: z.string(),
-  location: z.string(),
-  crops: z.string(),
-});
-
-const WorkerSchema = z.object({
-  type: z.literal('worker'),
-  name: z.string(),
-  age: z.string(),
-  gender: z.string(),
-  skills: z.string(),
-  expectedSalary: z.string(),
-});
-
-export const CreateUserInputSchema = z.union([FarmerSchema, WorkerSchema]);
-
-export type CreateUserInput = z.infer<typeof CreateUserInputSchema>;
 
 async function readUsers(): Promise<CreateUserInput[]> {
   try {
@@ -64,7 +43,7 @@ async function writeUsers(users: CreateUserInput[]): Promise<void> {
   }
 }
 
-export const createUserFlow = ai.defineFlow(
+const createUserFlow = ai.defineFlow(
   {
     name: 'createUserFlow',
     inputSchema: CreateUserInputSchema,
