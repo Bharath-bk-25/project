@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Bell, LogOut, Plus, Settings, User } from 'lucide-react';
+import { Bell, LogOut, Plus, Settings, User, ShoppingCart } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import {
@@ -33,6 +33,12 @@ export function DashboardHeader({ title, userType, onCreatePost }: DashboardHead
           <nav className="flex items-center space-x-2">
             {userType === 'farmer' && (
               <>
+                 <Button variant="ghost" size="icon" asChild>
+                   <Link href="/agristore">
+                      <ShoppingCart className="h-5 w-5" />
+                      <span className="sr-only">Agri Store</span>
+                   </Link>
+                </Button>
                  <Button variant="ghost" size="icon">
                   <Bell className="h-5 w-5" />
                   <span className="sr-only">Requests</span>
