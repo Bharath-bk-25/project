@@ -137,7 +137,8 @@ export default function SignupPage() {
                   <Input id="worker-age" type="number" placeholder="32" value={workerAge} onChange={(e) => setWorkerAge(e.target.value)} />
                 </div>
               </div>
-               <div className="space-y-2">
+               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                <div className="space-y-2">
                   <Label htmlFor="worker-gender">Gender</Label>
                   <Select onValueChange={setWorkerGender}>
                     <SelectTrigger id="worker-gender">
@@ -150,6 +151,7 @@ export default function SignupPage() {
                     </SelectContent>
                   </Select>
                 </div>
+              </div>
               <div className="space-y-2">
                 <Label htmlFor="worker-skills">Known Works</Label>
                 <Textarea id="worker-skills" placeholder="e.g., Harvesting, Planting, Irrigation" value={workerSkills} onChange={(e) => setWorkerSkills(e.target.value)}/>

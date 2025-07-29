@@ -6,7 +6,7 @@
  * - CreateUserInput - The input type for the createUser function.
  */
 import { ai } from '@/ai/genkit';
-import { z } from 'genkit/zod';
+import { z } from 'zod';
 import * as fs from 'fs/promises';
 import path from 'path';
 
