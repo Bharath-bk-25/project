@@ -6,28 +6,28 @@ import { Calendar, DollarSign, MapPin, Tractor } from 'lucide-react';
 const jobPosts = [
   {
     title: 'Strawberry Harvesting',
-    farmer: 'Green Valley Farms',
+    farmer: 'Pachai Pallathakku Pannai',
     location: 'Watsonville, CA',
     salary: 180,
     date: '2024-08-15',
   },
   {
     title: 'Grape Pruning',
-    farmer: 'Sun-kissed Vineyards',
+    farmer: 'Sooriya Muththam Thottangal',
     location: 'Napa, CA',
     salary: 200,
     date: '2024-08-20',
   },
   {
     title: 'Almond Shaking Operator',
-    farmer: 'Central Valley Growers',
+    farmer: 'Maiya Pallathakku Vivasayigal',
     location: 'Modesto, CA',
     salary: 220,
     date: '2024-09-01',
   },
   {
     title: 'General Farm Hand',
-    farmer: 'Old MacDonald\'s Farm',
+    farmer: 'Pazhaya MacDonald Pannai',
     location: 'Dixon, CA',
     salary: 160,
     date: '2024-08-12',

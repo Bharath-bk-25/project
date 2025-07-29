@@ -96,7 +96,7 @@ export default function SignupPage() {
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <div className="space-y-2">
                   <Label htmlFor="farmer-name">Name</Label>
-                  <Input id="farmer-name" placeholder="John Appleseed" value={farmerName} onChange={(e) => setFarmerName(e.target.value)} />
+                  <Input id="farmer-name" placeholder="Kumar Raja" value={farmerName} onChange={(e) => setFarmerName(e.target.value)} />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="farmer-age">Age</Label>
@@ -119,19 +119,19 @@ export default function SignupPage() {
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="farmer-location">Location</Label>
-                  <Input id="farmer-location" placeholder="Sunnyvale, CA" value={farmerLocation} onChange={(e) => setFarmerLocation(e.target.value)} />
+                  <Input id="farmer-location" placeholder="Chennai, TN" value={farmerLocation} onChange={(e) => setFarmerLocation(e.target.value)} />
                 </div>
               </div>
               <div className="space-y-2">
                 <Label htmlFor="farmer-crops">Types of Crops</Label>
-                <Textarea id="farmer-crops" placeholder="e.g., Corn, Wheat, Soybeans" value={farmerCrops} onChange={(e) => setFarmerCrops(e.target.value)} />
+                <Textarea id="farmer-crops" placeholder="e.g., Rice, Sugarcane, Cotton" value={farmerCrops} onChange={(e) => setFarmerCrops(e.target.value)} />
               </div>
             </TabsContent>
             <TabsContent value="worker" className="space-y-4 pt-4">
                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <div className="space-y-2">
                   <Label htmlFor="worker-name">Name</Label>
-                  <Input id="worker-name" placeholder="Jane Doe" value={workerName} onChange={(e) => setWorkerName(e.target.value)} />
+                  <Input id="worker-name" placeholder="Sangeetha Priya" value={workerName} onChange={(e) => setWorkerName(e.target.value)} />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="worker-age">Age</Label>
@@ -159,7 +159,7 @@ export default function SignupPage() {
               </div>
               <div className="space-y-2">
                 <Label htmlFor="worker-salary">Expected Salary (per work)</Label>
-                <Textarea id="worker-salary" placeholder="Harvesting: $20/hr, Planting: $18/hr" value={workerSalary} onChange={(e) => setWorkerSalary(e.target.value)}/>
+                <Textarea id="worker-salary" placeholder="Harvesting: ₹1500/day, Planting: ₹1200/day" value={workerSalary} onChange={(e) => setWorkerSalary(e.target.value)}/>
               </div>
             </TabsContent>
           </Tabs>

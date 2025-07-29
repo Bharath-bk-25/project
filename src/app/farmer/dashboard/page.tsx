@@ -25,10 +25,10 @@ import { format } from 'date-fns';
 import { cn } from '@/lib/utils';
 
 const workers = [
-  { name: 'Maria Garcia', age: 28, skills: ['Harvesting', 'Pruning', 'Packing'], location: 'Salinas, CA', image: 'https://placehold.co/300x300.png?text=MG', hint: 'woman portrait' },
-  { name: 'John Doe', age: 35, skills: ['Tractor Operation', 'Irrigation', 'Planting'], location: 'Fresno, CA', image: 'https://placehold.co/300x300.png?text=JD', hint: 'man portrait' },
-  { name: 'Chen Wang', age: 42, skills: ['Pest Control', 'Greenhouse Mgmt.'], location: 'Watsonville, CA', image: 'https://placehold.co/300x300.png?text=CW', hint: 'asian man' },
-  { name: 'Emily Smith', age: 24, skills: ['Fruit Picking', 'Sorting'], location: 'Bakersfield, CA', image: 'https://placehold.co/300x300.png?text=ES', hint: 'young woman' },
+  { name: 'Anjali Devi', age: 28, skills: ['Harvesting', 'Pruning', 'Packing'], location: 'Salinas, CA', image: 'https://placehold.co/300x300.png?text=AD', hint: 'woman portrait' },
+  { name: 'Rajesh Kumar', age: 35, skills: ['Tractor Operation', 'Irrigation', 'Planting'], location: 'Fresno, CA', image: 'https://placehold.co/300x300.png?text=RK', hint: 'man portrait' },
+  { name: 'Suresh Gupta', age: 42, skills: ['Pest Control', 'Greenhouse Mgmt.'], location: 'Watsonville, CA', image: 'https://placehold.co/300x300.png?text=SG', hint: 'asian man' },
+  { name: 'Priya Sharma', age: 24, skills: ['Fruit Picking', 'Sorting'], location: 'Bakersfield, CA', image: 'https://placehold.co/300x300.png?text=PS', hint: 'young woman' },
 ];
 
 export default function FarmerDashboard() {
