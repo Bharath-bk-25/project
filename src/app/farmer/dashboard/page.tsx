@@ -36,6 +36,11 @@ const workers = [
   { name: 'Ganesh Pillai', age: 50, skills: ['Supervising', 'Warehouse Management'], location: 'Salem, TN', image: 'https://placehold.co/300x300.png?text=GP', hint: 'older man' },
   { name: 'Meena Kumari', age: 22, skills: ['Flower Cutting', 'Landscaping'], location: 'Erode, TN', image: 'https://placehold.co/300x300.png?text=MK', hint: 'young indian woman' },
   { name: 'Velu Murugan', age: 33, skills: ['Ploughing', 'Fertilizing'], location: 'Tirunelveli, TN', image: 'https://placehold.co/300x300.png?text=VM', hint: 'farmer portrait' },
+  { name: 'Saravanan Suresh', age: 41, skills: ['Irrigation Systems', 'Farm Maintenance'], location: 'Thanjavur, TN', image: 'https://placehold.co/300x300.png?text=SS', hint: 'man with a beard' },
+  { name: 'Deepa Venkatesh', age: 27, skills: ['Vegetable Picking', 'Quality Check'], location: 'Dindigul, TN', image: 'https://placehold.co/300x300.png?text=DV', hint: 'woman smiling' },
+  { name: 'Karthik Raja', age: 36, skills: ['Heavy Machinery', 'Welding'], location: 'Tiruppur, TN', image: 'https://placehold.co/300x300.png?text=KR', hint: 'welder portrait' },
+  { name: 'Sivakami Murthy', age: 48, skills: ['Livestock Breeding', 'Animal Health'], location: 'Namakkal, TN', image: 'https://placehold.co/300x300.png?text=SM', hint: 'older indian woman' },
+  { name: 'Prakash Rajendran', age: 25, skills: ['Drone Operation', 'Data Collection'], location: 'Coimbatore, TN', image: 'https://placehold.co/300x300.png?text=PR', hint: 'young man with drone' },
 ];
 
 export default function FarmerDashboard() {
