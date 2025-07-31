@@ -30,5 +30,13 @@
     "gender": "male",
     "skills": "ertethht",
     "expectedSalary": "35ryqa"
+  },
+  {
+    "type": "farmer",
+    "name": "",
+    "age": "",
+    "gender": "",
+    "location": "",
+    "crops": ""
   }
 ]
