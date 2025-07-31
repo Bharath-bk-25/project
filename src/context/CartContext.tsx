@@ -8,6 +8,8 @@ export type Product = {
   price: number;
   image: string;
   hint: string;
+  shopName: string;
+  isAvailable: boolean;
 };
 
 type CartItem = {
