@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link';
-import { Bell, LogOut, Plus, Settings, User, ShoppingCart } from 'lucide-react';
+import { Bell, LogOut, Plus, Settings, User, ShoppingCart, Languages } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import {
@@ -44,6 +44,13 @@ export function DashboardHeader({ title, userType, onCreatePost }: DashboardHead
                 </Link>
              </nav>
           )}
+           {userType === 'worker' && (
+             <nav className="hidden gap-6 md:flex">
+                <Link href="/worker/dashboard" className="flex items-center text-lg font-medium transition-colors hover:text-foreground/80 sm:text-sm text-foreground">
+                  கிடைக்கும் வேலைகள்
+                </Link>
+             </nav>
+          )}
         </div>
         <div className="flex flex-1 items-center justify-end space-x-4">
           <nav className="flex items-center space-x-2">
@@ -75,14 +82,14 @@ export function DashboardHeader({ title, userType, onCreatePost }: DashboardHead
                 <Button variant="ghost" className="relative h-8 w-8 rounded-full">
                   <Avatar className="h-9 w-9">
                     <AvatarImage src={`https://placehold.co/100x100.png`} alt="@username" data-ai-hint="person portrait" />
-                    <AvatarFallback>{userType === 'farmer' ? 'F' : 'W'}</AvatarFallback>
+                    <AvatarFallback>{userType === 'farmer' ? 'வி' : 'ப'}</AvatarFallback>
                   </Avatar>
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-56" align="end" forceMount>
                 <DropdownMenuLabel className="font-normal">
                   <div className="flex flex-col space-y-1">
-                    <p className="text-sm font-medium leading-none">Username</p>
+                    <p className="text-sm font-medium leading-none">பயனர்பெயர்</p>
                     <p className="text-xs leading-none text-muted-foreground">user@email.com</p>
                   </div>
                 </DropdownMenuLabel>
@@ -90,17 +97,21 @@ export function DashboardHeader({ title, userType, onCreatePost }: DashboardHead
                 <DropdownMenuGroup>
                   <DropdownMenuItem>
                     <User className="mr-2 h-4 w-4" />
-                    <span>Profile</span>
+                    <span>சுயவிவரம்</span>
+                  </DropdownMenuItem>
+                   <DropdownMenuItem>
+                    <Languages className="mr-2 h-4 w-4" />
+                    <span>மொழி</span>
                   </DropdownMenuItem>
                   <DropdownMenuItem>
                     <Settings className="mr-2 h-4 w-4" />
-                    <span>Settings</span>
+                    <span>அமைப்புகள்</span>
                   </DropdownMenuItem>
                 </DropdownMenuGroup>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem>
                   <LogOut className="mr-2 h-4 w-4" />
-                  <span>Log out</span>
+                  <span>வெளியேறு</span>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
