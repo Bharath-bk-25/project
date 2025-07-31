@@ -119,8 +119,8 @@ export default function FarmerDashboard() {
               <Input id="work-type" placeholder="e.g., Strawberry Harvesting" className="col-span-3" />
             </div>
             <div className="grid grid-cols-4 items-center gap-4">
-              <Label htmlFor="salary" className="text-right">Salary/Day ($)</Label>
-              <Input id="salary" type="number" placeholder="150" className="col-span-3" />
+              <Label htmlFor="salary" className="text-right">Salary/Day (₹)</Label>
+              <Input id="salary" type="number" placeholder="500" className="col-span-3" />
             </div>
             <div className="grid grid-cols-4 items-center gap-4">
               <Label htmlFor="date" className="text-right">Date</Label>

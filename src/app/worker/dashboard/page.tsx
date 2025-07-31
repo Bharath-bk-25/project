@@ -8,28 +8,28 @@ const jobPosts = [
     title: 'Strawberry Harvesting',
     farmer: 'Pachai Pallathakku Pannai',
     location: 'Watsonville, CA',
-    salary: 180,
+    salary: 500,
     date: '2024-08-15',
   },
   {
     title: 'Grape Pruning',
     farmer: 'Sooriya Muththam Thottangal',
     location: 'Napa, CA',
-    salary: 200,
+    salary: 600,
     date: '2024-08-20',
   },
   {
     title: 'Almond Shaking Operator',
     farmer: 'Maiya Pallathakku Vivasayigal',
     location: 'Modesto, CA',
-    salary: 220,
+    salary: 750,
     date: '2024-09-01',
   },
   {
     title: 'General Farm Hand',
     farmer: 'Pazhaya MacDonald Pannai',
     location: 'Dixon, CA',
-    salary: 160,
+    salary: 450,
     date: '2024-08-12',
   },
 ];
@@ -61,8 +61,8 @@ export default function WorkerDashboard() {
                   <span>{new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
                 </div>
                 <div className="flex items-center text-sm font-semibold text-primary">
-                  <DollarSign className="mr-2 h-4 w-4" />
-                  <span>${post.salary} / day</span>
+                  <span className="font-sans mr-1">₹</span>
+                  <span>{post.salary} / day</span>
                 </div>
               </CardContent>
               <CardFooter className="flex items-center justify-center p-4 sm:p-6 sm:border-l">
