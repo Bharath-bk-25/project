@@ -9,22 +9,29 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
 import { DashboardHeader } from '@/components/dashboard-header';
 import Image from 'next/image';
-import { Contact, MapPin, Briefcase } from 'lucide-react';
+import { Contact, MapPin, Briefcase, Phone, User as UserIcon, Calendar as CalendarIconLucide } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Calendar } from '@/components/ui/calendar';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
-import { Calendar as CalendarIcon } from 'lucide-react';
 import { format } from 'date-fns';
 import { cn } from '@/lib/utils';
 
-const workers = [
+type Worker = {
+  name: string;
+  age: number;
+  skills: string[];
+  location: string;
+  image: string;
+  hint: string;
+  phone: string;
+};
+
+const workers: Worker[] = [
   { name: 'Anjali Devi', age: 28, skills: ['Harvesting', 'Pruning', 'Packing'], location: 'Salinas, CA', image: 'https://placehold.co/300x300.png?text=AD', hint: 'woman portrait', phone: '9876543210' },
   { name: 'Rajesh Kumar', age: 35, skills: ['Tractor Operation', 'Irrigation', 'Planting'], location: 'Fresno, CA', image: 'https://placehold.co/300x300.png?text=RK', hint: 'man portrait', phone: '9876543211' },
   { name: 'Suresh Gupta', age: 42, skills: ['Pest Control', 'Greenhouse Mgmt.'], location: 'Watsonville, CA', image: 'https://placehold.co/300x300.png?text=SG', hint: 'asian man', phone: '9876543212' },
@@ -44,12 +51,19 @@ const workers = [
 ];
 
 export default function FarmerDashboard() {
-  const [isDialogOpen, setDialogOpen] = useState(false);
+  const [isCreatePostOpen, setCreatePostOpen] = useState(false);
+  const [isContactWorkerOpen, setContactWorkerOpen] = useState(false);
+  const [selectedWorker, setSelectedWorker] = useState<Worker | null>(null);
   const [date, setDate] = useState<Date | undefined>(new Date());
+
+  const handleContactClick = (worker: Worker) => {
+    setSelectedWorker(worker);
+    setContactWorkerOpen(true);
+  };
   
   return (
     <div className="min-h-screen w-full bg-secondary/50">
-      <DashboardHeader title="Farmer Dashboard" userType="farmer" onCreatePost={() => setDialogOpen(true)} />
+      <DashboardHeader title="Farmer Dashboard" userType="farmer" onCreatePost={() => setCreatePostOpen(true)} />
       
       <main className="container mx-auto py-8">
         <h1 className="text-3xl font-bold mb-6 font-headline">Available Workers</h1>
@@ -80,7 +94,7 @@ export default function FarmerDashboard() {
                 </div>
               </CardContent>
               <CardFooter>
-                <Button className="w-full" onClick={() => alert(`Phone: ${worker.phone}`)}>
+                <Button className="w-full" onClick={() => handleContactClick(worker)}>
                   <Contact className="mr-2 h-4 w-4" />
                   Contact Worker
                 </Button>
@@ -90,7 +104,8 @@ export default function FarmerDashboard() {
         </div>
       </main>
 
-      <Dialog open={isDialogOpen} onOpenChange={setDialogOpen}>
+      {/* Create Job Post Dialog */}
+      <Dialog open={isCreatePostOpen} onOpenChange={setCreatePostOpen}>
         <DialogContent className="sm:max-w-[425px]">
           <DialogHeader>
             <DialogTitle>Create Job Post</DialogTitle>
@@ -118,7 +133,7 @@ export default function FarmerDashboard() {
                       !date && "text-muted-foreground"
                     )}
                   >
-                    <CalendarIcon className="mr-2 h-4 w-4" />
+                    <CalendarIconLucide className="mr-2 h-4 w-4" />
                     {date ? format(date, "PPP") : <span>Pick a date</span>}
                   </Button>
                 </PopoverTrigger>
@@ -134,10 +149,63 @@ export default function FarmerDashboard() {
             </div>
           </div>
           <DialogFooter>
-            <Button type="submit" onClick={() => setDialogOpen(false)}>Save Post</Button>
+            <Button type="submit" onClick={() => setCreatePostOpen(false)}>Save Post</Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>
+      
+      {/* Contact Worker Dialog */}
+      {selectedWorker && (
+         <Dialog open={isContactWorkerOpen} onOpenChange={setContactWorkerOpen}>
+          <DialogContent className="sm:max-w-md">
+            <DialogHeader>
+              <div className="flex items-center gap-4">
+                <div className="relative h-24 w-24 rounded-full overflow-hidden">
+                  <Image src={selectedWorker.image} alt={selectedWorker.name} layout="fill" objectFit="cover" data-ai-hint={selectedWorker.hint} />
+                </div>
+                <div>
+                  <DialogTitle className="text-2xl">{selectedWorker.name}</DialogTitle>
+                   <DialogDescription>
+                     Contact details and information
+                   </DialogDescription>
+                </div>
+              </div>
+            </DialogHeader>
+            <div className="py-4 space-y-4">
+               <div className="flex items-center">
+                  <Phone className="mr-3 h-5 w-5 text-muted-foreground" />
+                  <a href={`tel:${selectedWorker.phone}`} className="text-primary hover:underline">{selectedWorker.phone}</a>
+                </div>
+              <div className="flex items-center">
+                <UserIcon className="mr-3 h-5 w-5 text-muted-foreground" />
+                <span>{selectedWorker.age} years old</span>
+              </div>
+              <div className="flex items-center">
+                <MapPin className="mr-3 h-5 w-5 text-muted-foreground" />
+                <span>{selectedWorker.location}</span>
+              </div>
+              <div className="flex items-start">
+                 <Briefcase className="mr-3 mt-1 h-5 w-5 text-muted-foreground" />
+                 <div className="flex flex-wrap gap-2">
+                   {selectedWorker.skills.map((skill) => (
+                     <Badge key={skill} variant="secondary">{skill}</Badge>
+                   ))}
+                 </div>
+              </div>
+            </div>
+            <DialogFooter>
+               <Button onClick={() => setContactWorkerOpen(false)}>Close</Button>
+               <Button asChild>
+                <a href={`tel:${selectedWorker.phone}`}>
+                  <Phone className="mr-2 h-4 w-4" />
+                  Call Now
+                </a>
+              </Button>
+            </DialogFooter>
+          </DialogContent>
+        </Dialog>
+      )}
+
     </div>
   );
 }
