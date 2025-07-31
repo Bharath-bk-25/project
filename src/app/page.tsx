@@ -26,7 +26,7 @@ export default function Home() {
           <div className="mx-auto mb-4">
             <Logo />
           </div>
-          <CardTitle className="text-4xl font-headline font-bold">Welcome to FARMHANDS</CardTitle>
+          <CardTitle className="text-4xl font-headline font-bold">Welcome to FARM HANDS</CardTitle>
           <CardDescription className="text-lg">Your field of opportunities</CardDescription>
         </CardHeader>
         <CardContent>
