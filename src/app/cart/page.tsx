@@ -7,11 +7,24 @@ import { DashboardHeader } from '@/components/dashboard-header';
 import Image from 'next/image';
 import { Trash2 } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
+import { useToast } from '@/hooks/use-toast';
+import { useRouter } from 'next/navigation';
 
 export default function CartPage() {
   const { cartItems, removeFromCart, clearCart } = useCart();
+  const { toast } = useToast();
+  const router = useRouter();
 
   const total = cartItems.reduce((acc, item) => acc + item.product.price * item.quantity, 0);
+  
+  const handleCheckout = () => {
+    toast({
+      title: 'Order Placed!',
+      description: 'Your order has been successfully placed. Thank you for shopping with us!',
+    });
+    clearCart();
+    router.push('/agristore');
+  };
 
   return (
     <div className="min-h-screen w-full bg-secondary/50">
@@ -70,7 +83,7 @@ export default function CartPage() {
                         <p className="text-muted-foreground">Subtotal</p>
                         <p className="text-2xl font-bold">₹{total.toFixed(2)}</p>
                     </div>
-                     <Button size="lg">Proceed to Checkout</Button>
+                     <Button size="lg" onClick={handleCheckout}>Proceed to Checkout</Button>
                 </div>
                 <div className="flex justify-end mt-4">
                      <Button variant="outline" size="sm" onClick={clearCart}>Clear Cart</Button>
