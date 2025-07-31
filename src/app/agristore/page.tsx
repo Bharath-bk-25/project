@@ -50,14 +50,22 @@ const products: Product[] = [
   // Tirunelveli
   { id: 'seed-5', name: 'Chilli Seeds (மிளகாய் விதைகள்)', description: 'Samba variety', price: 90, image: 'https://placehold.co/400x400.png', hint: 'chilli plant', shopName: 'Nanguneri Seed Bank', shopLocation: 'Tirunelveli', isAvailable: true },
   { id: 'tool-6', name: 'Plough (கலப்பை)', description: 'Country plough', price: 1500, image: 'https://placehold.co/400x400.png', hint: 'wooden plough', shopName: 'Tamirabarani Tools', shopLocation: 'Tirunelveli', isAvailable: true },
+  { id: 'prod-13', name: 'Palm Sapling (பனை மரம்)', description: 'Native species', price: 40, image: 'https://placehold.co/400x400.png', hint: 'palm tree', shopName: 'Nellai Nursery', shopLocation: 'Tirunelveli', isAvailable: true },
 
   // Thanjavur
   { id: 'prod-11', name: 'Sesame Seeds (எள் விதைகள்)', description: 'Black sesame', price: 220, image: 'https://placehold.co/400x400.png', hint: 'sesame seeds', shopName: 'Delta Agro', shopLocation: 'Thanjavur', isAvailable: true },
   { id: 'fert-9', name: 'Gypsum (ஜிப்சம்)', description: 'Soil conditioner', price: 400, image: 'https://placehold.co/400x400.png', hint: 'gypsum powder', shopName: 'Kumbakonam Fertilizers', shopLocation: 'Thanjavur', isAvailable: false },
+  { id: 'tool-8', name: 'Paddy Weeder (நெல் களையெடுப்பான்)', description: 'Cono weeder', price: 2200, image: 'https://placehold.co/400x400.png', hint: 'paddy weeder', shopName: 'Thanjavur Farm Implements', shopLocation: 'Thanjavur', isAvailable: true },
 
   // Dindigul
   { id: 'prod-12', name: 'Moringa Seeds (முருங்கை விதைகள்)', description: 'PKM-1 variety', price: 350, image: 'https://placehold.co/400x400.png', hint: 'moringa tree', shopName: 'Sirumalai Seedlings', shopLocation: 'Dindigul', isAvailable: true },
   { id: 'tool-7', name: 'Harvesting Net (அறுவடை வலை)', description: 'For floriculture', price: 500, image: 'https://placehold.co/400x400.png', hint: 'green net', shopName: 'Dindigul Farm Needs', shopLocation: 'Dindigul', isAvailable: true },
+  { id: 'fert-10', name: 'Micronutrients (நுண்ணூட்டச் சத்து)', description: 'Vegetable mix', price: 750, image: 'https://placehold.co/400x400.png', hint: 'fertilizer mix', shopName: 'Dindigul Agro', shopLocation: 'Dindigul', isAvailable: true },
+
+  // Vellore
+  { id: 'seed-6', name: 'Brinjal Seeds (கத்தரி விதைகள்)', description: 'Vellore thorned variety', price: 60, image: 'https://placehold.co/400x400.png', hint: 'brinjal plant', shopName: 'Palar Seeds', shopLocation: 'Vellore', isAvailable: true },
+  { id: 'prod-14', name: 'Goat Manure (ஆட்டு எரு)', description: 'Well composted', price: 200, image: 'https://placehold.co/400x400.png', hint: 'manure compost', shopName: 'Vellore Farms', shopLocation: 'Vellore', isAvailable: true },
+  { id: 'tool-9', name: 'Pruning Shears (கவாத்து கத்தரிக்கோல்)', description: 'Bypass pruner', price: 650, image: 'https://placehold.co/400x400.png', hint: 'pruning shears', shopName: 'Ambur Tools', shopLocation: 'Vellore', isAvailable: false },
 ];
 
 
