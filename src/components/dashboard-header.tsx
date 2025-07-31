@@ -12,6 +12,8 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { Logo } from './logo';
+import { useCart } from '@/context/CartContext';
+import { Badge } from './ui/badge';
 
 type DashboardHeaderProps = {
   title: string;
@@ -20,6 +22,9 @@ type DashboardHeaderProps = {
 };
 
 export function DashboardHeader({ title, userType, onCreatePost }: DashboardHeaderProps) {
+  const { cartItems } = useCart();
+  const cartItemCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
+
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-background/80 backdrop-blur-sm">
       <div className="container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0">
@@ -28,15 +33,30 @@ export function DashboardHeader({ title, userType, onCreatePost }: DashboardHead
             <Logo className="h-10 w-10" />
             <span className="hidden font-bold sm:inline-block font-headline">{title}</span>
           </Link>
+          {userType === 'farmer' && (
+             <nav className="hidden gap-6 md:flex">
+                <Link href="/farmer/dashboard" className="flex items-center text-lg font-medium transition-colors hover:text-foreground/80 sm:text-sm text-foreground/60">
+                  Find Workers
+                </Link>
+                <Link href="/agristore" className="flex items-center text-lg font-medium transition-colors hover:text-foreground/80 sm:text-sm text-foreground">
+                  Agri-Store
+                </Link>
+             </nav>
+          )}
         </div>
         <div className="flex flex-1 items-center justify-end space-x-4">
           <nav className="flex items-center space-x-2">
             {userType === 'farmer' && (
               <>
-                 <Button variant="ghost" size="icon" asChild>
-                   <Link href="/agristore">
+                 <Button variant="ghost" size="icon" className="relative" asChild>
+                   <Link href="/cart">
                       <ShoppingCart className="h-5 w-5" />
-                      <span className="sr-only">Agri Store</span>
+                      {cartItemCount > 0 && (
+                        <Badge variant="destructive" className="absolute -right-2 -top-2 h-5 w-5 justify-center rounded-full p-0">
+                          {cartItemCount}
+                        </Badge>
+                      )}
+                      <span className="sr-only">Shopping Cart</span>
                    </Link>
                 </Button>
                  <Button variant="ghost" size="icon">
