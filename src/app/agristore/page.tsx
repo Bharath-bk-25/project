@@ -48,6 +48,7 @@ const products: Product[] = [
   { id: 'prod-10', name: 'Mushroom Spawn (காளான் வித்து)', description: 'Oyster mushroom', price: 150, image: 'https://placehold.co/400x400.png', hint: 'mushrooms', shopName: 'Erode Mushrooms', shopLocation: 'Erode', isAvailable: true },
 ];
 
+
 export default function AgriStorePage() {
   const { addToCart } = useCart();
   const { toast } = useToast();
@@ -93,39 +94,31 @@ export default function AgriStorePage() {
     </Card>
   );
 
-  const getProductsByCategory = (category: string) => {
-      const lowerCaseCategory = category.toLowerCase();
-      if (lowerCaseCategory === 'fertilizers') {
-          return products.filter(p => p.id.startsWith('fert-'));
-      }
-       if (lowerCaseCategory === 'seeds') {
-          return products.filter(p => p.id.startsWith('seed-'));
-      }
-      if (lowerCaseCategory === 'tools & machinery') {
-          return products.filter(p => p.id.startsWith('tool-') || p.id.startsWith('prod-3'));
-      }
-       if (lowerCaseCategory === 'saplings & others') {
-          return products.filter(p => p.id.startsWith('prod-') && p.id !== 'prod-3');
-      }
-      return [];
-  }
+  const productsByDistrict = products.reduce((acc, product) => {
+    const { shopLocation } = product;
+    if (!acc[shopLocation]) {
+      acc[shopLocation] = [];
+    }
+    acc[shopLocation].push(product);
+    return acc;
+  }, {} as Record<string, Product[]>);
 
-  const sections = ['Fertilizers (உரங்கள்)', 'Seeds (விதைகள்)', 'Tools & Machinery (கருவிகள் & இயந்திரங்கள்)', 'Saplings & Others (கன்றுகள் & மற்றவை)'];
+  const districts = Object.keys(productsByDistrict);
 
   return (
     <div className="min-h-screen w-full bg-secondary/50">
       <DashboardHeader title="Agri Store" userType="farmer" />
       
       <main className="container mx-auto py-8">
-        {sections.map(section => {
-            const sectionProducts = getProductsByCategory(section.split(' ')[0]);
-            if (sectionProducts.length === 0) return null;
+        {districts.map(district => {
+            const districtProducts = productsByDistrict[district];
+            if (districtProducts.length === 0) return null;
             
             return (
-                 <section key={section} className="mb-12">
-                  <h1 className="text-3xl font-bold mb-6 font-headline">{section}</h1>
+                 <section key={district} className="mb-12">
+                  <h1 className="text-3xl font-bold mb-6 font-headline">{district}</h1>
                   <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                    {sectionProducts.map(renderProductCard)}
+                    {districtProducts.map(renderProductCard)}
                   </div>
                 </section>
             );
