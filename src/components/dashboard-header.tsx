@@ -1,3 +1,4 @@
+'use client';
 import Link from 'next/link';
 import { Bell, LogOut, Plus, Settings, User, ShoppingCart } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
