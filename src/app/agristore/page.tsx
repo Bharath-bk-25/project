@@ -66,6 +66,18 @@ const products: Product[] = [
   { id: 'seed-6', name: 'Brinjal Seeds (கத்தரி விதைகள்)', description: 'Vellore thorned variety', price: 60, image: 'https://placehold.co/400x400.png', hint: 'brinjal plant', shopName: 'Palar Seeds', shopLocation: 'Vellore', isAvailable: true },
   { id: 'prod-14', name: 'Goat Manure (ஆட்டு எரு)', description: 'Well composted', price: 200, image: 'https://placehold.co/400x400.png', hint: 'manure compost', shopName: 'Vellore Farms', shopLocation: 'Vellore', isAvailable: true },
   { id: 'tool-9', name: 'Pruning Shears (கவாத்து கத்தரிக்கோல்)', description: 'Bypass pruner', price: 650, image: 'https://placehold.co/400x400.png', hint: 'pruning shears', shopName: 'Ambur Tools', shopLocation: 'Vellore', isAvailable: false },
+
+  // Karur
+  { id: 'prod-15', name: 'Coir Pith Block (கயிறு பித் தொகுதி)', description: '5kg block, expands to 75L', price: 300, image: 'https://placehold.co/400x400.png', hint: 'coir block', shopName: 'Karur Coir Exports', shopLocation: 'Karur', isAvailable: true },
+  { id: 'tool-10', name: 'Textile Shredder (ஜவுளி து драப்பர்)', description: 'For mulching', price: 12000, image: 'https://placehold.co/400x400.png', hint: 'shredder machine', shopName: 'Amaravathi Farm Tech', shopLocation: 'Karur', isAvailable: true },
+
+  // Tiruppur
+  { id: 'prod-16', name: 'Cotton Waste (பருத்தி கழிவுகள்)', description: 'Organic matter for compost', price: 50, image: 'https://placehold.co/400x400.png', hint: 'cotton waste', shopName: 'Tiruppur Cotton Mills', shopLocation: 'Tiruppur', isAvailable: true },
+  { id: 'fert-11', name: 'Zinc Sulphate (цинк சல்பேட்)', description: 'For cotton crops', price: 700, image: 'https://placehold.co/400x400.png', hint: 'fertilizer bag', shopName: 'Noyyal Agro Center', shopLocation: 'Tiruppur', isAvailable: false },
+
+  // Kanyakumari
+  { id: 'prod-17', name: 'Rubber Sheet (ரப்பர் தாள்)', description: 'RSS-4 Grade', price: 180, image: 'https://placehold.co/400x400.png', hint: 'rubber sheets', shopName: 'Kumari Rubber Traders', shopLocation: 'Kanyakumari', isAvailable: true },
+  { id: 'seed-7', name: 'Clove Sapling (கிராம்பு கன்று)', description: 'Healthy sapling', price: 150, image: 'https://placehold.co/400x400.png', hint: 'clove plant', shopName: 'Marthandam Spices', shopLocation: 'Kanyakumari', isAvailable: true },
 ];
 
 
@@ -147,3 +159,5 @@ export default function AgriStorePage() {
     </div>
   );
 }
+
+    
