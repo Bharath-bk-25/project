@@ -3,11 +3,12 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { DashboardHeader } from '@/components/dashboard-header';
 import Image from 'next/image';
-import { ShoppingCart, PackageX, MapPin } from 'lucide-react';
+import { ShoppingCart, PackageX, MapPin, Store } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
 import { useToast } from '@/hooks/use-toast';
 import type { Product } from '@/context/CartContext';
 import { Badge } from '@/components/ui/badge';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
 const products: Product[] = [
   // Coimbatore
@@ -80,7 +81,6 @@ const products: Product[] = [
   { id: 'seed-7', name: 'Clove Sapling (கிராம்பு கன்று)', description: 'Healthy sapling', price: 150, image: 'https://placehold.co/400x400.png', hint: 'clove plant', shopName: 'Marthandam Spices', shopLocation: 'Kanyakumari', isAvailable: true },
 ];
 
-
 export default function AgriStorePage() {
   const { addToCart } = useCart();
   const { toast } = useToast();
@@ -108,9 +108,8 @@ export default function AgriStorePage() {
       <CardContent className="p-4 flex-grow">
         <CardTitle className="text-xl">{product.name}</CardTitle>
         <CardDescription className="flex items-center text-sm text-muted-foreground mt-1">
-            <MapPin className="mr-1.5 h-4 w-4" /> {product.shopName}, {product.shopLocation}
+             {product.description}
         </CardDescription>
-        <p className="mt-2 text-sm text-muted-foreground">{product.description}</p>
         <p className="mt-2 text-lg font-semibold text-primary">₹{product.price.toFixed(2)}</p>
       </CardContent>
       <CardFooter>
@@ -135,23 +134,42 @@ export default function AgriStorePage() {
     return acc;
   }, {} as Record<string, Product[]>);
 
-  const districts = Object.keys(productsByDistrict);
-
   return (
     <div className="min-h-screen w-full bg-secondary/50">
       <DashboardHeader title="Agri Store" userType="farmer" />
       
       <main className="container mx-auto py-8">
-        {districts.map(district => {
-            const districtProducts = productsByDistrict[district];
+        {Object.entries(productsByDistrict).map(([district, districtProducts]) => {
             if (districtProducts.length === 0) return null;
+
+            const productsByShop = districtProducts.reduce((acc, product) => {
+                if (!acc[product.shopName]) {
+                  acc[product.shopName] = [];
+                }
+                acc[product.shopName].push(product);
+                return acc;
+            }, {} as Record<string, Product[]>);
             
             return (
                  <section key={district} className="mb-12">
                   <h1 className="text-3xl font-bold mb-6 font-headline">{district}</h1>
-                  <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                    {districtProducts.map(renderProductCard)}
-                  </div>
+                    <Accordion type="multiple" className="w-full space-y-4">
+                        {Object.entries(productsByShop).map(([shopName, shopProducts]) => (
+                             <AccordionItem value={shopName} key={shopName} className="border bg-card rounded-lg">
+                                <AccordionTrigger className="p-6 text-lg font-semibold hover:no-underline">
+                                    <div className="flex items-center gap-3">
+                                        <Store className="h-6 w-6 text-primary" />
+                                        {shopName}
+                                    </div>
+                                </AccordionTrigger>
+                                <AccordionContent className="p-6 pt-0">
+                                    <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                                        {shopProducts.map(renderProductCard)}
+                                    </div>
+                                </AccordionContent>
+                            </AccordionItem>
+                        ))}
+                    </Accordion>
                 </section>
             );
         })}
