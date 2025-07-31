@@ -25,22 +25,22 @@ import { format } from 'date-fns';
 import { cn } from '@/lib/utils';
 
 const workers = [
-  { name: 'Anjali Devi', age: 28, skills: ['Harvesting', 'Pruning', 'Packing'], location: 'Salinas, CA', image: 'https://placehold.co/300x300.png?text=AD', hint: 'woman portrait' },
-  { name: 'Rajesh Kumar', age: 35, skills: ['Tractor Operation', 'Irrigation', 'Planting'], location: 'Fresno, CA', image: 'https://placehold.co/300x300.png?text=RK', hint: 'man portrait' },
-  { name: 'Suresh Gupta', age: 42, skills: ['Pest Control', 'Greenhouse Mgmt.'], location: 'Watsonville, CA', image: 'https://placehold.co/300x300.png?text=SG', hint: 'asian man' },
-  { name: 'Priya Sharma', age: 24, skills: ['Fruit Picking', 'Sorting'], location: 'Bakersfield, CA', image: 'https://placehold.co/300x300.png?text=PS', hint: 'young woman' },
-  { name: 'Muthu Krishnan', age: 45, skills: ['Livestock care', 'Fencing'], location: 'Chennai, TN', image: 'https://placehold.co/300x300.png?text=MK', hint: 'indian man' },
-  { name: 'Lakshmi Patel', age: 31, skills: ['Weeding', 'Sowing', 'Organic Farming'], location: 'Coimbatore, TN', image: 'https://placehold.co/300x300.png?text=LP', hint: 'indian woman' },
-  { name: 'Arun Selvam', age: 29, skills: ['Driving', 'Mechanical Repair'], location: 'Madurai, TN', image: 'https://placehold.co/300x300.png?text=AS', hint: 'man smiling' },
-  { name: 'Kavitha Ramasamy', age: 38, skills: ['Crop Dusting', 'Seed selection'], location: 'Trichy, TN', image: 'https://placehold.co/300x300.png?text=KR', hint: 'woman in a field' },
-  { name: 'Ganesh Pillai', age: 50, skills: ['Supervising', 'Warehouse Management'], location: 'Salem, TN', image: 'https://placehold.co/300x300.png?text=GP', hint: 'older man' },
-  { name: 'Meena Kumari', age: 22, skills: ['Flower Cutting', 'Landscaping'], location: 'Erode, TN', image: 'https://placehold.co/300x300.png?text=MK', hint: 'young indian woman' },
-  { name: 'Velu Murugan', age: 33, skills: ['Ploughing', 'Fertilizing'], location: 'Tirunelveli, TN', image: 'https://placehold.co/300x300.png?text=VM', hint: 'farmer portrait' },
-  { name: 'Saravanan Suresh', age: 41, skills: ['Irrigation Systems', 'Farm Maintenance'], location: 'Thanjavur, TN', image: 'https://placehold.co/300x300.png?text=SS', hint: 'man with a beard' },
-  { name: 'Deepa Venkatesh', age: 27, skills: ['Vegetable Picking', 'Quality Check'], location: 'Dindigul, TN', image: 'https://placehold.co/300x300.png?text=DV', hint: 'woman smiling' },
-  { name: 'Karthik Raja', age: 36, skills: ['Heavy Machinery', 'Welding'], location: 'Tiruppur, TN', image: 'https://placehold.co/300x300.png?text=KR', hint: 'welder portrait' },
-  { name: 'Sivakami Murthy', age: 48, skills: ['Livestock Breeding', 'Animal Health'], location: 'Namakkal, TN', image: 'https://placehold.co/300x300.png?text=SM', hint: 'older indian woman' },
-  { name: 'Prakash Rajendran', age: 25, skills: ['Drone Operation', 'Data Collection'], location: 'Coimbatore, TN', image: 'https://placehold.co/300x300.png?text=PR', hint: 'young man with drone' },
+  { name: 'Anjali Devi', age: 28, skills: ['Harvesting', 'Pruning', 'Packing'], location: 'Salinas, CA', image: 'https://placehold.co/300x300.png?text=AD', hint: 'woman portrait', phone: '9876543210' },
+  { name: 'Rajesh Kumar', age: 35, skills: ['Tractor Operation', 'Irrigation', 'Planting'], location: 'Fresno, CA', image: 'https://placehold.co/300x300.png?text=RK', hint: 'man portrait', phone: '9876543211' },
+  { name: 'Suresh Gupta', age: 42, skills: ['Pest Control', 'Greenhouse Mgmt.'], location: 'Watsonville, CA', image: 'https://placehold.co/300x300.png?text=SG', hint: 'asian man', phone: '9876543212' },
+  { name: 'Priya Sharma', age: 24, skills: ['Fruit Picking', 'Sorting'], location: 'Bakersfield, CA', image: 'https://placehold.co/300x300.png?text=PS', hint: 'young woman', phone: '9876543213' },
+  { name: 'Muthu Krishnan', age: 45, skills: ['Livestock care', 'Fencing'], location: 'Chennai, TN', image: 'https://placehold.co/300x300.png?text=MK', hint: 'indian man', phone: '9876543214' },
+  { name: 'Lakshmi Patel', age: 31, skills: ['Weeding', 'Sowing', 'Organic Farming'], location: 'Coimbatore, TN', image: 'https://placehold.co/300x300.png?text=LP', hint: 'indian woman', phone: '9876543215' },
+  { name: 'Arun Selvam', age: 29, skills: ['Driving', 'Mechanical Repair'], location: 'Madurai, TN', image: 'https://placehold.co/300x300.png?text=AS', hint: 'man smiling', phone: '9876543216' },
+  { name: 'Kavitha Ramasamy', age: 38, skills: ['Crop Dusting', 'Seed selection'], location: 'Trichy, TN', image: 'https://placehold.co/300x300.png?text=KR', hint: 'woman in a field', phone: '9876543217' },
+  { name: 'Ganesh Pillai', age: 50, skills: ['Supervising', 'Warehouse Management'], location: 'Salem, TN', image: 'https://placehold.co/300x300.png?text=GP', hint: 'older man', phone: '9876543218' },
+  { name: 'Meena Kumari', age: 22, skills: ['Flower Cutting', 'Landscaping'], location: 'Erode, TN', image: 'https://placehold.co/300x300.png?text=MK', hint: 'young indian woman', phone: '9876543219' },
+  { name: 'Velu Murugan', age: 33, skills: ['Ploughing', 'Fertilizing'], location: 'Tirunelveli, TN', image: 'https://placehold.co/300x300.png?text=VM', hint: 'farmer portrait', phone: '9876543220' },
+  { name: 'Saravanan Suresh', age: 41, skills: ['Irrigation Systems', 'Farm Maintenance'], location: 'Thanjavur, TN', image: 'https://placehold.co/300x300.png?text=SS', hint: 'man with a beard', phone: '9876543221' },
+  { name: 'Deepa Venkatesh', age: 27, skills: ['Vegetable Picking', 'Quality Check'], location: 'Dindigul, TN', image: 'https://placehold.co/300x300.png?text=DV', hint: 'woman smiling', phone: '9876543222' },
+  { name: 'Karthik Raja', age: 36, skills: ['Heavy Machinery', 'Welding'], location: 'Tiruppur, TN', image: 'https://placehold.co/300x300.png?text=KR', hint: 'welder portrait', phone: '9876543223' },
+  { name: 'Sivakami Murthy', age: 48, skills: ['Livestock Breeding', 'Animal Health'], location: 'Namakkal, TN', image: 'https://placehold.co/300x300.png?text=SM', hint: 'older indian woman', phone: '9876543224' },
+  { name: 'Prakash Rajendran', age: 25, skills: ['Drone Operation', 'Data Collection'], location: 'Coimbatore, TN', image: 'https://placehold.co/300x300.png?text=PR', hint: 'young man with drone', phone: '9876543225' },
 ];
 
 export default function FarmerDashboard() {
@@ -80,7 +80,7 @@ export default function FarmerDashboard() {
                 </div>
               </CardContent>
               <CardFooter>
-                <Button className="w-full">
+                <Button className="w-full" onClick={() => alert(`Phone: ${worker.phone}`)}>
                   <Contact className="mr-2 h-4 w-4" />
                   Contact Worker
                 </Button>
