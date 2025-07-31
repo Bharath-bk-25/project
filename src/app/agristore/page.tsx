@@ -655,7 +655,7 @@ export default function AgriStorePage() {
     <Card key={product.id} className="overflow-hidden flex flex-col">
       <CardHeader className="p-0">
         <div className="relative h-48 w-full">
-          <Image src={product.image} alt={product.name} layout="fill" objectFit="cover" data-ai-hint={product.hint} />
+          <Image src={product.image} alt={product.name} fill className="object-cover" data-ai-hint={product.hint} />
            {!product.isAvailable && (
             <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
               <Badge variant="destructive" className="text-lg">Out of Stock</Badge>
