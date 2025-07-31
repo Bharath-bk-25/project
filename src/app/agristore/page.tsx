@@ -46,6 +46,18 @@ const products: Product[] = [
   { id: 'prod-9', name: 'Tapioca Cuttings (மரவள்ளிக்கிழங்கு குச்சி)', description: 'High starch content', price: 5, image: 'https://placehold.co/400x400.png', hint: 'tapioca plant', shopName: 'Erode Farmers Coop', shopLocation: 'Erode', isAvailable: true },
   { id: 'fert-8', name: 'Sulphate (சல்ஃபேட்)', description: 'Ammonium Sulphate', price: 600, image: 'https://placehold.co/400x400.png', hint: 'white powder', shopName: 'Kongu Fertilizers', shopLocation: 'Erode', isAvailable: true },
   { id: 'prod-10', name: 'Mushroom Spawn (காளான் வித்து)', description: 'Oyster mushroom', price: 150, image: 'https://placehold.co/400x400.png', hint: 'mushrooms', shopName: 'Erode Mushrooms', shopLocation: 'Erode', isAvailable: true },
+
+  // Tirunelveli
+  { id: 'seed-5', name: 'Chilli Seeds (மிளகாய் விதைகள்)', description: 'Samba variety', price: 90, image: 'https://placehold.co/400x400.png', hint: 'chilli plant', shopName: 'Nanguneri Seed Bank', shopLocation: 'Tirunelveli', isAvailable: true },
+  { id: 'tool-6', name: 'Plough (கலப்பை)', description: 'Country plough', price: 1500, image: 'https://placehold.co/400x400.png', hint: 'wooden plough', shopName: 'Tamirabarani Tools', shopLocation: 'Tirunelveli', isAvailable: true },
+
+  // Thanjavur
+  { id: 'prod-11', name: 'Sesame Seeds (எள் விதைகள்)', description: 'Black sesame', price: 220, image: 'https://placehold.co/400x400.png', hint: 'sesame seeds', shopName: 'Delta Agro', shopLocation: 'Thanjavur', isAvailable: true },
+  { id: 'fert-9', name: 'Gypsum (ஜிப்சம்)', description: 'Soil conditioner', price: 400, image: 'https://placehold.co/400x400.png', hint: 'gypsum powder', shopName: 'Kumbakonam Fertilizers', shopLocation: 'Thanjavur', isAvailable: false },
+
+  // Dindigul
+  { id: 'prod-12', name: 'Moringa Seeds (முருங்கை விதைகள்)', description: 'PKM-1 variety', price: 350, image: 'https://placehold.co/400x400.png', hint: 'moringa tree', shopName: 'Sirumalai Seedlings', shopLocation: 'Dindigul', isAvailable: true },
+  { id: 'tool-7', name: 'Harvesting Net (அறுவடை வலை)', description: 'For floriculture', price: 500, image: 'https://placehold.co/400x400.png', hint: 'green net', shopName: 'Dindigul Farm Needs', shopLocation: 'Dindigul', isAvailable: true },
 ];
 
 
