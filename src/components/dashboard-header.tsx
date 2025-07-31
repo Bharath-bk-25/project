@@ -47,7 +47,7 @@ export function DashboardHeader({ title, userType, onCreatePost }: DashboardHead
            {userType === 'worker' && (
              <nav className="hidden gap-6 md:flex">
                 <Link href="/worker/dashboard" className="flex items-center text-lg font-medium transition-colors hover:text-foreground/80 sm:text-sm text-foreground">
-                  கிடைக்கும் வேலைகள்
+                  Available Jobs (கிடைக்கும் வேலைகள்)
                 </Link>
              </nav>
           )}
@@ -82,14 +82,14 @@ export function DashboardHeader({ title, userType, onCreatePost }: DashboardHead
                 <Button variant="ghost" className="relative h-8 w-8 rounded-full">
                   <Avatar className="h-9 w-9">
                     <AvatarImage src={`https://placehold.co/100x100.png`} alt="@username" data-ai-hint="person portrait" />
-                    <AvatarFallback>{userType === 'farmer' ? 'வி' : 'ப'}</AvatarFallback>
+                    <AvatarFallback>{userType === 'farmer' ? 'F' : 'W'}</AvatarFallback>
                   </Avatar>
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-56" align="end" forceMount>
                 <DropdownMenuLabel className="font-normal">
                   <div className="flex flex-col space-y-1">
-                    <p className="text-sm font-medium leading-none">பயனர்பெயர்</p>
+                    <p className="text-sm font-medium leading-none">Username</p>
                     <p className="text-xs leading-none text-muted-foreground">user@email.com</p>
                   </div>
                 </DropdownMenuLabel>
@@ -97,21 +97,21 @@ export function DashboardHeader({ title, userType, onCreatePost }: DashboardHead
                 <DropdownMenuGroup>
                   <DropdownMenuItem>
                     <User className="mr-2 h-4 w-4" />
-                    <span>சுயவிவரம்</span>
+                    <span>Profile (சுயவிவரம்)</span>
                   </DropdownMenuItem>
                    <DropdownMenuItem>
                     <Languages className="mr-2 h-4 w-4" />
-                    <span>மொழி</span>
+                    <span>Language (மொழி)</span>
                   </DropdownMenuItem>
                   <DropdownMenuItem>
                     <Settings className="mr-2 h-4 w-4" />
-                    <span>அமைப்புகள்</span>
+                    <span>Settings (அமைப்புகள்)</span>
                   </DropdownMenuItem>
                 </DropdownMenuGroup>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem>
                   <LogOut className="mr-2 h-4 w-4" />
-                  <span>வெளியேறு</span>
+                  <span>Log out (வெளியேறு)</span>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
