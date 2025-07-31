@@ -34,108 +34,112 @@ type Worker = {
 const workers: Worker[] = [
     // Coimbatore
     { name: 'Karthik Raja', age: 40, skills: ['Tractor Operation', 'Coconut Plucking'], location: 'Pollachi, Coimbatore', image: 'https://placehold.co/300x300.png?text=KR', hint: 'man portrait', phone: '9234567890' },
-    { name: 'Deepa Selvi', age: 32, skills: ['Vegetable Farming', 'Poultry Care'], location: 'Mettupalayam, Coimbatore', image: 'https://placehold.co/300x300.png?text=DS', hint: 'woman portrait', phone: '9234567891' },
-    { name: 'Arun Kumar', age: 28, skills: ['Irrigation Setup', 'Pest Control'], location: 'Annur, Coimbatore', image: 'https://placehold.co/300x300.png?text=AK', hint: 'young man', phone: '9234567892' },
-    { name: 'Saravanan M', age: 42, skills: ['Maize Cultivation', 'Harvesting'], location: 'Sulur, Coimbatore', image: 'https://placehold.co/300x300.png?text=SM', hint: 'farmer portrait', phone: '9234567893' },
-    { name: 'Priya Mohan', age: 35, skills: ['Organic Farming', 'Grafting'], location: 'Kinathukadavu, Coimbatore', image: 'https://placehold.co/300x300.png?text=PM', hint: 'woman smiling', phone: '9234567894' },
-    { name: 'Senthil Kumaran', age: 48, skills: ['Coir Production', 'Livestock Feed'], location: 'Valparai, Coimbatore', image: 'https://placehold.co/300x300.png?text=SK', hint: 'man in his 40s', phone: '9234567895' },
+    { name: 'Mani Kandan', age: 38, skills: ['Pest Control', 'Irrigation'], location: 'Pollachi, Coimbatore', image: 'https://placehold.co/300x300.png?text=MK', hint: 'farmer smiling', phone: '9234567891' },
+    { name: 'Anjali Devi', age: 33, skills: ['Weeding', 'Harvesting'], location: 'Pollachi, Coimbatore', image: 'https://placehold.co/300x300.png?text=AD', hint: 'woman in field', phone: '9234567892' },
+    { name: 'Suresh Kumar', age: 45, skills: ['Coconut Tree Climbing', 'Spraying'], location: 'Pollachi, Coimbatore', image: 'https://placehold.co/300x300.png?text=SK', hint: 'man climbing tree', phone: '9234567893' },
+    { name: 'Priya Varman', age: 29, skills: ['Vegetable Picking', 'Sorting'], location: 'Pollachi, Coimbatore', image: 'https://placehold.co/300x300.png?text=PV', hint: 'young woman portrait', phone: '9234567894' },
 
+    { name: 'Deepa Selvi', age: 32, skills: ['Vegetable Farming', 'Poultry Care'], location: 'Mettupalayam, Coimbatore', image: 'https://placehold.co/300x300.png?text=DS', hint: 'woman portrait', phone: '9234567895' },
+    { name: 'Ravi Verma', age: 41, skills: ['Arecanut Harvesting', 'Drip Irrigation'], location: 'Mettupalayam, Coimbatore', image: 'https://placehold.co/300x300.png?text=RV', hint: 'man in farm', phone: '9234567896' },
+    { name: 'Kamala Hassan', age: 39, skills: ['Flower Picking', 'Nursery Work'], location: 'Mettupalayam, Coimbatore', image: 'https://placehold.co/300x300.png?text=KH', hint: 'woman with flowers', phone: '9234567897' },
+    { name: 'Ganesh Pandi', age: 35, skills: ['Turmeric Cultivation', 'Machine Operation'], location: 'Mettupalayam, Coimbatore', image: 'https://placehold.co/300x300.png?text=GP', hint: 'man on tractor', phone: '9234567898' },
+    { name: 'Meena Kumari', age: 28, skills: ['General Farm Hand', 'Weeding'], location: 'Mettupalayam, Coimbatore', image: 'https://placehold.co/300x300.png?text=MK', hint: 'young woman smiling', phone: '9234567899' },
+    
+    { name: 'Arun Kumar', age: 28, skills: ['Irrigation Setup', 'Pest Control'], location: 'Annur, Coimbatore', image: 'https://placehold.co/300x300.png?text=AK', hint: 'young man', phone: '9234567900' },
+    { name: 'Sathish Kumar', age: 31, skills: ['Maize Farming', 'Harvesting'], location: 'Annur, Coimbatore', image: 'https://placehold.co/300x300.png?text=SK', hint: 'man in a cornfield', phone: '9234567901' },
+    { name: 'Vanitha Selvam', age: 36, skills: ['Cotton Picking', 'Manual Weeding'], location: 'Annur, Coimbatore', image: 'https://placehold.co/300x300.png?text=VS', hint: 'woman picking cotton', phone: '9234567902' },
+    { name: 'Murugan P', age: 43, skills: ['Ploughing', 'Sowing'], location: 'Annur, Coimbatore', image: 'https://placehold.co/300x300.png?text=MP', hint: 'farmer ploughing', phone: '9234567903' },
+    { name: 'Lakshmi Priya', age: 30, skills: ['Vegetable Nursery', 'Seed Treatment'], location: 'Annur, Coimbatore', image: 'https://placehold.co/300x300.png?text=LP', hint: 'woman with seedlings', phone: '9234567904' },
+
+    { name: 'Saravanan M', age: 42, skills: ['Maize Cultivation', 'Harvesting'], location: 'Sulur, Coimbatore', image: 'https://placehold.co/300x300.png?text=SM', hint: 'farmer portrait', phone: '9234567905' },
+    { name: 'Karthikeyan R', age: 39, skills: ['Poultry Farm Management', 'Feed Mixing'], location: 'Sulur, Coimbatore', image: 'https://placehold.co/300x300.png?text=KR', hint: 'man with chickens', phone: '9234567906' },
+    { name: 'Shanthi Murugan', age: 41, skills: ['Vegetable Farming', 'Packing'], location: 'Sulur, Coimbatore', image: 'https://placehold.co/300x300.png?text=SM', hint: 'woman with vegetables', phone: '9234567907' },
+    { name: 'Rajesh V', age: 29, skills: ['Driving', 'Loading/Unloading'], location: 'Sulur, Coimbatore', image: 'https://placehold.co/300x300.png?text=RV', hint: 'man driving truck', phone: '9234567908' },
+    { name: 'Divya Bharathi', age: 27, skills: ['General Farm Labor', 'Weeding'], location: 'Sulur, Coimbatore', image: 'https://placehold.co/300x300.png?text=DB', hint: 'young woman in farm', phone: '9234567909' },
+
+    { name: 'Priya Mohan', age: 35, skills: ['Organic Farming', 'Grafting'], location: 'Kinathukadavu, Coimbatore', image: 'https://placehold.co/300x300.png?text=PM', hint: 'woman smiling', phone: '9234567910' },
+    { name: 'Mohan Das', age: 48, skills: ['Tomato Farming', 'Staking'], location: 'Kinathukadavu, Coimbatore', image: 'https://placehold.co/300x300.png?text=MD', hint: 'man in tomato field', phone: '9234567911' },
+    { name: 'Geetha Rani', age: 40, skills: ['Chilli Picking', 'Drying'], location: 'Kinathukadavu, Coimbatore', image: 'https://placehold.co/300x300.png?text=GR', hint: 'woman with chillies', phone: '9234567912' },
+    { name: 'Loganathan S', age: 36, skills: ['Coconut Harvesting', 'Spraying'], location: 'Kinathukadavu, Coimbatore', image: 'https://placehold.co/300x300.png?text=LS', hint: 'man with coconuts', phone: '9234567913' },
+    { name: 'Amutha Valli', age: 31, skills: ['Weeding', 'General Maintenance'], location: 'Kinathukadavu, Coimbatore', image: 'https://placehold.co/300x300.png?text=AV', hint: 'woman working in field', phone: '9234567914' },
 
     // Madurai
     { name: 'Muthu Pandi', age: 45, skills: ['Paddy Cultivation', 'Jasmine Harvesting'], location: 'Thirumangalam, Madurai', image: 'https://placehold.co/300x300.png?text=MP', hint: 'farmer portrait', phone: '9345678901' },
-    { name: 'Meenakshi Sundaram', age: 38, skills: ['Banana Cultivation', 'Sugarcane Cutting'], location: 'Usilampatti, Madurai', image: 'https://placehold.co/300x300.png?text=MS', hint: 'woman in a field', phone: '9345678902' },
-    { name: 'David Nadar', age: 43, skills: ['Rubber Tapping', 'Spice Cultivation'], location: 'Melur, Madurai', image: 'https://placehold.co/300x300.png?text=DN', hint: 'man with a beard', phone: '9345678903' },
-    { name: 'Stella Mary', age: 37, skills: ['Clove Harvesting', 'Fisheries'], location: 'Peraiyur, Madurai', image: 'https://placehold.co/300x300.png?text=SM', hint: 'woman smiling', phone: '9345678904' },
-    { name: 'Ganesan P', age: 50, skills: ['Cotton Farming', 'Millet Cultivation'], location: 'Vadipatti, Madurai', image: 'https://placehold.co/300x300.png?text=GP', hint: 'older man', phone: '9345678905' },
-    { name: 'Parvathy Krishnan', age: 31, skills: ['Vegetable Grading', 'Cold Storage Mgmt'], location: 'Thiruparankundram, Madurai', image: 'https://placehold.co/300x300.png?text=PK', hint: 'young woman', phone: '9345678906' },
+    { name: 'Pandiyamma M', age: 42, skills: ['Flower Stringing', 'Weeding'], location: 'Thirumangalam, Madurai', image: 'https://placehold.co/300x300.png?text=PM', hint: 'woman with flowers', phone: '9345678902' },
+    { name: 'Alagarsamy K', age: 50, skills: ['Sugarcane Cutting', 'Loading'], location: 'Thirumangalam, Madurai', image: 'https://placehold.co/300x300.png?text=AK', hint: 'man cutting sugarcane', phone: '9345678903' },
+    { name: 'Kasthuri R', age: 35, skills: ['Paddy Transplanting', 'Harvesting'], location: 'Thirumangalam, Madurai', image: 'https://placehold.co/300x300.png?text=KR', hint: 'woman in paddy field', phone: '9345678904' },
+    { name: 'Veeramani S', age: 39, skills: ['Tractor Driving', 'Ploughing'], location: 'Thirumangalam, Madurai', image: 'https://placehold.co/300x300.png?text=VS', hint: 'man on tractor', phone: '9345678905' },
 
+    { name: 'Meenakshi Sundaram', age: 38, skills: ['Banana Cultivation', 'Sugarcane Cutting'], location: 'Usilampatti, Madurai', image: 'https://placehold.co/300x300.png?text=MS', hint: 'woman in a field', phone: '9345678906' },
+    { name: 'Karuppan C', age: 44, skills: ['Cotton Farming', 'Pest control'], location: 'Usilampatti, Madurai', image: 'https://placehold.co/300x300.png?text=KC', hint: 'man spraying pesticides', phone: '9345678907' },
+    { name: 'Valliammai P', age: 40, skills: ['Maize de-husking', 'Drying'], location: 'Usilampatti, Madurai', image: 'https://placehold.co/300x300.png?text=VP', hint: 'woman with maize', phone: '9345678908' },
+    { name: 'Thevaraj M', age: 52, skills: ['General Farm Hand', 'Livestock care'], location: 'Usilampatti, Madurai', image: 'https://placehold.co/300x300.png?text=TM', hint: 'older man with cattle', phone: '9345678909' },
+    { name: 'Chellamma G', age: 36, skills: ['Weeding', 'Vegetable harvesting'], location: 'Usilampatti, Madurai', image: 'https://placehold.co/300x300.png?text=CG', hint: 'woman harvesting vegetables', phone: '9345678910' },
+    
     // Tiruchirappalli
     { name: 'Ravi Chandran', age: 37, skills: ['Irrigation Management', 'Farm Machinery'], location: 'Lalgudi, Tiruchirappalli', image: 'https://placehold.co/300x300.png?text=RC', hint: 'man smiling', phone: '9456789012' },
-    { name: 'Sangeetha Bala', age: 30, skills: ['Flower Cultivation', 'Nursery Management'], location: 'Srirangam, Tiruchirappalli', image: 'https://placehold.co/300x300.png?text=SB', hint: 'young woman', phone: '9456789013' },
-    { name: 'Ramesh Pandian', age: 33, skills: ['Drumstick Farming', 'Textile Crop Handling'], location: 'Manapparai, Tiruchirappalli', image: 'https://placehold.co/300x300.png?text=RP', hint: 'young man', phone: '9456789014' },
-    { name: 'Saranya Devi', age: 28, skills: ['Betel Vine Cultivation', 'Coir Making'], location: 'Thuraiyur, Tiruchirappalli', image: 'https://placehold.co/300x300.png?text=SD', hint: 'young woman', phone: '9456789015' },
-    { name: 'Balamurugan K', age: 41, skills: ['Paddy Harvesting', 'Seed Treatment'], location: 'Musiri, Tiruchirappalli', image: 'https://placehold.co/300x300.png?text=BK', hint: 'man portrait', phone: '9456789016' },
-    { name: 'Kavitha Ramu', age: 29, skills: ['Banana Leaf Cutting', 'Packaging'], location: 'Thiruverumbur, Tiruchirappalli', image: 'https://placehold.co/300x300.png?text=KR', hint: 'woman in field', phone: '9456789017' },
+    { name: 'Chandralekha R', age: 34, skills: ['Paddy Transplanting', 'Weeding'], location: 'Lalgudi, Tiruchirappalli', image: 'https://placehold.co/300x300.png?text=CR', hint: 'woman in paddy field', phone: '9456789013' },
+    { name: 'Baskaran T', age: 45, skills: ['Sugarcane Harvesting', 'Loading'], location: 'Lalgudi, Tiruchirappalli', image: 'https://placehold.co/300x300.png?text=BT', hint: 'man cutting sugarcane', phone: '9456789014' },
+    { name: 'Poornima S', age: 29, skills: ['Banana Cultivation', 'De-leafing'], location: 'Lalgudi, Tiruchirappalli', image: 'https://placehold.co/300x300.png?text=PS', hint: 'woman in banana plantation', phone: '9456789015' },
+    { name: 'Mani K', age: 40, skills: ['Tractor driving', 'General farm work'], location: 'Lalgudi, Tiruchirappalli', image: 'https://placehold.co/300x300.png?text=MK', hint: 'man on tractor', phone: '9456789016' },
+
+    { name: 'Sangeetha Bala', age: 30, skills: ['Flower Cultivation', 'Nursery Management'], location: 'Srirangam, Tiruchirappalli', image: 'https://placehold.co/300x300.png?text=SB', hint: 'young woman', phone: '9456789017' },
+    { name: 'Bala Murugan', age: 35, skills: ['Garland Making', 'Flower harvesting'], location: 'Srirangam, Tiruchirappalli', image: 'https://placehold.co/300x300.png?text=BM', hint: 'man with flowers', phone: '9456789018' },
+    { name: 'Kokila Vani', age: 28, skills: ['Betel Leaf Picking', 'Packing'], location: 'Srirangam, Tiruchirappalli', image: 'https://placehold.co/300x300.png?text=KV', hint: 'woman picking leaves', phone: '9456789019' },
+    { name: 'Rangarajan V', age: 55, skills: ['Temple flower supply chain', 'Logistics'], location: 'Srirangam, Tiruchirappalli', image: 'https://placehold.co/300x300.png?text=RV', hint: 'older man portrait', phone: '9456789020' },
+    { name: 'Jayanthi R', age: 42, skills: ['Retail stall management', 'Sales'], location: 'Srirangam, Tiruchirappalli', image: 'https://placehold.co/300x300.png?text=JR', hint: 'woman at market stall', phone: '9456789021' },
     
     // Salem
     { name: 'Vignesh Kumar', age: 28, skills: ['Mango Farming', 'Grafting'], location: 'Attur, Salem', image: 'https://placehold.co/300x300.png?text=VK', hint: 'young man', phone: '9567890123' },
-    { name: 'Anitha Murugan', age: 33, skills: ['Tapioca Cultivation', 'Sago Production'], location: 'Mettur, Salem', image: 'https://placehold.co/300x300.png?text=AM', hint: 'indian woman', phone: '9567890124' },
-    { name: 'Selvaraj S', age: 45, skills: ['Coffee Plantation', 'Pepper Cultivation'], location: 'Yercaud, Salem', image: 'https://placehold.co/300x300.png?text=SS', hint: 'farmer portrait', phone: '9567890125' },
-    { name: 'Lakshmi Priya', age: 31, skills: ['Turmeric Farming', 'Spice Processing'], location: 'Gangavalli, Salem', image: 'https://placehold.co/300x300.png?text=LP', hint: 'woman smiling', phone: '9567890126' },
-    { name: 'Rajesh Kannan', age: 38, skills: ['Silver Oak Farming', 'Wood Cutting'], location: 'Vazhapadi, Salem', image: 'https://placehold.co/300x300.png?text=RK', hint: 'man portrait', phone: '9567890127' },
-    { name: 'Dhanalakshmi Perumal', age: 40, skills: ['Poultry Farm Handling', 'Egg Collection'], location: 'Omalur, Salem', image: 'https://placehold.co/300x300.png?text=DP', hint: 'woman in a farm', phone: '9567890128' },
-
-    // Tirunelveli
-    { name: 'Arumugam Pillai', age: 52, skills: ['Palm Tree Climbing', 'Paddy Harvesting'], location: 'Palayamkottai, Tirunelveli', image: 'https://placehold.co/300x300.png?text=AP', hint: 'older man', phone: '9678901234' },
-    { name: 'Esakki Ammal', age: 46, skills: ['Chilli Farming', 'Cotton Picking'], location: 'Ambasamudram, Tirunelveli', image: 'https://placehold.co/300x300.png?text=EA', hint: 'older indian woman', phone: '9678901235' },
-    { name: 'Subramanian V', age: 49, skills: ['Banana Cultivation', 'Cashew Farming'], location: 'Nanguneri, Tirunelveli', image: 'https://placehold.co/300x300.png?text=SV', hint: 'man portrait', phone: '9678901236' },
-    { name: 'Mariyamma P', age: 39, skills: ['Livestock Management', 'Fodder Cultivation'], location: 'Tenkasi, Tirunelveli', image: 'https://placehold.co/300x300.png?text=MP', hint: 'woman in field', phone: '9678901237' },
-    { name: 'Velmurugan R', age: 34, skills: ['Vegetable Farming', 'Organic Pesticides'], location: 'Sankarankovil, Tirunelveli', image: 'https://placehold.co/300x300.png?text=VR', hint: 'young man', phone: '9678901238' },
-    { name: 'Siva Kumar', age: 29, skills: ['Fishing', 'Net Mending'], location: 'Radhapuram, Tirunelveli', image: 'https://placehold.co/300x300.png?text=SK', hint: 'fisherman', phone: '9678901239' },
+    { name: 'Kumarasamy P', age: 48, skills: ['Mango Harvesting', 'Sorting'], location: 'Attur, Salem', image: 'https://placehold.co/300x300.png?text=KP', hint: 'man with mangoes', phone: '9567890124' },
+    { name: 'Malliga S', age: 41, skills: ['Tapioca Harvesting', 'Processing'], location: 'Attur, Salem', image: 'https://placehold.co/300x300.png?text=MS', hint: 'woman with tapioca', phone: '9567890125' },
+    { name: 'Sarath Babu', age: 31, skills: ['Pest management', 'Spraying'], location: 'Attur, Salem', image: 'https://placehold.co/300x300.png?text=SB', hint: 'man spraying crops', phone: '9567890126' },
+    { name: 'Deepa K', age: 29, skills: ['General farm hand', 'Weeding'], location: 'Attur, Salem', image: 'https://placehold.co/300x300.png?text=DK', hint: 'young woman working', phone: '9567890127' },
+    
+    { name: 'Anitha Murugan', age: 33, skills: ['Tapioca Cultivation', 'Sago Production'], location: 'Mettur, Salem', image: 'https://placehold.co/300x300.png?text=AM', hint: 'indian woman', phone: '9567890128' },
+    { name: 'Murugesan L', age: 46, skills: ['Sugarcane cutting', 'Farm machinery operation'], location: 'Mettur, Salem', image: 'https://placehold.co/300x300.png?text=ML', hint: 'man on farm', phone: '9567890129' },
+    { name: 'Selvi R', age: 38, skills: ['Fishing (Reservoir)', 'Net mending'], location: 'Mettur, Salem', image: 'https://placehold.co/300x300.png?text=SR', hint: 'woman with fishing net', phone: '9567890130' },
+    { name: 'Kannan V', age: 40, skills: ['General Maintenance', 'Driving'], location: 'Mettur, Salem', image: 'https://placehold.co/300x300.png?text=KV', hint: 'man driving truck', phone: '9567890131' },
+    { name: 'Pappaothi A', age: 50, skills: ['Weeding', 'Cotton picking'], location: 'Mettur, Salem', image: 'https://placehold.co/300x300.png?text=PA', hint: 'older woman in field', phone: '9567890132' },
     
     // Erode
     { name: 'Senthil Nathan', age: 39, skills: ['Turmeric Cultivation', 'Textile Crop Mgmt.'], location: 'Bhavani, Erode', image: 'https://placehold.co/300x300.png?text=SN', hint: 'man portrait', phone: '9789012345' },
-    { name: 'Kavitha Loganathan', age: 31, skills: ['Sugarcane Harvesting', 'Poultry Farming'], location: 'Gobichettipalayam, Erode', image: 'https://placehold.co/300x300.png?text=KL', hint: 'woman smiling', phone: '9789012346' },
-    { name: 'Nallasivam T', age: 51, skills: ['Cattle Rearing', 'Dairy Farming'], location: 'Perundurai, Erode', image: 'https://placehold.co/300x300.png?text=NT', hint: 'older farmer', phone: '9789012347' },
-    { name: 'Poongodi S', age: 29, skills: ['Mushroom Cultivation', 'Vermicomposting'], location: 'Sathyamangalam, Erode', image: 'https://placehold.co/300x300.png?text=PS', hint: 'young woman', phone: '9789012348' },
-    { name: 'Dhamodaran P', age: 44, skills: ['Tapioca Farming', 'Groundnut Cultivation'], location: 'Anthiyur, Erode', image: 'https://placehold.co/300x300.png?text=DP', hint: 'man in field', phone: '9789012349' },
-    { name: 'Bhavani Selvi', age: 36, skills: ['Irrigation Pump Operation', 'General Maintenance'], location: 'Kodumudi, Erode', image: 'https://placehold.co/300x300.png?text=BS', hint: 'woman portrait', phone: '9789012350' },
+    { name: 'Natarajan S', age: 47, skills: ['Carpet Weaving', 'Dyeing'], location: 'Bhavani, Erode', image: 'https://placehold.co/300x300.png?text=NS', hint: 'man weaving', phone: '9789012346' },
+    { name: 'Bhavani K', age: 41, skills: ['Turmeric polishing', 'Packing'], location: 'Bhavani, Erode', image: 'https://placehold.co/300x300.png?text=BK', hint: 'woman with turmeric', phone: '9789012347' },
+    { name: 'Kumar T', age: 33, skills: ['Paddy harvesting', 'Threshing'], location: 'Bhavani, Erode', image: 'https://placehold.co/300x300.png?text=KT', hint: 'man in paddy field', phone: '9789012348' },
+    { name: 'Mekala P', age: 30, skills: ['General farm hand', 'Irrigation'], location: 'Bhavani, Erode', image: 'https://placehold.co/300x300.png?text=MP', hint: 'woman working with water', phone: '9789012349' },
+
+    { name: 'Kavitha Loganathan', age: 31, skills: ['Sugarcane Harvesting', 'Poultry Farming'], location: 'Gobichettipalayam, Erode', image: 'https://placehold.co/300x300.png?text=KL', hint: 'woman smiling', phone: '9789012350' },
+    { name: 'Loganathan R', age: 36, skills: ['Paddy cultivation', 'Tractor driving'], location: 'Gobichettipalayam, Erode', image: 'https://placehold.co/300x300.png?text=LR', hint: 'man on tractor', phone: '9789012351' },
+    { name: 'Saraswathi M', age: 45, skills: ['Coconut harvesting', 'Copra making'], location: 'Gobichettipalayam, Erode', image: 'https://placehold.co/300x300.png?text=SM', hint: 'woman with coconuts', phone: '9789012352' },
+    { name: 'Periyasamy K', age: 52, skills: ['Cattle rearing', 'Dairy work'], location: 'Gobichettipalayam, Erode', image: 'https://placehold.co/300x300.png?text=PK', hint: 'man with cow', phone: '9789012353' },
+    { name: 'Anitha S', age: 28, skills: ['Vegetable picking', 'Weeding'], location: 'Gobichettipalayam, Erode', image: 'https://placehold.co/300x300.png?text=AS', hint: 'young woman picking vegetables', phone: '9789012354' },
 
     // Vellore
     { name: 'Gopalakrishnan V', age: 41, skills: ['Leather Tanning (Agri-use)', 'Paddy Cultivation'], location: 'Ambur, Vellore', image: 'https://placehold.co/300x300.png?text=GV', hint: 'man with a beard', phone: '9890123456' },
-    { name: 'Brindha Sarathy', age: 27, skills: ['Jasmine Plucking', 'Brinjal Farming'], location: 'Vaniyambadi, Vellore', image: 'https://placehold.co/300x300.png?text=BS', hint: 'young indian woman', phone: '9890123457' },
-    { name: 'Vasu Devan', age: 47, skills: ['Mango Orchard Management', 'Fruit Packing'], location: 'Gudiyatham, Vellore', image: 'https://placehold.co/300x300.png?text=VD', hint: 'man portrait', phone: '9890123458' },
-    { name: 'Chitra K', age: 36, skills: ['Groundnut Harvesting', 'Sugarcane Farming'], location: 'Tirupattur, Vellore', image: 'https://placehold.co/300x300.png?text=CK', hint: 'woman in saree', phone: '9890123459' },
-    { name: 'Elango R', age: 30, skills: ['Farm Maintenance', 'Driving'], location: 'Arakkonam, Vellore', image: 'https://placehold.co/300x300.png?text=ER', hint: 'young man', phone: '9890123460' },
-    { name: 'Kumaravel Pandian', age: 44, skills: ['Jackfruit Harvesting', 'Bee Keeping'], location: 'Yelagiri, Vellore', image: 'https://placehold.co/300x300.png?text=KP', hint: 'man in hills', phone: '9890123461' },
+    { name: 'Syed Basha', age: 45, skills: ['Biryani Rice Cultivation', 'Marketing'], location: 'Ambur, Vellore', image: 'https://placehold.co/300x300.png?text=SB', hint: 'man in rice field', phone: '9890123457' },
+    { name: 'Fathima Rizwan', age: 39, skills: ['Leather Goods Stitching', 'Quality Check'], location: 'Ambur, Vellore', image: 'https://placehold.co/300x300.png?text=FR', hint: 'woman stitching leather', phone: '9890123458' },
+    { name: 'Mani E', age: 35, skills: ['Sugarcane harvesting', 'General Labor'], location: 'Ambur, Vellore', image: 'https://placehold.co/300x300.png?text=ME', hint: 'man working in field', phone: '9890123459' },
+    { name: 'Ayesha Begum', age: 31, skills: ['Jasmine picking', 'Weeding'], location: 'Ambur, Vellore', image: 'https://placehold.co/300x300.png?text=AB', hint: 'woman with jasmine', phone: '9890123460' },
 
-    // Thanjavur
-    { name: 'Cholan Murthy', age: 48, skills: ['Paddy Cultivation (Delta)', 'Coconut Farming'], location: 'Kumbakonam, Thanjavur', image: 'https://placehold.co/300x300.png?text=CM', hint: 'farmer portrait', phone: '9012345678' },
-    { name: 'Kamala Devi', age: 40, skills: ['Traditional Rice Varieties', 'Seed Saving'], location: 'Pattukkottai, Thanjavur', image: 'https://placehold.co/300x300.png?text=KD', hint: 'woman in a field', phone: '9012345679' },
-    { name: 'Sivakumar M', age: 42, skills: ['Sugarcane Plantation', 'Jaggery Making'], location: 'Thiruvaiyaru, Thanjavur', image: 'https://placehold.co/300x300.png?text=SM', hint: 'man portrait', phone: '9012345680' },
-    { name: 'Revathi S', age: 34, skills: ['Black Gram Cultivation', 'Gingelly Farming'], location: 'Orathanadu, Thanjavur', image: 'https://placehold.co/300x300.png?text=RS', hint: 'woman smiling', phone: '9012345681' },
-    { name: 'Boominathan A', age: 53, skills: ['Ploughing', 'Fisheries (Pond)'], location: 'Peravurani, Thanjavur', image: 'https://placehold.co/300x300.png?text=BA', hint: 'older farmer', phone: '9012345682' },
-    { name: 'Rajendran Mani', age: 55, skills: ['Farm Equipment Repair', 'Welding'], location: 'Papanasam, Thanjavur', image: 'https://placehold.co/300x300.png?text=RM', hint: 'mechanic', phone: '9012345683' },
+    { name: 'Brindha Sarathy', age: 27, skills: ['Jasmine Plucking', 'Brinjal Farming'], location: 'Vaniyambadi, Vellore', image: 'https://placehold.co/300x300.png?text=BS', hint: 'young indian woman', phone: '9890123461' },
+    { name: 'Sarathy P', age: 32, skills: ['Groundnut Cultivation', 'Harvesting'], location: 'Vaniyambadi, Vellore', image: 'https://placehold.co/300x300.png?text=SP', hint: 'man in groundnut field', phone: '9890123462' },
+    { name: 'Parveen Taj', age: 40, skills: ['Leather processing', 'Chemical handling'], location: 'Vaniyambadi, Vellore', image: 'https://placehold.co/300x300.png?text=PT', hint: 'woman in workshop', phone: '9890123463' },
+    { name: 'Irfan Khan', age: 29, skills: ['Driving', 'Loading'], location: 'Vaniyambadi, Vellore', image: 'https://placehold.co/300x300.png?text=IK', hint: 'man next to truck', phone: '9890123464' },
+    { name: 'Sumathi G', age: 36, skills: ['General farm hand', 'Sowing'], location: 'Vaniyambadi, Vellore', image: 'https://placehold.co/300x300.png?text=SG', hint: 'woman sowing seeds', phone: '9890123465' },
 
-    // Dindigul
-    { name: 'Velu Kumar', age: 35, skills: ['Floriculture', 'Grape Pruning'], location: 'Kodaikanal, Dindigul', image: 'https://placehold.co/300x300.png?text=VK', hint: 'man smiling', phone: '9123456789' },
-    { name: 'Fathima Beevi', age: 29, skills: ['Guava Picking', 'Onion Farming'], location: 'Palani, Dindigul', image: 'https://placehold.co/300x300.png?text=FB', hint: 'woman portrait', phone: '9123456790' },
-    { name: 'Karuppasamy P', age: 46, skills: ['Moringa Cultivation', 'Vegetable Sorting'], location: 'Oddanchatram, Dindigul', image: 'https://placehold.co/300x300.png?text=KP', hint: 'farmer portrait', phone: '9123456791' },
-    { name: 'Anjali Devi', age: 33, skills: ['Coffee Bean Picking', 'Cardamom Curing'], location: 'Sirumalai, Dindigul', image: 'https://placehold.co/300x300.png?text=AD', hint: 'woman in plantation', phone: '9123456792' },
-    { name: 'Murugesan V', age: 50, skills: ['Lock Making (Agri-tools)', 'General Farmhand'], location: 'Natham, Dindigul', image: 'https://placehold.co/300x300.png?text=MV', hint: 'older man', phone: '9123456793' },
-    { name: 'Rani Chellam', age: 41, skills: ['Tamarind Processing', 'Goat Rearing'], location: 'Vedasandur, Dindigul', image: 'https://placehold.co/300x300.png?text=RC', hint: 'woman with goats', phone: '9123456794' },
+    // Tirunelveli
+    { name: 'Arumugam Pillai', age: 52, skills: ['Palm Tree Climbing', 'Paddy Harvesting'], location: 'Palayamkottai, Tirunelveli', image: 'https://placehold.co/300x300.png?text=AP', hint: 'older man', phone: '9678901234' },
+    { name: 'Pillai Rajan', age: 49, skills: ['Banana Cultivation', 'Irrigation'], location: 'Palayamkottai, Tirunelveli', image: 'https://placehold.co/300x300.png?text=PR', hint: 'man in banana farm', phone: '9678901235' },
+    { name: 'Thangam A', age: 45, skills: ['Cotton Picking', 'Weeding'], location: 'Palayamkottai, Tirunelveli', image: 'https://placehold.co/300x300.png?text=TA', hint: 'woman picking cotton', phone: '9678901236' },
+    { name: 'Nellaiyappan S', age: 55, skills: ['Ploughing', 'General Maintenance'], location: 'Palayamkottai, Tirunelveli', image: 'https://placehold.co/300x300.png?text=NS', hint: 'older farmer portrait', phone: '9678901237' },
+    { name: 'Kanthimathi T', age: 40, skills: ['Halwa Making (Agri-product)', 'Sales'], location: 'Palayamkottai, Tirunelveli', image: 'https://placehold.co/300x300.png?text=KT', hint: 'woman making sweets', phone: '9678901238' },
     
-    // Tiruppur
-    { name: 'Kandasamy Gounder', age: 55, skills: ['Cotton Farming', 'Ginning'], location: 'Avinashi, Tiruppur', image: 'https://placehold.co/300x300.png?text=KG', hint: 'older man', phone: '9234567891' },
-    { name: 'Prema Sundar', age: 42, skills: ['Maize Cultivation', 'Cattle Rearing'], location: 'Dharapuram, Tiruppur', image: 'https://placehold.co/300x300.png?text=PS', hint: 'indian woman', phone: '9234567892' },
-    { name: 'Thirumoorthy S', age: 38, skills: ['Coconut De-husking', 'Copra Drying'], location: 'Udumalpet, Tiruppur', image: 'https://placehold.co/300x300.png?text=TS', hint: 'man with coconuts', phone: '9234567893' },
-    { name: 'Malarkodi R', age: 30, skills: ['Knitting (Agri-textiles)', 'Tomato Farming'], location: 'Palladam, Tiruppur', image: 'https://placehold.co/300x300.png?text=MR', hint: 'young woman', phone: '9234567894' },
-    { name: 'Palanisamy K', age: 47, skills: ['Windmill Maintenance', 'Solar Pump Operation'], location: 'Kangeyam, Tiruppur', image: 'https://placehold.co/300x300.png?text=PK', hint: 'man near windmill', phone: '9234567895' },
-    { name: 'Ramkumar Velu', age: 25, skills: ['Sewing Machine Operation', 'Packing'], location: 'Tiruppur North, Tiruppur', image: 'https://placehold.co/300x300.png?text=RV', hint: 'young man at work', phone: '9234567896' },
-
-    // Kanyakumari
-    { name: 'David Nadar', age: 43, skills: ['Rubber Tapping', 'Spice Cultivation'], location: 'Nagercoil, Kanyakumari', image: 'https://placehold.co/300x300.png?text=DN', hint: 'man with a beard', phone: '9345678903' },
-    { name: 'Stella Mary', age: 37, skills: ['Clove Harvesting', 'Fisheries'], location: 'Colachel, Kanyakumari', image: 'https://placehold.co/300x300.png?text=SM', hint: 'woman smiling', phone: '9345678904' },
-    { name: 'Justin Raj', age: 40, skills: ['Coconut Plucking', 'Palm Jaggery Making'], location: 'Thuckalay, Kanyakumari', image: 'https://placehold.co/300x300.png?text=JR', hint: 'man portrait', phone: '9345678905' },
-    { name: 'Gracy Bai', age: 45, skills: ['Tapioca Cultivation', 'Banana Chips Making'], location: 'Vilavancode, Kanyakumari', image: 'https://placehold.co/300x300.png?text=GB', hint: 'woman in kitchen', phone: '9345678906' },
-    { name: 'Yacob D', age: 35, skills: ['Nutmeg Processing', 'Bee Keeping'], location: 'Kalkulam, Kanyakumari', image: 'https://placehold.co/300x300.png?text=YD', hint: 'man with beehive', phone: '9345678907' },
-    { name: 'Vincent Antony', age: 50, skills: ['Deep Sea Fishing', 'Boat Maintenance'], location: 'Muttom, Kanyakumari', image: 'https://placehold.co/300x300.png?text=VA', hint: 'fisherman on boat', phone: '9345678908' },
-
-    // Karur
-    { name: 'Ramesh Pandian', age: 33, skills: ['Drumstick Farming', 'Textile Crop Handling'], location: 'Kulithalai, Karur', image: 'https://placehold.co/300x300.png?text=RP', hint: 'young man', phone: '9456789014' },
-    { name: 'Saranya Devi', age: 28, skills: ['Betel Vine Cultivation', 'Coir Making'], location: 'Aravakurichi, Karur', image: 'https://placehold.co/300x300.png?text=SD', hint: 'young woman', phone: '9456789015' },
-    { name: 'Pasupathy M', age: 49, skills: ['Mosquito Net Weaving (Agri)', 'Paddy Sowing'], location: 'Kadavur, Karur', image: 'https://placehold.co/300x300.png?text=PM', hint: 'man weaving', phone: '9456789016' },
-    { name: 'Manimekalai C', age: 39, skills: ['Paper Mill Agri-Inputs', 'Sugarcane Farming'], location: 'Krishnarayapuram, Karur', image: 'https://placehold.co/300x300.png?text=MC', hint: 'woman in field', phone: '9456789017' },
-    { name: 'Thangavelu G', age: 54, skills: ['Bus Body Building (Agri-trailers)', 'General Maintenance'], location: 'Manmangalam, Karur', image: 'https://placehold.co/300x300.png?text=TG', hint: 'older man working', phone: '9456789018' },
-    { name: 'Selvi Muthu', age: 32, skills: ['Coir Rope Spinning', 'Packaging'], location: 'Karur Town, Karur', image: 'https://placehold.co/300x300.png?text=SM', hint: 'woman working', phone: '9456789019' },
-    
-    // Chennai
-    { name: 'Suresh Raman', age: 34, skills: ['Urban Farming', 'Rooftop Gardening'], location: 'Mylapore, Chennai', image: 'https://placehold.co/300x300.png?text=SR', hint: 'man portrait', phone: '9123456780' },
-    { name: 'Priya Krishnan', age: 29, skills: ['Hydroponics', 'Organic Inputs'], location: 'Adyar, Chennai', image: 'https://placehold.co/300x300.png?text=PK', hint: 'woman portrait', phone: '9123456781' },
-    { name: 'Ashok Mehta', age: 42, skills: ['Nursery Management', 'Landscaping'], location: 'T. Nagar, Chennai', image: 'https://placehold.co/300x300.png?text=AM', hint: 'man smiling', phone: '9123456782' },
-    { name: 'Lalitha Shankar', age: 38, skills: ['Kitchen Gardening', 'Composting'], location: 'Velachery, Chennai', image: 'https://placehold.co/300x300.png?text=LS', hint: 'woman with plants', phone: '9123456783' },
-    { name: 'Rajan Iyengar', age: 50, skills: ['Bonsai', 'Terrace Garden Setup'], location: 'Anna Nagar, Chennai', image: 'https://placehold.co/300x300.png?text=RI', hint: 'older man with plant', phone: '9123456784' },
-    { name: 'Murali Gopal', age: 28, skills: ['Vertical Farming', 'Aquaponics'], location: 'Sholinganallur, Chennai', image: 'https://placehold.co/300x300.png?text=MG', hint: 'young man with tech', phone: '9123456785' },
+    { name: 'Esakki Ammal', age: 46, skills: ['Chilli Farming', 'Cotton Picking'], location: 'Ambasamudram, Tirunelveli', image: 'https://placehold.co/300x300.png?text=EA', hint: 'older indian woman', phone: '9678901239' },
+    { name: 'Sankaralingam P', age: 51, skills: ['Paddy Cultivation', 'Forest Produce Collection'], location: 'Ambasamudram, Tirunelveli', image: 'https://placehold.co/300x300.png?text=SP', hint: 'man in forest area', phone: '9678901240' },
+    { name: 'Muthulakshmi K', age: 42, skills: ['Herbal Plant Collection', 'Drying'], location: 'Ambasamudram, Tirunelveli', image: 'https://placehold.co/300x300.png?text=MK', hint: 'woman with herbs', phone: '9678901241' },
+    { name: 'Ramakrishnan V', age: 38, skills: ['Groundnut harvesting', 'Driving'], location: 'Ambasamudram, Tirunelveli', image: 'https://placehold.co/300x300.png?text=RV', hint: 'man driving tractor', phone: '9678901242' },
+    { name: 'Mariammal R', age: 48, skills: ['Weeding', 'General farm hand'], location: 'Ambasamudram, Tirunelveli', image: 'https://placehold.co/300x300.png?text=MR', hint: 'woman working in field', phone: '9678901243' },
 ];
 
 export default function FarmerDashboard() {
