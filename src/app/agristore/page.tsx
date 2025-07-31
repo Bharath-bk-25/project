@@ -34,7 +34,7 @@ const products: Product[] = [
   { id: 'cac-8', name: 'Sticky Traps', description: 'Yellow, for insects (10 pack)', price: 250, image: 'https://placehold.co/400x400.png', hint: 'yellow trap', shopName: 'Covai Agro Center', shopLocation: 'Coimbatore', isAvailable: true },
   { id: 'cac-9', name: 'Shade Net', description: '50% green, 3m width', price: 120, image: 'https://placehold.co/400x400.png', hint: 'green net', shopName: 'Covai Agro Center', shopLocation: 'Coimbatore', isAvailable: false },
   { id: 'cac-10', name: 'Coco Peat Brick', description: '5kg block', price: 280, image: 'https://placehold.co/400x400.png', hint: 'coco coir', shopName: 'Covai Agro Center', shopLocation: 'Coimbatore', isAvailable: true },
-  { id: 'cac-11', name: 'Grafting Tape', description: '1 inch width', price: 100, image: 'https://placehold.co/400x400.png', hint: 'tape roll', shopName: 'Covai Agro Center', shopLocation: 'Coimbatore', isAvailable: true },
+  { id: 'cac-11', name: 'Urea', description: 'N-P-K: 46-0-0', price: 270, image: 'https://placehold.co/400x400.png', hint: 'fertilizer bag', shopName: 'Covai Agro Center', shopLocation: 'Coimbatore', isAvailable: true },
 
   { id: 'prod-5', name: 'Coconut Sapling (தென்னங்கன்று)', description: 'West Coast Tall', price: 150, image: 'https://placehold.co/400x400.png', hint: 'coconut tree', shopName: 'Green Thumb Nursery', shopLocation: 'Coimbatore', isAvailable: true },
   { id: 'prod-c2', name: 'Guava Sapling (கொய்யா கன்று)', description: 'Pink flesh variety', price: 80, image: 'https://placehold.co/400x400.png', hint: 'guava tree', shopName: 'Green Thumb Nursery', shopLocation: 'Coimbatore', isAvailable: true },
@@ -69,7 +69,7 @@ const products: Product[] = [
   { id: 'as-7', name: 'Cowpea Seeds', description: 'Bush type', price: 160, image: 'https://placehold.co/400x400.png', hint: 'cowpea beans', shopName: 'Annapoorna Seeds', shopLocation: 'Coimbatore', isAvailable: true },
   { id: 'as-8', name: 'Bhendi (Okra) Seeds', description: 'Hybrid F1', price: 90, image: 'https://placehold.co/400x400.png', hint: 'okra seeds', shopName: 'Annapoorna Seeds', shopLocation: 'Coimbatore', isAvailable: true },
   { id: 'as-9', name: 'Chilli Seeds', description: 'Hybrid, high pungency', price: 110, image: 'https://placehold.co/400x400.png', hint: 'chilli plant', shopName: 'Annapoorna Seeds', shopLocation: 'Coimbatore', isAvailable: false },
-  { id: 'as-10', name: 'Tomato Seeds (Nattu Thakkali)', description: 'Country variety', price: 80, image: 'https://placehold.co/400x400.png', hint: 'tomato plant', shopName: 'Annapoorna Seeds', shopLocation: 'Coimbatore', isAvailable: true },
+  { id: 'as-10', name: 'Paddy Seeds', description: 'ADT-45 variety', price: 62, image: 'https://placehold.co/400x400.png', hint: 'paddy seeds', shopName: 'Annapoorna Seeds', shopLocation: 'Coimbatore', isAvailable: true },
   { id: 'as-11', name: 'Brinjal Seeds (Green)', description: 'Long variety', price: 75, image: 'https://placehold.co/400x400.png', hint: 'green brinjal', shopName: 'Annapoorna Seeds', shopLocation: 'Coimbatore', isAvailable: true },
 
   // Madurai
@@ -92,7 +92,7 @@ const products: Product[] = [
   { id: 'fert-m1', name: 'Panchagavya', description: 'Organic growth promoter', price: 300, image: 'https://placehold.co/400x400.png', hint: 'liquid fertilizer', shopName: 'Meenakshi Traders', shopLocation: 'Madurai', isAvailable: true },
   { id: 'mt-6', name: 'Gingelly Oil', description: '1L bottle', price: 400, image: 'https://placehold.co/400x400.png', hint: 'oil bottle', shopName: 'Meenakshi Traders', shopLocation: 'Madurai', isAvailable: true },
   { id: 'mt-7', name: 'Neem Cake Powder', description: '5kg bag', price: 450, image: 'https://placehold.co/400x400.png', hint: 'powder bag', shopName: 'Meenakshi Traders', shopLocation: 'Madurai', isAvailable: true },
-  { id: 'mt-8', name: 'Cow Dung Powder', description: 'Dried, 5kg', price: 150, image: 'https://placehold.co/400x400.png', hint: 'manure powder', shopName: 'Meenakshi Traders', shopLocation: 'Madurai', isAvailable: false },
+  { id: 'mt-8', name: 'Urea', description: '46% Nitrogen', price: 275, image: 'https://placehold.co/400x400.png', hint: 'manure powder', shopName: 'Meenakshi Traders', shopLocation: 'Madurai', isAvailable: false },
   { id: 'mt-9', name: 'Pest Repellent (Herbal)', description: '1L, for all crops', price: 550, image: 'https://placehold.co/400x400.png', hint: 'liquid bottle', shopName: 'Meenakshi Traders', shopLocation: 'Madurai', isAvailable: true },
   { id: 'mt-10', name: 'Banana Fiber Products', description: 'Handmade crafts', price: 250, image: 'https://placehold.co/400x400.png', hint: 'fiber craft', shopName: 'Meenakshi Traders', shopLocation: 'Madurai', isAvailable: true },
   { id: 'mt-11', name: 'Palm Leaf Baskets', description: 'Set of 3', price: 400, image: 'https://placehold.co/400x400.png', hint: 'leaf basket', shopName: 'Meenakshi Traders', shopLocation: 'Madurai', isAvailable: true },
@@ -106,7 +106,7 @@ const products: Product[] = [
   { id: 'pn-7', name: 'Sapota (Chikoo) Sapling', description: 'Sweet variety', price: 130, image: 'https://placehold.co/400x400.png', hint: 'sapota tree', shopName: 'Pandiyan Nursery', shopLocation: 'Madurai', isAvailable: true },
   { id: 'pn-8', name: 'Pomegranate Sapling', description: 'Bhagwa variety', price: 180, image: 'https://placehold.co/400x400.png', hint: 'pomegranate tree', shopName: 'Pandiyan Nursery', shopLocation: 'Madurai', isAvailable: true },
   { id: 'pn-9', name: 'Crossandra (Kanakambaram) Plant', description: 'Orange flowers', price: 45, image: 'https://placehold.co/400x400.png', hint: 'orange flower', shopName: 'Pandiyan Nursery', shopLocation: 'Madurai', isAvailable: true },
-  { id: 'pn-10', name: 'Tulsi (Holy Basil) Plant', description: 'For medicinal use', price: 25, image: 'https://placehold.co/400x400.png', hint: 'basil plant', shopName: 'Pandiyan Nursery', shopLocation: 'Madurai', isAvailable: false },
+  { id: 'pn-10', name: 'Vermicompost (10kg)', description: 'Organic Manure', price: 320, image: 'https://placehold.co/400x400.png', hint: 'compost bag', shopName: 'Pandiyan Nursery', shopLocation: 'Madurai', isAvailable: false },
   { id: 'pn-11', name: 'Betel Vine Plant', description: 'Climbing vine', price: 55, image: 'https://placehold.co/400x400.png', hint: 'betel leaf plant', shopName: 'Pandiyan Nursery', shopLocation: 'Madurai', isAvailable: true },
 
   { id: 'tool-2', name: 'Sickle (அரிவாள்)', description: 'Traditional design', price: 280, image: 'https://placehold.co/400x400.png', hint: 'sickle tool', shopName: 'Madurai Farm Tools', shopLocation: 'Madurai', isAvailable: false },
@@ -144,7 +144,7 @@ const products: Product[] = [
   { id: 'so-8', name: 'Groundnut Cake', description: 'Cattle feed, 50kg', price: 2200, image: 'https://placehold.co/400x400.png', hint: 'animal feed', shopName: 'Selvam Organics', shopLocation: 'Salem', isAvailable: true },
   { id: 'so-9', name: 'Organic Jaggery Powder', description: '1kg packet', price: 180, image: 'https://placehold.co/400x400.png', hint: 'jaggery powder', shopName: 'Selvam Organics', shopLocation: 'Salem', isAvailable: true },
   { id: 'so-10', name: 'Areca Plates', description: 'Pack of 25', price: 150, image: 'https://placehold.co/400x400.png', hint: 'leaf plates', shopName: 'Selvam Organics', shopLocation: 'Salem', isAvailable: false },
-  { id: 'so-11', name: 'Wood Pressed Coconut Oil', description: '1 Litre', price: 450, image: 'https://placehold.co/400x400.png', hint: 'oil bottle', shopName: 'Selvam Organics', shopLocation: 'Salem', isAvailable: true },
+  { id: 'so-11', name: 'Urea', description: '46% Nitrogen', price: 268, image: 'https://placehold.co/400x400.png', hint: 'fertilizer bag', shopName: 'Selvam Organics', shopLocation: 'Salem', isAvailable: true },
 
   { id: 'prod-7', name: 'Mango Sapling (மாங்கன்று)', description: 'Salem Bangalora', price: 250, image: 'https://placehold.co/400x400.png', hint: 'mango tree', shopName: 'Salem Mango Farm', shopLocation: 'Salem', isAvailable: true },
   { id: 'prod-s3', name: 'Alphonso Mango Sapling', description: 'Grafted', price: 350, image: 'https://placehold.co/400x400.png', hint: 'mango sapling', shopName: 'Salem Mango Farm', shopLocation: 'Salem', isAvailable: true },
@@ -168,7 +168,7 @@ const products: Product[] = [
   { id: 'so2-8', name: 'Millet Flour (Mixed)', description: '1kg, healthy mix', price: 180, image: 'https://placehold.co/400x400.png', hint: 'flour bag', shopName: 'Salem Organics', shopLocation: 'Salem', isAvailable: false },
   { id: 'so2-9', name: 'Herbal Bath Powder', description: 'Traditional skin care', price: 200, image: 'https://placehold.co/400x400.png', hint: 'herbal powder', shopName: 'Salem Organics', shopLocation: 'Salem', isAvailable: true },
   { id: 'so2-10', name: 'Moringa Leaf Powder', description: 'Superfood, 100g', price: 150, image: 'https://placehold.co/400x400.png', hint: 'green powder', shopName: 'Salem Organics', shopLocation: 'Salem', isAvailable: true },
-  { id: 'so2-11', name: 'Castor Oil', description: 'Cold pressed, 500ml', price: 280, image: 'https://placehold.co/400x400.png', hint: 'oil bottle', shopName: 'Salem Organics', shopLocation: 'Salem', isAvailable: true },
+  { id: 'so2-11', name: 'Paddy Seeds', description: 'Ponni Rice', price: 65, image: 'https://placehold.co/400x400.png', hint: 'rice seeds', shopName: 'Salem Organics', shopLocation: 'Salem', isAvailable: true },
 
   { id: 'tool-3', name: 'Spade (மண்வெட்டி)', description: 'Heavy duty', price: 450, image: 'https://placehold.co/400x400.png', hint: 'spade tool', shopName: 'Yercaud Agri Tools', shopLocation: 'Salem', isAvailable: true },
   { id: 'tool-s2', name: 'Coffee Pulper Machine', description: 'Manual hand-crank', price: 5000, image: 'https://placehold.co/400x400.png', hint: 'coffee machine', shopName: 'Yercaud Agri Tools', shopLocation: 'Salem', isAvailable: false },
@@ -180,7 +180,7 @@ const products: Product[] = [
   { id: 'yat-8', name: 'Oranges (Hill)', description: '1kg, fresh', price: 120, image: 'https://placehold.co/400x400.png', hint: 'orange fruit', shopName: 'Yercaud Agri Tools', shopLocation: 'Salem', isAvailable: true },
   { id: 'yat-9', name: 'Rosemary Plant', description: 'Herb plant in pot', price: 150, image: 'https://placehold.co/400x400.png', hint: 'rosemary plant', shopName: 'Yercaud Agri Tools', shopLocation: 'Salem', isAvailable: true },
   { id: 'yat-10', name: 'Eucalyptus Oil', description: '100ml, pure', price: 300, image: 'https://placehold.co/400x400.png', hint: 'oil bottle', shopName: 'Yercaud Agri Tools', shopLocation: 'Salem', isAvailable: false },
-  { id: 'yat-11', name: 'Mulberry Cuttings', description: 'For sericulture', price: 10, image: 'https://placehold.co/400x400.png', hint: 'plant cuttings', shopName: 'Yercaud Agri Tools', shopLocation: 'Salem', isAvailable: true },
+  { id: 'yat-11', name: 'Sickle', description: 'Curved blade', price: 290, image: 'https://placehold.co/400x400.png', hint: 'sickle tool', shopName: 'Yercaud Agri Tools', shopLocation: 'Salem', isAvailable: true },
 
   { id: 'seed-3', name: 'Turmeric Rhizome (மஞ்சள் கிழங்கு)', description: 'Erode variety', price: 120, image: 'https://placehold.co/400x400.png', hint: 'turmeric root', shopName: 'Salem Spices', shopLocation: 'Salem', isAvailable: true },
   { id: 'seed-s2', name: 'Coriander Seeds', description: 'For planting', price: 80, image: 'https://placehold.co/400x400.png', hint: 'coriander seeds', shopName: 'Salem Spices', shopLocation: 'Salem', isAvailable: true },
@@ -192,7 +192,7 @@ const products: Product[] = [
   { id: 'ss-8', name: 'Cinnamon Sticks', description: '100g pack', price: 120, image: 'https://placehold.co/400x400.png', hint: 'cinnamon sticks', shopName: 'Salem Spices', shopLocation: 'Salem', isAvailable: true },
   { id: 'ss-9', name: 'Cloves', description: '100g pack', price: 180, image: 'https://placehold.co/400x400.png', hint: 'cloves spice', shopName: 'Salem Spices', shopLocation: 'Salem', isAvailable: false },
   { id: 'ss-10', name: 'Star Anise', description: '100g pack', price: 200, image: 'https://placehold.co/400x400.png', hint: 'star anise', shopName: 'Salem Spices', shopLocation: 'Salem', isAvailable: true },
-  { id: 'ss-11', name: 'Bay Leaf', description: 'Dried, 50g pack', price: 80, image: 'https://placehold.co/400x400.png', hint: 'bay leaves', shopName: 'Salem Spices', shopLocation: 'Salem', isAvailable: true },
+  { id: 'ss-11', name: 'Neem Cake', description: '5kg Bag', price: 470, image: 'https://placehold.co/400x400.png', hint: 'neem cake', shopName: 'Salem Spices', shopLocation: 'Salem', isAvailable: true },
   
   // Tiruchirappalli
   { id: 'prod-3', name: 'Tractor Rental (டிராக்டர் வாடகை)', description: 'Per hour basis', price: 600, image: 'https://placehold.co/400x400.png', hint: 'tractor field', shopName: 'Agri Machinaries Inc.', shopLocation: 'Tiruchirappalli', isAvailable: true },
@@ -229,7 +229,7 @@ const products: Product[] = [
   { id: 'ta-8', name: 'Okra (Ladies Finger)', description: '1kg, fresh', price: 50, image: 'https://placehold.co/400x400.png', hint: 'okra vegetable', shopName: 'Trichy Agro', shopLocation: 'Tiruchirappalli', isAvailable: true },
   { id: 'ta-9', name: 'Papaya', description: '1 piece, organic', price: 60, image: 'https://placehold.co/400x400.png', hint: 'papaya fruit', shopName: 'Trichy Agro', shopLocation: 'Tiruchirappalli', isAvailable: true },
   { id: 'ta-10', name: 'Country Chicken Eggs', description: 'Dozen', price: 150, image: 'https://placehold.co/400x400.png', hint: 'brown eggs', shopName: 'Trichy Agro', shopLocation: 'Tiruchirappalli', isAvailable: false },
-  { id: 'ta-11', name: 'Banana Leaf (Roll)', description: 'For meals', price: 300, image: 'https://placehold.co/400x400.png', hint: 'banana leaf', shopName: 'Trichy Agro', shopLocation: 'Tiruchirappalli', isAvailable: true },
+  { id: 'ta-11', name: 'Vermicompost', description: '10kg bag', price: 310, image: 'https://placehold.co/400x400.png', hint: 'compost bag', shopName: 'Trichy Agro', shopLocation: 'Tiruchirappalli', isAvailable: true },
 
   { id: 'tool-4', name: 'Power Tiller (பவர் டில்லர்)', description: 'Diesel engine', price: 75000, image: 'https://placehold.co/400x400.png', hint: 'power tiller', shopName: 'Rockfort Machinery', shopLocation: 'Tiruchirappalli', isAvailable: true },
   { id: 'tool-t5', name: 'Brush Cutter', description: '2-stroke engine', price: 8000, image: 'https://placehold.co/400x400.png', hint: 'brush cutter', shopName: 'Rockfort Machinery', shopLocation: 'Tiruchirappalli', isAvailable: true },
@@ -241,13 +241,14 @@ const products: Product[] = [
   { id: 'rm-8', name: 'Rice Mill Machine (Mini)', description: 'For domestic use', price: 22000, image: 'https://placehold.co/400x400.png', hint: 'rice mill', shopName: 'Rockfort Machinery', shopLocation: 'Tiruchirappalli', isAvailable: true },
   { id: 'rm-9', name: 'Oil Expeller Machine', description: 'For groundnut, sesame', price: 65000, image: 'https://placehold.co/400x400.png', hint: 'oil press', shopName: 'Rockfort Machinery', shopLocation: 'Tiruchirappalli', isAvailable: false },
   { id: 'rm-10', name: 'Welding Machine', description: 'Portable ARC welder', price: 7000, image: 'https://placehold.co/400x400.png', hint: 'welding machine', shopName: 'Rockfort Machinery', shopLocation: 'Tiruchirappalli', isAvailable: true },
-  { id: 'rm-11', name: 'Air Compressor', description: '50 Litre tank', price: 10000, image: 'https://placehold.co/400x400.png', hint: 'air compressor', shopName: 'Rockfort Machinery', shopLocation: 'Tiruchirappalli', isAvailable: true },
+  { id: 'rm-11', name: 'Sickle', description: 'Traditional design', price: 295, image: 'https://placehold.co/400x400.png', hint: 'sickle tool', shopName: 'Rockfort Machinery', shopLocation: 'Tiruchirappalli', isAvailable: true },
   
   { id: 'seed-tr1', name: 'Paddy Seeds (ADT 51)', description: 'Popular variety', price: 70, image: 'https://placehold.co/400x400.png', hint: 'paddy seeds', shopName: 'Srirangam Seeds', shopLocation: 'Tiruchirappalli', isAvailable: true },
   { id: 'seed-tr2', name: 'Maize (Hybrid)', description: 'High-yield variety', price: 300, image: 'https://placehold.co/400x400.png', hint: 'maize seeds', shopName: 'Srirangam Seeds', shopLocation: 'Tiruchirappalli', isAvailable: true },
   { id: 'seed-tr3', name: 'Groundnut (TMV 14)', description: 'Drought resistant', price: 220, image: 'https://placehold.co/400x400.png', hint: 'groundnuts', shopName: 'Srirangam Seeds', shopLocation: 'Tiruchirappalli', isAvailable: false },
   { id: 'seed-tr4', name: 'Vegetable Seed Kit', description: '5 varieties', price: 250, image: 'https://placehold.co/400x400.png', hint: 'seed packets', shopName: 'Srirangam Seeds', shopLocation: 'Tiruchirappalli', isAvailable: true },
   { id: 'seed-tr5', name: 'Fodder Seeds Mix', description: 'For cattle', price: 150, image: 'https://placehold.co/400x400.png', hint: 'mixed seeds', shopName: 'Srirangam Seeds', shopLocation: 'Tiruchirappalli', isAvailable: true },
+  { id: 'seed-tr6', name: 'Neem Cake', description: '5kg bag', price: 460, image: 'https://placehold.co/400x400.png', hint: 'neem cake', shopName: 'Srirangam Seeds', shopLocation: 'Tiruchirappalli', isAvailable: true },
 
   // Erode
   { id: 'seed-4', name: 'Groundnut Seeds (நிலக்கடலை விதைகள்)', description: 'TMV 7 variety', price: 180, image: 'https://placehold.co/400x400.png', hint: 'groundnuts', shopName: 'Erode Agri Center', shopLocation: 'Erode', isAvailable: true },
@@ -260,7 +261,7 @@ const products: Product[] = [
   { id: 'eac-8', name: 'Maize (Grain)', description: '100kg bag', price: 2200, image: 'https://placehold.co/400x400.png', hint: 'maize grain', shopName: 'Erode Agri Center', shopLocation: 'Erode', isAvailable: true },
   { id: 'eac-9', name: 'Jute Bags', description: 'For packaging, pack of 50', price: 1000, image: 'https://placehold.co/400x400.png', hint: 'jute bags', shopName: 'Erode Agri Center', shopLocation: 'Erode', isAvailable: true },
   { id: 'eac-10', name: 'Tamarind', description: '1kg, with seeds', price: 100, image: 'https://placehold.co/400x400.png', hint: 'tamarind fruit', shopName: 'Erode Agri Center', shopLocation: 'Erode', isAvailable: false },
-  { id: 'eac-11', name: 'Tapioca (Raw)', description: '1kg', price: 30, image: 'https://placehold.co/400x400.png', hint: 'tapioca root', shopName: 'Erode Agri Center', shopLocation: 'Erode', isAvailable: true },
+  { id: 'eac-11', name: 'Urea', description: '46% Nitrogen', price: 265, image: 'https://placehold.co/400x400.png', hint: 'fertilizer bag', shopName: 'Erode Agri Center', shopLocation: 'Erode', isAvailable: true },
 
   { id: 'tool-5', name: 'Water Pump (நீர் பம்ப்)', description: '2 HP motor', price: 8000, image: 'https://placehold.co/400x400.png', hint: 'water pump', shopName: 'Bhavani Pumps', shopLocation: 'Erode', isAvailable: false },
   { id: 'tool-e2', name: 'Submersible Pump', description: '4-inch, 1.5 HP', price: 12000, image: 'https://placehold.co/400x400.png', hint: 'submersible pump', shopName: 'Bhavani Pumps', shopLocation: 'Erode', isAvailable: true },
@@ -283,7 +284,7 @@ const products: Product[] = [
   { id: 'efc-7', name: 'Poultry Feed', description: 'Starter mash, 50kg', price: 2500, image: 'https://placehold.co/400x400.png', hint: 'poultry feed', shopName: 'Erode Farmers Coop', shopLocation: 'Erode', isAvailable: true },
   { id: 'efc-8', name: 'Milk (A2)', description: '1 Litre', price: 70, image: 'https://placehold.co/400x400.png', hint: 'milk bottle', shopName: 'Erode Farmers Coop', shopLocation: 'Erode', isAvailable: true },
   { id: 'efc-9', name: 'Ghee (Pure)', description: '500ml jar', price: 350, image: 'https://placehold.co/400x400.png', hint: 'ghee jar', shopName: 'Erode Farmers Coop', shopLocation: 'Erode', isAvailable: true },
-  { id: 'efc-10', name: 'Vegetable Box (Mixed)', description: '5kg assorted vegetables', price: 300, image: 'https://placehold.co/400x400.png', hint: 'vegetable box', shopName: 'Erode Farmers Coop', shopLocation: 'Erode', isAvailable: false },
+  { id: 'efc-10', name: 'Paddy Seeds', description: 'Bhavani variety', price: 58, image: 'https://placehold.co/400x400.png', hint: 'paddy seeds', shopName: 'Erode Farmers Coop', shopLocation: 'Erode', isAvailable: false },
   { id: 'efc-11', name: 'Banana (Nendran)', description: '1kg', price: 60, image: 'https://placehold.co/400x400.png', hint: 'banana fruit', shopName: 'Erode Farmers Coop', shopLocation: 'Erode', isAvailable: true },
   
   { id: 'fert-8', name: 'Sulphate (சல்ஃபேட்)', description: 'Ammonium Sulphate', price: 600, image: 'https://placehold.co/400x400.png', hint: 'white powder', shopName: 'Kongu Fertilizers', shopLocation: 'Erode', isAvailable: true },
@@ -296,7 +297,7 @@ const products: Product[] = [
   { id: 'kf2-8', name: 'Ferrous Sulphate', description: 'For iron deficiency', price: 400, image: 'https://placehold.co/400x400.png', hint: 'fertilizer sack', shopName: 'Kongu Fertilizers', shopLocation: 'Erode', isAvailable: true },
   { id: 'kf2-9', name: 'Wetting Agent', description: 'Spreader/Sticker', price: 300, image: 'https://placehold.co/400x400.png', hint: 'liquid bottle', shopName: 'Kongu Fertilizers', shopLocation: 'Erode', isAvailable: true },
   { id: 'kf2-10', name: 'Humic Acid Granules', description: 'Soil conditioner', price: 850, image: 'https://placehold.co/400x400.png', hint: 'black granules', shopName: 'Kongu Fertilizers', shopLocation: 'Erode', isAvailable: false },
-  { id: 'kf2-11', name: 'NPK 19-19-19', description: 'Water soluble fertilizer', price: 1000, image: 'https://placehold.co/400x400.png', hint: 'fertilizer bag', shopName: 'Kongu Fertilizers', shopLocation: 'Erode', isAvailable: true },
+  { id: 'kf2-11', name: 'Neem Cake', description: '5kg bag', price: 480, image: 'https://placehold.co/400x400.png', hint: 'neem cake', shopName: 'Kongu Fertilizers', shopLocation: 'Erode', isAvailable: true },
 
   { id: 'prod-10', name: 'Mushroom Spawn (காளான் வித்து)', description: 'Oyster mushroom', price: 150, image: 'https://placehold.co/400x400.png', hint: 'mushrooms', shopName: 'Erode Mushrooms', shopLocation: 'Erode', isAvailable: true },
   { id: 'tool-14', name: 'Garden Rake (தோட்ட ரேக்)', description: '12-teeth', price: 400, image: 'https://placehold.co/400x400.png', hint: 'garden rake', shopName: 'Erode Mushrooms', shopLocation: 'Erode', isAvailable: true },
@@ -308,7 +309,7 @@ const products: Product[] = [
   { id: 'em-8', name: 'Polypropylene Bags', description: 'For spawn, 100 pack', price: 500, image: 'https://placehold.co/400x400.png', hint: 'plastic bags', shopName: 'Erode Mushrooms', shopLocation: 'Erode', isAvailable: true },
   { id: 'em-9', name: 'Mushroom Bed Steamer', description: 'Small scale', price: 15000, image: 'https://placehold.co/400x400.png', hint: 'steamer machine', shopName: 'Erode Mushrooms', shopLocation: 'Erode', isAvailable: false },
   { id: 'em-10', name: 'Mushroom Value Added Products', description: 'Pickles, Soup powder', price: 200, image: 'https://placehold.co/400x400.png', hint: 'food products', shopName: 'Erode Mushrooms', shopLocation: 'Erode', isAvailable: true },
-  { id: 'em-11', name: 'Training on Mushroom Cultivation', description: '1-day program', price: 1000, image: 'https://placehold.co/400x400.png', hint: 'training class', shopName: 'Erode Mushrooms', shopLocation: 'Erode', isAvailable: true },
+  { id: 'em-11', name: 'Sickle', description: 'Harvesting tool', price: 310, image: 'https://placehold.co/400x400.png', hint: 'sickle tool', shopName: 'Erode Mushrooms', shopLocation: 'Erode', isAvailable: true },
 
   // Tirunelveli
   { id: 'seed-5', name: 'Chilli Seeds (மிளகாய் விதைகள்)', description: 'Samba variety', price: 90, image: 'https://placehold.co/400x400.png', hint: 'chilli plant', shopName: 'Nanguneri Seed Bank', shopLocation: 'Tirunelveli', isAvailable: true },
@@ -319,7 +320,7 @@ const products: Product[] = [
   { id: 'nsb-6', name: 'Ridge Gourd Seeds', description: 'Hybrid', price: 75, image: 'https://placehold.co/400x400.png', hint: 'ridge gourd', shopName: 'Nanguneri Seed Bank', shopLocation: 'Tirunelveli', isAvailable: true },
   { id: 'nsb-7', name: 'Bitter Gourd Seeds', description: 'Small, green', price: 85, image: 'https://placehold.co/400x400.png', hint: 'bitter gourd', shopName: 'Nanguneri Seed Bank', shopLocation: 'Tirunelveli', isAvailable: true },
   { id: 'nsb-8', name: 'Watermelon Seeds', description: 'Sugar Baby variety', price: 120, image: 'https://placehold.co/400x400.png', hint: 'watermelon seeds', shopName: 'Nanguneri Seed Bank', shopLocation: 'Tirunelveli', isAvailable: true },
-  { id: 'nsb-9', name: 'Muskmelon Seeds', description: 'Cantaloupe', price: 110, image: 'https://placehold.co/400x400.png', hint: 'muskmelon seeds', shopName: 'Nanguneri Seed Bank', shopLocation: 'Tirunelveli', isAvailable: false },
+  { id: 'nsb-9', name: 'Paddy Seeds', description: 'Karuppu Kavuni rice', price: 80, image: 'https://placehold.co/400x400.png', hint: 'paddy seeds', shopName: 'Nanguneri Seed Bank', shopLocation: 'Tirunelveli', isAvailable: false },
   { id: 'nsb-10', name: 'Cucumber Seeds', description: 'Long, green', price: 65, image: 'https://placehold.co/400x400.png', hint: 'cucumber seeds', shopName: 'Nanguneri Seed Bank', shopLocation: 'Tirunelveli', isAvailable: true },
   { id: 'nsb-11', name: 'Greens Seeds (Arai Keerai)', description: 'Leafy vegetable', price: 40, image: 'https://placehold.co/400x400.png', hint: 'green leaves', shopName: 'Nanguneri Seed Bank', shopLocation: 'Tirunelveli', isAvailable: true },
   
@@ -333,7 +334,7 @@ const products: Product[] = [
   { id: 'tt-8', name: 'Tender Coconut Puncher', description: 'Stainless steel', price: 250, image: 'https://placehold.co/400x400.png', hint: 'coconut opener', shopName: 'Tamirabarani Tools', shopLocation: 'Tirunelveli', isAvailable: true },
   { id: 'tt-9', name: 'Rubber Tapping Knife', description: 'Sharp and durable', price: 350, image: 'https://placehold.co/400x400.png', hint: 'tapping knife', shopName: 'Tamirabarani Tools', shopLocation: 'Tirunelveli', isAvailable: false },
   { id: 'tt-10', name: 'Fish Net', description: 'Nylon, for aquaculture', price: 600, image: 'https://placehold.co/400x400.png', hint: 'fishing net', shopName: 'Tamirabarani Tools', shopLocation: 'Tirunelveli', isAvailable: true },
-  { id: 'tt-11', name: 'Paddy Field Leveler', description: 'Wooden board', price: 1300, image: 'https://placehold.co/400x400.png', hint: 'wooden plank', shopName: 'Tamirabarani Tools', shopLocation: 'Tirunelveli', isAvailable: true },
+  { id: 'tt-11', name: 'Sickle', description: 'Traditional design', price: 285, image: 'https://placehold.co/400x400.png', hint: 'sickle tool', shopName: 'Tamirabarani Tools', shopLocation: 'Tirunelveli', isAvailable: true },
   
   { id: 'prod-13', name: 'Palm Sapling (பனை மரம்)', description: 'Native species', price: 40, image: 'https://placehold.co/400x400.png', hint: 'palm tree', shopName: 'Nellai Nursery', shopLocation: 'Tirunelveli', isAvailable: true },
   { id: 'fert-12', name: 'Bone Meal (எலும்புத் தூள்)', description: 'Organic Phosphorus Source', price: 250, image: 'https://placehold.co/400x400.png', hint: 'bone meal powder', shopName: 'Nellai Nursery', shopLocation: 'Tirunelveli', isAvailable: true },
@@ -344,20 +345,20 @@ const products: Product[] = [
   { id: 'nn-7', name: 'Tamarind Sapling', description: 'Sweet variety', price: 120, image: 'https://placehold.co/400x400.png', hint: 'tamarind tree', shopName: 'Nellai Nursery', shopLocation: 'Tirunelveli', isAvailable: true },
   { id: 'nn-8', name: 'Gooseberry (Amla) Sapling', description: 'High yield', price: 140, image: 'https://placehold.co/400x400.png', hint: 'gooseberry plant', shopName: 'Nellai Nursery', shopLocation: 'Tirunelveli', isAvailable: true },
   { id: 'nn-9', name: 'Agathi Keerai Plant', description: 'Sesbania grandiflora', price: 30, image: 'https://placehold.co/400x400.png', hint: 'green plant', shopName: 'Nellai Nursery', shopLocation: 'Tirunelveli', isAvailable: true },
-  { id: 'nn-10', name: 'Pungai Tree Sapling', description: 'Indian Beech Tree', price: 80, image: 'https://placehold.co/400x400.png', hint: 'beech tree', shopName: 'Nellai Nursery', shopLocation: 'Tirunelveli', isAvailable: false },
+  { id: 'nn-10', name: 'Vermicompost', description: '10kg bag', price: 330, image: 'https://placehold.co/400x400.png', hint: 'compost bag', shopName: 'Nellai Nursery', shopLocation: 'Tirunelveli', isAvailable: false },
   { id: 'nn-11', name: 'Mahogany Sapling', description: 'Timber wood', price: 180, image: 'https://placehold.co/400x400.png', hint: 'mahogany tree', shopName: 'Nellai Nursery', shopLocation: 'Tirunelveli', isAvailable: true },
   
   { id: 'prod-tn1', name: 'Palm Jaggery', description: 'Karupatti, 1kg', price: 400, image: 'https://placehold.co/400x400.png', hint: 'jaggery', shopName: 'Pothigai Organics', shopLocation: 'Tirunelveli', isAvailable: true },
   { id: 'prod-tn2', name: 'Pathaneer (Palm Nectar)', description: 'Fresh, 1 Litre', price: 100, image: 'https://placehold.co/400x400.png', hint: 'nectar drink', shopName: 'Pothigai Organics', shopLocation: 'Tirunelveli', isAvailable: true },
   { id: 'prod-tn3', name: 'Dried Chillies', description: '1kg, spicy', price: 300, image: 'https://placehold.co/400x400.png', hint: 'dried chillies', shopName: 'Pothigai Organics', shopLocation: 'Tirunelveli', isAvailable: true },
   { id: 'prod-tn4', name: 'Cashew Nuts', description: 'Raw, 1kg', price: 800, image: 'https://placehold.co/400x400.png', hint: 'cashew nuts', shopName: 'Pothigai Organics', shopLocation: 'Tirunelveli', isAvailable: true },
-  { id: 'prod-tn5', name: 'Banana Chips', description: 'Nendran, 250g', price: 100, image: 'https://placehold.co/400x400.png', hint: 'banana chips', shopName: 'Pothigai Organics', shopLocation: 'Tirunelveli', isAvailable: false },
+  { id: 'prod-tn5', name: 'Urea', description: '46% Nitrogen', price: 272, image: 'https://placehold.co/400x400.png', hint: 'fertilizer bag', shopName: 'Pothigai Organics', shopLocation: 'Tirunelveli', isAvailable: false },
 
   { id: 'prod-tn6', name: 'Halwa', description: 'Tirunelveli special, 500g', price: 250, image: 'https://placehold.co/400x400.png', hint: 'sweet halwa', shopName: 'Ambai Products', shopLocation: 'Tirunelveli', isAvailable: true },
   { id: 'prod-tn7', name: 'Idli Rice', description: '10kg bag', price: 550, image: 'https://placehold.co/400x400.png', hint: 'rice bag', shopName: 'Ambai Products', shopLocation: 'Tirunelveli', isAvailable: true },
   { id: 'prod-tn8', name: 'Urad Dal', description: 'Whole, 1kg', price: 200, image: 'https://placehold.co/400x400.png', hint: 'urad dal', shopName: 'Ambai Products', shopLocation: 'Tirunelveli', isAvailable: true },
   { id: 'prod-tn9', name: 'Cloves', description: '100g, organic', price: 150, image: 'https://placehold.co/400x400.png', hint: 'cloves spice', shopName: 'Ambai Products', shopLocation: 'Tirunelveli', isAvailable: true },
-  { id: 'prod-tn10', name: 'Pepper', description: '100g, whole', price: 120, image: 'https://placehold.co/400x400.png', hint: 'black pepper', shopName: 'Ambai Products', shopLocation: 'Tirunelveli', isAvailable: false },
+  { id: 'prod-tn10', name: 'Neem Cake', description: '5kg bag', price: 475, image: 'https://placehold.co/400x400.png', hint: 'neem cake', shopName: 'Ambai Products', shopLocation: 'Tirunelveli', isAvailable: false },
 
 
   // Thanjavur
@@ -370,7 +371,7 @@ const products: Product[] = [
   { id: 'da-7', name: 'Coconut Oil (Chekku)', description: 'Wood pressed, 1L', price: 400, image: 'https://placehold.co/400x400.png', hint: 'oil bottle', shopName: 'Delta Agro', shopLocation: 'Thanjavur', isAvailable: true },
   { id: 'da-8', name: 'Idli Rice', description: '5kg pack', price: 300, image: 'https://placehold.co/400x400.png', hint: 'rice bag', shopName: 'Delta Agro', shopLocation: 'Thanjavur', isAvailable: true },
   { id: 'da-9', name: 'Parboiled Rice', description: '5kg pack', price: 280, image: 'https://placehold.co/400x400.png', hint: 'rice bag', shopName: 'Delta Agro', shopLocation: 'Thanjavur', isAvailable: true },
-  { id: 'da-10', name: 'Green Gram', description: '1kg, whole', price: 180, image: 'https://placehold.co/400x400.png', hint: 'green gram', shopName: 'Delta Agro', shopLocation: 'Thanjavur', isAvailable: false },
+  { id: 'da-10', name: 'Urea', description: '46% Nitrogen', price: 270, image: 'https://placehold.co/400x400.png', hint: 'fertilizer bag', shopName: 'Delta Agro', shopLocation: 'Thanjavur', isAvailable: false },
   { id: 'da-11', name: 'Fish Feed', description: 'Floating pellets, 25kg', price: 1500, image: 'https://placehold.co/400x400.png', hint: 'fish feed', shopName: 'Delta Agro', shopLocation: 'Thanjavur', isAvailable: true },
 
   { id: 'fert-9', name: 'Gypsum (ஜிப்சம்)', description: 'Soil conditioner', price: 400, image: 'https://placehold.co/400x400.png', hint: 'gypsum powder', shopName: 'Kumbakonam Fertilizers', shopLocation: 'Thanjavur', isAvailable: false },
@@ -394,7 +395,7 @@ const products: Product[] = [
   { id: 'tfi-7', name: 'Paddy Thresher Machine', description: 'Motor operated', price: 40000, image: 'https://placehold.co/400x400.png', hint: 'thresher machine', shopName: 'Thanjavur Farm Implements', shopLocation: 'Thanjavur', isAvailable: true },
   { id: 'tfi-8', name: 'Manual Seed Drill', description: 'Single row', price: 3000, image: 'https://placehold.co/400x400.png', hint: 'manual seeder', shopName: 'Thanjavur Farm Implements', shopLocation: 'Thanjavur', isAvailable: true },
   { id: 'tfi-9', name: 'Rope (Coconut Coir)', description: '50 meter roll', price: 600, image: 'https://placehold.co/400x400.png', hint: 'coir rope', shopName: 'Thanjavur Farm Implements', shopLocation: 'Thanjavur', isAvailable: true },
-  { id: 'tfi-10', name: 'Sieve (for grains)', description: 'Iron mesh', price: 450, image: 'https://placehold.co/400x400.png', hint: 'metal sieve', shopName: 'Thanjavur Farm Implements', shopLocation: 'Thanjavur', isAvailable: false },
+  { id: 'tfi-10', name: 'Sickle', description: 'Iron mesh', price: 305, image: 'https://placehold.co/400x400.png', hint: 'sickle tool', shopName: 'Thanjavur Farm Implements', shopLocation: 'Thanjavur', isAvailable: false },
   { id: 'tfi-11', name: 'Bamboo Basket', description: 'Large size', price: 350, image: 'https://placehold.co/400x400.png', hint: 'bamboo basket', shopName: 'Thanjavur Farm Implements', shopLocation: 'Thanjavur', isAvailable: true },
 
   { id: 'seed-tj1', name: 'Paddy Seeds (BPT 5204)', description: 'Samba Mahsuri', price: 60, image: 'https://placehold.co/400x400.png', hint: 'rice seeds', shopName: 'Big Temple Seeds', shopLocation: 'Thanjavur', isAvailable: true },
@@ -402,12 +403,13 @@ const products: Product[] = [
   { id: 'seed-tj3', name: 'Green Gram (CO 8)', description: 'High protein', price: 190, image: 'https://placehold.co/400x400.png', hint: 'green gram', shopName: 'Big Temple Seeds', shopLocation: 'Thanjavur', isAvailable: false },
   { id: 'seed-tj4', name: 'Sugarcane Setts (CO 86032)', description: 'High sucrose content', price: 4, image: 'https://placehold.co/400x400.png', hint: 'sugarcane cutting', shopName: 'Big Temple Seeds', shopLocation: 'Thanjavur', isAvailable: true },
   { id: 'seed-tj5', name: 'Banana Corms (Robusta)', description: 'For delta region', price: 25, image: 'https://placehold.co/400x400.png', hint: 'banana corm', shopName: 'Big Temple Seeds', shopLocation: 'Thanjavur', isAvailable: true },
+  { id: 'seed-tj6', name: 'Vermicompost', description: '5kg bag', price: 180, image: 'https://placehold.co/400x400.png', hint: 'compost bag', shopName: 'Big Temple Seeds', shopLocation: 'Thanjavur', isAvailable: true },
 
   { id: 'prod-tj1', name: 'Poppy Seeds (Kasakasa)', description: '100g pack', price: 200, image: 'https://placehold.co/400x400.png', hint: 'poppy seeds', shopName: 'Raja Raja Cholan Traders', shopLocation: 'Thanjavur', isAvailable: true },
   { id: 'prod-tj2', name: 'Gingelly Oil', description: 'Cold pressed, 1L', price: 450, image: 'https://placehold.co/400x400.png', hint: 'oil bottle', shopName: 'Raja Raja Cholan Traders', shopLocation: 'Thanjavur', isAvailable: true },
   { id: 'prod-tj3', name: 'Coconut (Bulk)', description: '100 nuts', price: 2500, image: 'https://placehold.co/400x400.png', hint: 'coconut pile', shopName: 'Raja Raja Cholan Traders', shopLocation: 'Thanjavur', isAvailable: true },
   { id: 'prod-tj4', name: 'Cashew (Roasted)', description: '500g, salted', price: 600, image: 'https://placehold.co/400x400.png', hint: 'roasted cashews', shopName: 'Raja Raja Cholan Traders', shopLocation: 'Thanjavur', isAvailable: true },
-  { id: 'prod-tj5', name: 'Tamarind (Seedless)', description: '1kg pack', price: 150, image: 'https://placehold.co/400x400.png', hint: 'tamarind pulp', shopName: 'Raja Raja Cholan Traders', shopLocation: 'Thanjavur', isAvailable: false },
+  { id: 'prod-tj5', name: 'Neem Cake', description: '10kg bag', price: 850, image: 'https://placehold.co/400x400.png', hint: 'neem cake', shopName: 'Raja Raja Cholan Traders', shopLocation: 'Thanjavur', isAvailable: false },
 
 
   // Dindigul
@@ -433,7 +435,7 @@ const products: Product[] = [
   { id: 'dfn-8', name: 'Bird Net', description: 'Protect crops', price: 40, image: 'https://placehold.co/400x400.png', hint: 'bird netting', shopName: 'Dindigul Farm Needs', shopLocation: 'Dindigul', isAvailable: true },
   { id: 'dfn-9', name: 'Trellis Net', description: 'For creepers', price: 300, image: 'https://placehold.co/400x400.png', hint: 'trellis netting', shopName: 'Dindigul Farm Needs', shopLocation: 'Dindigul', isAvailable: true },
   { id: 'dfn-10', name: 'Fruit Cover Bags', description: 'For pomegranate, 100 pack', price: 250, image: 'https://placehold.co/400x400.png', hint: 'fruit covers', shopName: 'Dindigul Farm Needs', shopLocation: 'Dindigul', isAvailable: false },
-  { id: 'dfn-11', name: 'Plastic Crates', description: 'For harvesting', price: 350, image: 'https://placehold.co/400x400.png', hint: 'plastic crate', shopName: 'Dindigul Farm Needs', shopLocation: 'Dindigul', isAvailable: true },
+  { id: 'dfn-11', name: 'Sickle', description: 'Harvesting tool', price: 315, image: 'https://placehold.co/400x400.png', hint: 'sickle tool', shopName: 'Dindigul Farm Needs', shopLocation: 'Dindigul', isAvailable: true },
 
   { id: 'fert-10', name: 'Micronutrients (நுண்ணூட்டச் சத்து)', description: 'Vegetable mix', price: 750, image: 'https://placehold.co/400x400.png', hint: 'fertilizer mix', shopName: 'Dindigul Agro', shopLocation: 'Dindigul', isAvailable: true },
   { id: 'seed-10', name: 'Onion Seeds (வெங்காய விதைகள்)', description: 'Small onion variety', price: 450, image: 'https://placehold.co/400x400.png', hint: 'onion seeds', shopName: 'Dindigul Agro', shopLocation: 'Dindigul', isAvailable: true },
@@ -444,7 +446,7 @@ const products: Product[] = [
   { id: 'da2-7', name: 'Grapes (Panneer)', description: '1kg', price: 90, image: 'https://placehold.co/400x400.png', hint: 'grape bunch', shopName: 'Dindigul Agro', shopLocation: 'Dindigul', isAvailable: true },
   { id: 'da2-8', name: 'Onion (Bellary)', description: '1kg, large', price: 40, image: 'https://placehold.co/400x400.png', hint: 'onions', shopName: 'Dindigul Agro', shopLocation: 'Dindigul', isAvailable: true },
   { id: 'da2-9', name: 'Moringa Leaf Powder', description: '100g pack', price: 120, image: 'https://placehold.co/400x400.png', hint: 'green powder', shopName: 'Dindigul Agro', shopLocation: 'Dindigul', isAvailable: true },
-  { id: 'da2-10', name: 'Amla Candy', description: 'Sweet gooseberry, 250g', price: 150, image: 'https://placehold.co/400x400.png', hint: 'amla candy', shopName: 'Dindigul Agro', shopLocation: 'Dindigul', isAvailable: false },
+  { id: 'da2-10', name: 'Urea', description: '46% Nitrogen', price: 280, image: 'https://placehold.co/400x400.png', hint: 'fertilizer bag', shopName: 'Dindigul Agro', shopLocation: 'Dindigul', isAvailable: false },
   { id: 'da2-11', name: 'Honey Amla', description: 'Gooseberry in honey, 500g', price: 300, image: 'https://placehold.co/400x400.png', hint: 'honey jar', shopName: 'Dindigul Agro', shopLocation: 'Dindigul', isAvailable: true },
 
   { id: 'prod-d8', name: 'Dindigul Biryani Rice', description: 'Seeraga Samba, 1kg', price: 180, image: 'https://placehold.co/400x400.png', hint: 'rice grains', shopName: 'Bhai Biryani Supplies', shopLocation: 'Dindigul', isAvailable: true },
@@ -452,12 +454,13 @@ const products: Product[] = [
   { id: 'prod-d10', name: 'Mutton (Fresh)', description: '1kg, for biryani', price: 800, image: 'https://placehold.co/400x400.png', hint: 'raw meat', shopName: 'Bhai Biryani Supplies', shopLocation: 'Dindigul', isAvailable: true },
   { id: 'prod-d11', name: 'Ginger Garlic Paste', description: '500g pack', price: 150, image: 'https://placehold.co/400x400.png', hint: 'ginger garlic paste', shopName: 'Bhai Biryani Supplies', shopLocation: 'Dindigul', isAvailable: false },
   { id: 'prod-d12', name: 'Mint & Coriander Bundle', description: 'Fresh leaves', price: 30, image: 'https://placehold.co/400x400.png', hint: 'fresh herbs', shopName: 'Bhai Biryani Supplies', shopLocation: 'Dindigul', isAvailable: true },
+  { id: 'prod-d13', name: 'Paddy Seeds', description: 'Seeraga Samba rice', price: 170, image: 'https://placehold.co/400x400.png', hint: 'paddy seeds', shopName: 'Bhai Biryani Supplies', shopLocation: 'Dindigul', isAvailable: true },
 
   { id: 'tool-d3', name: 'Grape Pruning Shears', description: 'High carbon steel', price: 800, image: 'https://placehold.co/400x400.png', hint: 'pruning shears', shopName: 'Kodaikanal Garden Tools', shopLocation: 'Dindigul', isAvailable: true },
   { id: 'tool-d4', name: 'Flower Plucking Net', description: 'For jasmine, etc.', price: 450, image: 'https://placehold.co/400x400.png', hint: 'harvesting net', shopName: 'Kodaikanal Garden Tools', shopLocation: 'Dindigul', isAvailable: true },
   { id: 'tool-d5', name: 'Vegetable Crate', description: '50kg capacity', price: 400, image: 'https://placehold.co/400x400.png', hint: 'plastic crate', shopName: 'Kodaikanal Garden Tools', shopLocation: 'Dindigul', isAvailable: true },
   { id: 'tool-d6', name: 'Rose Thorn Stripper', description: 'Metal hand tool', price: 250, image: 'https://placehold.co/400x400.png', hint: 'gardening tool', shopName: 'Kodaikanal Garden Tools', shopLocation: 'Dindigul', isAvailable: false },
-  { id: 'tool-d7', name: 'Hand Gloves', description: 'Rubber, for florists', price: 150, image: 'https://placehold.co/400x400.png', hint: 'rubber gloves', shopName: 'Kodaikanal Garden Tools', shopLocation: 'Dindigul', isAvailable: true },
+  { id: 'tool-d7', name: 'Vermicompost', description: '10kg bag', price: 340, image: 'https://placehold.co/400x400.png', hint: 'compost bag', shopName: 'Kodaikanal Garden Tools', shopLocation: 'Dindigul', isAvailable: true },
 
   // Vellore
   { id: 'seed-6', name: 'Brinjal Seeds (கத்தரி விதைகள்)', description: 'Vellore thorned variety', price: 60, image: 'https://placehold.co/400x400.png', hint: 'brinjal plant', shopName: 'Palar Seeds', shopLocation: 'Vellore', isAvailable: true },
@@ -491,7 +494,7 @@ const products: Product[] = [
   { id: 'prod-v6', name: 'Finished Leather', description: 'Per sq. ft.', price: 250, image: 'https://placehold.co/400x400.png', hint: 'leather sheet', shopName: 'Ambur Tools', shopLocation: 'Vellore', isAvailable: true },
   { id: 'at-6', name: 'Bone Meal Fertilizer', description: 'Steamed, 1kg', price: 150, image: 'https://placehold.co/400x400.png', hint: 'bone meal powder', shopName: 'Ambur Tools', shopLocation: 'Vellore', isAvailable: true },
   { id: 'at-7', name: 'Leather Tanning Chemicals', description: 'Basic chromium sulphate', price: 500, image: 'https://placehold.co/400x400.png', hint: 'chemical powder', shopName: 'Ambur Tools', shopLocation: 'Vellore', isAvailable: true },
-  { id: 'at-8', name: 'Makki Rice', description: 'For biryani, 1kg', price: 120, image: 'https://placehold.co/400x400.png', hint: 'rice grains', shopName: 'Ambur Tools', shopLocation: 'Vellore', isAvailable: true },
+  { id: 'at-8', name: 'Paddy Seeds', description: 'Ambur special rice', price: 120, image: 'https://placehold.co/400x400.png', hint: 'rice grains', shopName: 'Ambur Tools', shopLocation: 'Vellore', isAvailable: true },
   { id: 'at-9', name: 'Leather Boots', description: 'Handmade', price: 2500, image: 'https://placehold.co/400x400.png', hint: 'leather boots', shopName: 'Ambur Tools', shopLocation: 'Vellore', isAvailable: true },
   { id: 'at-10', name: 'Leather Wallets', description: 'Genuine leather', price: 800, image: 'https://placehold.co/400x400.png', hint: 'leather wallet', shopName: 'Ambur Tools', shopLocation: 'Vellore', isAvailable: false },
   { id: 'at-11', name: 'Tannery Effluent Treatment', description: 'Consultation service', price: 10000, image: 'https://placehold.co/400x400.png', hint: 'water treatment', shopName: 'Ambur Tools', shopLocation: 'Vellore', isAvailable: true },
@@ -501,12 +504,13 @@ const products: Product[] = [
   { id: 'fert-v3', name: 'Complex 17-17-17', description: 'Balanced NPK', price: 1500, image: 'https://placehold.co/400x400.png', hint: 'fertilizer granules', shopName: 'Yelagiri Agri Solutions', shopLocation: 'Vellore', isAvailable: false },
   { id: 'fert-v4', name: 'Organic Manure Pellets', description: 'Slow release', price: 500, image: 'https://placehold.co/400x400.png', hint: 'manure pellets', shopName: 'Yelagiri Agri Solutions', shopLocation: 'Vellore', isAvailable: true },
   { id: 'fert-v5', name: 'Growth Promoters', description: 'Seaweed based', price: 900, image: 'https://placehold.co/400x400.png', hint: 'liquid bottle', shopName: 'Yelagiri Agri Solutions', shopLocation: 'Vellore', isAvailable: true },
+  { id: 'fert-v6', name: 'Sickle', description: 'Sharp blade', price: 320, image: 'https://placehold.co/400x400.png', hint: 'sickle tool', shopName: 'Yelagiri Agri Solutions', shopLocation: 'Vellore', isAvailable: true },
 
   { id: 'prod-v7', name: 'Jackfruit (Honey)', description: 'Sweet variety, 1kg', price: 150, image: 'https://placehold.co/400x400.png', hint: 'jackfruit', shopName: 'Vellore Fort Nursery', shopLocation: 'Vellore', isAvailable: true },
   { id: 'prod-v8', name: 'Mangoes (Banganapalli)', description: '1kg, seasonal', price: 120, image: 'https://placehold.co/400x400.png', hint: 'mangoes', shopName: 'Vellore Fort Nursery', shopLocation: 'Vellore', isAvailable: true },
   { id: 'prod-v9', name: 'Jasmine Flowers', description: '1 meter string', price: 80, image: 'https://placehold.co/400x400.png', hint: 'jasmine garland', shopName: 'Vellore Fort Nursery', shopLocation: 'Vellore', isAvailable: true },
   { id: 'prod-v10', name: 'Rose Milk Syrup', description: '500ml bottle', price: 200, image: 'https://placehold.co/400x400.png', hint: 'syrup bottle', shopName: 'Vellore Fort Nursery', shopLocation: 'Vellore', isAvailable: true },
-  { id: 'prod-v11', name: 'Sapota (Chikoo)', description: '1kg, fresh', price: 90, image: 'https://placehold.co/400x400.png', hint: 'sapota fruit', shopName: 'Vellore Fort Nursery', shopLocation: 'Vellore', isAvailable: false },
+  { id: 'prod-v11', name: 'Neem Cake', description: '5kg bag', price: 490, image: 'https://placehold.co/400x400.png', hint: 'neem cake', shopName: 'Vellore Fort Nursery', shopLocation: 'Vellore', isAvailable: false },
 
   // Karur
   { id: 'prod-15', name: 'Coir Pith Block (கயிறு பித் தொகுதி)', description: '5kg block, expands to 75L', price: 300, image: 'https://placehold.co/400x400.png', hint: 'coir block', shopName: 'Karur Coir Exports', shopLocation: 'Karur', isAvailable: true },
@@ -537,19 +541,19 @@ const products: Product[] = [
   { id: 'seed-k2', name: 'Moringa Seeds (PKM1)', description: 'Annual moringa', price: 400, image: 'https://placehold.co/400x400.png', hint: 'moringa seeds', shopName: 'Pasupatheeswarar Seeds', shopLocation: 'Karur', isAvailable: true },
   { id: 'seed-k3', name: 'Sorghum Seeds (CO 30)', description: 'Fodder crop', price: 140, image: 'https://placehold.co/400x400.png', hint: 'sorghum plant', shopName: 'Pasupatheeswarar Seeds', shopLocation: 'Karur', isAvailable: true },
   { id: 'seed-k4', name: 'Sesame Seeds (TMV 7)', description: 'Oilseed crop', price: 230, image: 'https://placehold.co/400x400.png', hint: 'sesame seeds', shopName: 'Pasupatheeswarar Seeds', shopLocation: 'Karur', isAvailable: false },
-  { id: 'seed-k5', name: 'Cucumber Seeds', description: 'Local variety', price: 70, image: 'https://placehold.co/400x400.png', hint: 'cucumber plant', shopName: 'Pasupatheeswarar Seeds', shopLocation: 'Karur', isAvailable: true },
+  { id: 'seed-k5', name: 'Paddy Seeds', description: 'Amaravathi rice', price: 68, image: 'https://placehold.co/400x400.png', hint: 'paddy seeds', shopName: 'Pasupatheeswarar Seeds', shopLocation: 'Karur', isAvailable: true },
 
   { id: 'tool-k2', name: 'Gem Clips', description: 'For paper industry', price: 50, image: 'https://placehold.co/400x400.png', hint: 'paper clips', shopName: 'TNPL Green Supplies', shopLocation: 'Karur', isAvailable: true },
   { id: 'tool-k3', name: 'Paper Ream', description: 'A4 size, 500 sheets', price: 350, image: 'https://placehold.co/400x400.png', hint: 'paper stack', shopName: 'TNPL Green Supplies', shopLocation: 'Karur', isAvailable: true },
   { id: 'prod-k7', name: 'Cement', description: '50kg bag', price: 450, image: 'https://placehold.co/400x400.png', hint: 'cement bag', shopName: 'TNPL Green Supplies', shopLocation: 'Karur', isAvailable: true },
   { id: 'prod-k8', name: 'Fly Ash Brick', description: 'Per brick', price: 8, image: 'https://placehold.co/400x400.png', hint: 'ash brick', shopName: 'TNPL Green Supplies', shopLocation: 'Karur', isAvailable: false },
-  { id: 'prod-k9', name: 'Bagasse', description: 'Sugarcane waste, per ton', price: 1500, image: 'https://placehold.co/400x400.png', hint: 'sugarcane waste', shopName: 'TNPL Green Supplies', shopLocation: 'Karur', isAvailable: true },
+  { id: 'prod-k9', name: 'Urea', description: '46% Nitrogen', price: 271, image: 'https://placehold.co/400x400.png', hint: 'fertilizer bag', shopName: 'TNPL Green Supplies', shopLocation: 'Karur', isAvailable: true },
   
   { id: 'prod-k10', name: 'Bed Linens', description: 'Cotton, Export Quality', price: 1200, image: 'https://placehold.co/400x400.png', hint: 'bed linens', shopName: 'Karur Textiles', shopLocation: 'Karur', isAvailable: true },
   { id: 'prod-k11', name: 'Kitchen Linens', description: 'Apron, Gloves, Towels', price: 600, image: 'https://placehold.co/400x400.png', hint: 'kitchen textiles', shopName: 'Karur Textiles', shopLocation: 'Karur', isAvailable: true },
   { id: 'prod-k12', name: 'Table Linens', description: 'Table cloth, mats', price: 800, image: 'https://placehold.co/400x400.png', hint: 'table cloth', shopName: 'Karur Textiles', shopLocation: 'Karur', isAvailable: true },
   { id: 'prod-k13', name: 'Curtains', description: 'Cotton, pair', price: 1500, image: 'https://placehold.co/400x400.png', hint: 'curtains', shopName: 'Karur Textiles', shopLocation: 'Karur', isAvailable: false },
-  { id: 'prod-k14', name: 'Floor Mats', description: 'Woven cotton mats', price: 400, image: 'https://placehold.co/400x400.png', hint: 'floor mat', shopName: 'Karur Textiles', shopLocation: 'Karur', isAvailable: true },
+  { id: 'prod-k14', name: 'Sickle', description: 'Steel blade', price: 300, image: 'https://placehold.co/400x400.png', hint: 'sickle tool', shopName: 'Karur Textiles', shopLocation: 'Karur', isAvailable: true },
 
   // Tiruppur
   { id: 'prod-16', name: 'Cotton Waste (பருத்தி கழிவுகள்)', description: 'Organic matter for compost', price: 50, image: 'https://placehold.co/400x400.png', hint: 'cotton waste', shopName: 'Tiruppur Cotton Mills', shopLocation: 'Tiruppur', isAvailable: true },
@@ -580,19 +584,19 @@ const products: Product[] = [
   { id: 'prod-tp2', name: 'Polo Shirts', description: 'Assorted colors', price: 400, image: 'https://placehold.co/400x400.png', hint: 'polo shirts', shopName: 'Knitwear Capital', shopLocation: 'Tiruppur', isAvailable: true },
   { id: 'prod-tp3', name: 'Kids Wear', description: 'Set of 3', price: 700, image: 'https://placehold.co/400x400.png', hint: 'kids clothes', shopName: 'Knitwear Capital', shopLocation: 'Tiruppur', isAvailable: true },
   { id: 'prod-tp4', name: 'Leggings', description: 'Cotton Lycra', price: 250, image: 'https://placehold.co/400x400.png', hint: 'leggings', shopName: 'Knitwear Capital', shopLocation: 'Tiruppur', isAvailable: false },
-  { id: 'prod-tp5', name: 'Innerwear', description: 'Vests, pack of 5', price: 500, image: 'https://placehold.co/400x400.png', hint: 'vests', shopName: 'Knitwear Capital', shopLocation: 'Tiruppur', isAvailable: true },
+  { id: 'prod-tp5', name: 'Urea', description: '46% Nitrogen', price: 275, image: 'https://placehold.co/400x400.png', hint: 'fertilizer bag', shopName: 'Knitwear Capital', shopLocation: 'Tiruppur', isAvailable: true },
 
   { id: 'tool-tp1', name: 'Tagging Gun', description: 'For apparel', price: 600, image: 'https://placehold.co/400x400.png', hint: 'tagging gun', shopName: 'Garment Zone', shopLocation: 'Tiruppur', isAvailable: true },
   { id: 'tool-tp2', name: 'Fabric Cutting Scissors', description: '10-inch, sharp', price: 800, image: 'https://placehold.co/400x400.png', hint: 'scissors', shopName: 'Garment Zone', shopLocation: 'Tiruppur', isAvailable: true },
   { id: 'tool-tp3', name: 'Screen Printing Kit', description: 'Basic setup', price: 5000, image: 'https://placehold.co/400x400.png', hint: 'printing kit', shopName: 'Garment Zone', shopLocation: 'Tiruppur', isAvailable: true },
   { id: 'tool-tp4', name: 'Steam Iron', description: 'Industrial grade', price: 3000, image: 'https://placehold.co/400x400.png', hint: 'steam iron', shopName: 'Garment Zone', shopLocation: 'Tiruppur', isAvailable: false },
-  { id: 'tool-tp5', name: 'Measuring Tapes', description: 'Pack of 10', price: 200, image: 'https://placehold.co/400x400.png', hint: 'measuring tape', shopName: 'Garment Zone', shopLocation: 'Tiruppur', isAvailable: true },
+  { id: 'tool-tp5', name: 'Vermicompost', description: '5kg bag', price: 190, image: 'https://placehold.co/400x400.png', hint: 'compost bag', shopName: 'Garment Zone', shopLocation: 'Tiruppur', isAvailable: true },
 
   { id: 'seed-tp1', name: 'Guava Seeds (L-49)', description: 'Lucknow 49 variety', price: 150, image: 'https://placehold.co/400x400.png', hint: 'guava seeds', shopName: 'Avinashi Agri', shopLocation: 'Tiruppur', isAvailable: true },
   { id: 'seed-tp2', name: 'Sapota Seeds (PKM-1)', description: 'Cricket ball variety', price: 120, image: 'https://placehold.co/400x400.png', hint: 'sapota seeds', shopName: 'Avinashi Agri', shopLocation: 'Tiruppur', isAvailable: true },
   { id: 'seed-tp3', name: 'Pomegranate Seeds (Bhagwa)', description: 'For cultivation', price: 200, image: 'https://placehold.co/400x400.png', hint: 'pomegranate seeds', shopName: 'Avinashi Agri', shopLocation: 'Tiruppur', isAvailable: true },
   { id: 'seed-tp4', name: 'Amla Seeds (NA-7)', description: 'For planting', price: 100, image: 'https://placehold.co/400x400.png', hint: 'amla seeds', shopName: 'Avinashi Agri', shopLocation: 'Tiruppur', isAvailable: false },
-  { id: 'seed-tp5', name: 'Jamun Seeds (Local)', description: 'For rootstock', price: 80, image: 'https://placehold.co/400x400.png', hint: 'jamun seeds', shopName: 'Avinashi Agri', shopLocation: 'Tiruppur', isAvailable: true },
+  { id: 'seed-tp5', name: 'Paddy Seeds', description: 'Kulla Kar rice', price: 75, image: 'https://placehold.co/400x400.png', hint: 'paddy seeds', shopName: 'Avinashi Agri', shopLocation: 'Tiruppur', isAvailable: true },
 
   // Kanyakumari
   { id: 'prod-17', name: 'Rubber Sheet (ரப்பர் தாள்)', description: 'RSS-4 Grade', price: 180, image: 'https://placehold.co/400x400.png', hint: 'rubber sheets', shopName: 'Kumari Rubber Traders', shopLocation: 'Kanyakumari', isAvailable: true },
@@ -623,7 +627,7 @@ const products: Product[] = [
   { id: 'prod-y7', name: 'Dried Fish', description: 'Nethili, 200g', price: 150, image: 'https://placehold.co/400x400.png', hint: 'dried fish', shopName: 'Ocean Fresh', shopLocation: 'Kanyakumari', isAvailable: true },
   { id: 'prod-y8', name: 'Fish Pickle', description: 'Spicy tuna pickle, 250g', price: 200, image: 'https://placehold.co/400x400.png', hint: 'pickle jar', shopName: 'Ocean Fresh', shopLocation: 'Kanyakumari', isAvailable: true },
   { id: 'prod-y9', name: 'Prawns (Frozen)', description: 'Peeled, 500g', price: 450, image: 'https://placehold.co/400x400.png', hint: 'frozen prawns', shopName: 'Ocean Fresh', shopLocation: 'Kanyakumari', isAvailable: false },
-  { id: 'prod-y10', name: 'Sea Shell Crafts', description: 'Decorative items', price: 300, image: 'https://placehold.co/400x400.png', hint: 'shell crafts', shopName: 'Ocean Fresh', shopLocation: 'Kanyakumari', isAvailable: true },
+  { id: 'prod-y10', name: 'Urea', description: '46% Nitrogen', price: 280, image: 'https://placehold.co/400x400.png', hint: 'fertilizer bag', shopName: 'Ocean Fresh', shopLocation: 'Kanyakumari', isAvailable: true },
   
   { id: 'tool-y3', name: 'Fishing Net', description: 'Nylon, 50m', price: 1200, image: 'https://placehold.co/400x400.png', hint: 'fishing net', shopName: 'Nagercoil Fishing Gear', shopLocation: 'Kanyakumari', isAvailable: true },
   { id: 'tool-y4', name: 'Fishing Rod', description: 'Beginner kit', price: 1500, image: 'https://placehold.co/400x400.png', hint: 'fishing rod', shopName: 'Nagercoil Fishing Gear', shopLocation: 'Kanyakumari', isAvailable: true },
