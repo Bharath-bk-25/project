@@ -3,24 +3,24 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { DashboardHeader } from '@/components/dashboard-header';
 import Image from 'next/image';
-import { ShoppingCart, PackageX } from 'lucide-react';
+import { ShoppingCart, PackageX, MapPin } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
 import { useToast } from '@/hooks/use-toast';
 import type { Product } from '@/context/CartContext';
 import { Badge } from '@/components/ui/badge';
 
 const fertilizers: Product[] = [
-  { id: 'fert-1', name: 'Urea (யூரியா)', description: 'N-P-K: 46-0-0', price: 266.50, image: 'https://placehold.co/400x400.png', hint: 'fertilizer bag', shopName: 'Ram Fertilizers', isAvailable: true },
-  { id: 'fert-2', name: 'DAP (டி.ஏ.பி)', description: 'N-P-K: 18-46-0', price: 1350, image: 'https://placehold.co/400x400.png', hint: 'fertilizer sack', shopName: 'Sita Agri Store', isAvailable: true },
-  { id: 'fert-3', name: 'Potash (பொட்டாஷ்)', description: 'N-P-K: 0-0-60', price: 1700, image: 'https://placehold.co/400x400.png', hint: 'fertilizer pellets', shopName: 'Ram Fertilizers', isAvailable: false },
-  { id: 'fert-4', name: 'Neem Cake (வேப்பம் புண்ணாக்கு)', description: 'Organic Pest Repellent', price: 1200, image: 'https://placehold.co/400x400.png', hint: 'organic fertilizer', shopName: 'Organic Farmers Coop', isAvailable: true },
+  { id: 'fert-1', name: 'Urea (யூரியா)', description: 'N-P-K: 46-0-0', price: 266.50, image: 'https://placehold.co/400x400.png', hint: 'fertilizer bag', shopName: 'Kumar Fertilizers', shopLocation: 'Coimbatore', isAvailable: true },
+  { id: 'fert-2', name: 'DAP (டி.ஏ.பி)', description: 'N-P-K: 18-46-0', price: 1350, image: 'https://placehold.co/400x400.png', hint: 'fertilizer sack', shopName: 'Priya Agri Supplies', shopLocation: 'Madurai', isAvailable: true },
+  { id: 'fert-3', name: 'Potash (பொட்டாஷ்)', description: 'N-P-K: 0-0-60', price: 1700, image: 'https://placehold.co/400x400.png', hint: 'fertilizer pellets', shopName: 'Kumar Fertilizers', shopLocation: 'Coimbatore', isAvailable: false },
+  { id: 'fert-4', name: 'Neem Cake (வேப்பம் புண்ணாக்கு)', description: 'Organic Pest Repellent', price: 1200, image: 'https://placehold.co/400x400.png', hint: 'organic fertilizer', shopName: 'Selvam Organics', shopLocation: 'Salem', isAvailable: true },
 ];
 
 const agriProducts: Product[] = [
-  { id: 'prod-1', name: 'Paddy Seeds (நெல் விதைகள்)', description: 'High-yield variety', price: 40, image: 'https://placehold.co/400x400.png', hint: 'paddy seeds', shopName: 'Sita Agri Store', isAvailable: true },
-  { id: 'prod-2', name: 'Sugarcane Setts (கரும்பு கரணை)', description: 'Disease-resistant', price: 3, image: 'https://placehold.co/400x400.png', hint: 'sugarcane cutting', shopName: 'Ram Fertilizers', isAvailable: false },
-  { id: 'prod-3', name: 'Tractor Rental (டிராக்டர் வாடகை)', description: 'Per hour basis', price: 600, image: 'https://placehold.co/400x400.png', hint: 'tractor field', shopName: 'Agri Machinaries Inc.', isAvailable: true },
-  { id: 'prod-4', name: 'Sprayer (விசைத்தெளிப்பான்)', description: '5-litre capacity', price: 2500, image: 'https://placehold.co/400x400.png', hint: 'farm sprayer', shopName: 'Agri Machinaries Inc.', isAvailable: true },
+  { id: 'prod-1', name: 'Paddy Seeds (நெல் விதைகள்)', description: 'High-yield variety', price: 40, image: 'https://placehold.co/400x400.png', hint: 'paddy seeds', shopName: 'Priya Agri Supplies', shopLocation: 'Madurai', isAvailable: true },
+  { id: 'prod-2', name: 'Sugarcane Setts (கரும்பு கரணை)', description: 'Disease-resistant', price: 3, image: 'https://placehold.co/400x400.png', hint: 'sugarcane cutting', shopName: 'Kumar Fertilizers', shopLocation: 'Coimbatore', isAvailable: false },
+  { id: 'prod-3', name: 'Tractor Rental (டிராக்டர் வாடகை)', description: 'Per hour basis', price: 600, image: 'https://placehold.co/400x400.png', hint: 'tractor field', shopName: 'Agri Machinaries Inc.', shopLocation: 'Tiruchirappalli', isAvailable: true },
+  { id: 'prod-4', name: 'Sprayer (விசைத்தெளிப்பான்)', description: '5-litre capacity', price: 2500, image: 'https://placehold.co/400x400.png', hint: 'farm sprayer', shopName: 'Agri Machinaries Inc.', shopLocation: 'Tiruchirappalli', isAvailable: true },
 ];
 
 export default function AgriStorePage() {
@@ -49,7 +49,9 @@ export default function AgriStorePage() {
       </CardHeader>
       <CardContent className="p-4 flex-grow">
         <CardTitle className="text-xl">{product.name}</CardTitle>
-        <CardDescription>{product.shopName}</CardDescription>
+        <CardDescription className="flex items-center text-sm text-muted-foreground mt-1">
+            <MapPin className="mr-1.5 h-4 w-4" /> {product.shopName}, {product.shopLocation}
+        </CardDescription>
         <p className="mt-2 text-sm text-muted-foreground">{product.description}</p>
         <p className="mt-2 text-lg font-semibold text-primary">₹{product.price.toFixed(2)}</p>
       </CardContent>

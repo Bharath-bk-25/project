@@ -9,6 +9,7 @@ export type Product = {
   image: string;
   hint: string;
   shopName: string;
+  shopLocation: string;
   isAvailable: boolean;
 };
 
