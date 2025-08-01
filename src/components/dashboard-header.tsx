@@ -22,6 +22,7 @@ type DashboardHeaderProps = {
   userType: 'farmer' | 'worker';
   onCreatePost?: () => void;
   onNotificationClick?: (farmerName: string) => void;
+  onFarmerNotificationClick?: (workerName: string) => void;
 };
 
 type Notification = {
@@ -33,27 +34,31 @@ type Notification = {
 }
 
 
-export function DashboardHeader({ title, userType, onCreatePost, onNotificationClick }: DashboardHeaderProps) {
+export function DashboardHeader({ title, userType, onCreatePost, onNotificationClick, onFarmerNotificationClick }: DashboardHeaderProps) {
   const { cartItems } = useCart();
   const cartItemCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
   const [notifications, setNotifications] = useState<Notification[]>([]);
   const unreadCount = notifications.filter(n => !n.read).length;
   
   useEffect(() => {
-    if (userType === 'worker') {
-      const interval = setInterval(() => {
-        const storedNotifications = JSON.parse(localStorage.getItem('notifications') || '[]') as Notification[];
-        // Assuming current worker is 'Sangeetha priya' for demonstration
-        // In a real app, you'd get the current user's name
-        const workerNotifications = storedNotifications.filter(n => n.workerName === 'Sangeetha priya');
-        setNotifications(workerNotifications);
-      }, 1000); // Check for new notifications every second
+    const interval = setInterval(() => {
+      const storedNotifications = JSON.parse(localStorage.getItem('notifications') || '[]') as Notification[];
+      let userNotifications: Notification[];
 
-      return () => clearInterval(interval);
-    }
+      if (userType === 'worker') {
+        // Assuming current worker is 'Sangeetha priya' for demonstration
+        userNotifications = storedNotifications.filter(n => n.workerName === 'Sangeetha priya');
+      } else { // farmer
+        // Assuming current farmer is 'Current Farmer' for demonstration
+        userNotifications = storedNotifications.filter(n => n.farmerName === 'Current Farmer' && n.message.startsWith('Worker:'));
+      }
+      setNotifications(userNotifications);
+    }, 1000); // Check for new notifications every second
+
+    return () => clearInterval(interval);
   }, [userType]);
 
-  const handleNotificationClick = (notification: Notification) => {
+  const handleWorkerNotificationClick = (notification: Notification) => {
     // Mark as read in local storage
     const storedNotifications = JSON.parse(localStorage.getItem('notifications') || '[]') as Notification[];
     const updatedNotifications = storedNotifications.map(n => 
@@ -65,6 +70,19 @@ export function DashboardHeader({ title, userType, onCreatePost, onNotificationC
     // Trigger the handler to open the message dialog
     if(onNotificationClick) {
         onNotificationClick(notification.farmerName);
+    }
+  };
+
+  const handleFarmerNotificationClick = (notification: Notification) => {
+    const storedNotifications = JSON.parse(localStorage.getItem('notifications') || '[]') as Notification[];
+    const updatedNotifications = storedNotifications.map(n => 
+        n.id === notification.id ? { ...n, read: true } : n
+    );
+    localStorage.setItem('notifications', JSON.stringify(updatedNotifications));
+    setNotifications(updatedNotifications.filter(n => n.farmerName === 'Current Farmer' && n.message.startsWith('Worker:')));
+    
+    if (onFarmerNotificationClick) {
+        onFarmerNotificationClick(notification.workerName);
     }
   };
 
@@ -110,6 +128,39 @@ export function DashboardHeader({ title, userType, onCreatePost, onNotificationC
                       <span className="sr-only">Shopping Cart</span>
                    </Link>
                 </Button>
+                 <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                        <Button variant="ghost" size="icon" className="relative">
+                            <MessageSquare className="h-5 w-5" />
+                            {unreadCount > 0 && (
+                                <Badge variant="destructive" className="absolute -right-2 -top-2 h-5 w-5 justify-center rounded-full p-0">
+                                {unreadCount}
+                                </Badge>
+                            )}
+                            <span className="sr-only">Messages</span>
+                        </Button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent className="w-80" align="end">
+                        <DropdownMenuLabel>Messages</DropdownMenuLabel>
+                        <DropdownMenuSeparator />
+                        {notifications.length === 0 ? (
+                            <DropdownMenuItem disabled>No new messages</DropdownMenuItem>
+                        ) : (
+                            notifications.map((notification) => (
+                            <DropdownMenuItem 
+                                key={notification.id} 
+                                onSelect={() => handleFarmerNotificationClick(notification)}
+                                className={!notification.read ? 'font-bold' : ''}
+                            >
+                                <div className='flex flex-col'>
+                                <span>From: {notification.workerName}</span>
+                                <span className='text-xs text-muted-foreground truncate'>{notification.message.substring(notification.message.indexOf(':') + 1).trim()}</span>
+                                </div>
+                            </DropdownMenuItem>
+                            ))
+                        )}
+                    </DropdownMenuContent>
+                </DropdownMenu>
                 <Button size="sm" onClick={onCreatePost}>
                   <Plus className="-ml-1 mr-2 h-4 w-4" />
                   Create Post
@@ -138,7 +189,7 @@ export function DashboardHeader({ title, userType, onCreatePost, onNotificationC
                       notifications.map((notification) => (
                         <DropdownMenuItem 
                             key={notification.id} 
-                            onSelect={() => handleNotificationClick(notification)}
+                            onSelect={() => handleWorkerNotificationClick(notification)}
                             className={!notification.read ? 'font-bold' : ''}
                         >
                           <div className='flex flex-col'>

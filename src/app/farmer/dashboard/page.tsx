@@ -172,7 +172,7 @@ export default function FarmerDashboard() {
             name: user.name,
             age: parseInt(user.age, 10) || 0,
             skills: typeof user.skills === 'string' ? user.skills.split(',').map((s: string) => s.trim()) : [],
-            location: user.location || 'Newly Registered',
+            location: user.location ? `${user.location}, ${user.location}` : 'Newly Registered, Newly Registered',
             image: `https://placehold.co/300x300.png?text=${user.name.charAt(0)}`,
             hint: 'worker portrait',
             salary: parseInt(user.expectedSalary, 10) || 0,
@@ -199,6 +199,16 @@ export default function FarmerDashboard() {
     setConversation([]);
     setMessageWorkerOpen(true);
   };
+  
+  const handleFarmerNotificationClick = (workerName: string) => {
+    const worker = workers.find(w => w.name === workerName);
+    if (worker) {
+        setSelectedWorker(worker);
+        setMessageWorkerOpen(true);
+        setConversation(prev => [...prev, `${workerName}: I have received your message and will respond shortly.`]);
+    }
+  };
+
 
   const handleSendMessage = () => {
     if (!message.trim() || !selectedWorker) return;
@@ -206,12 +216,12 @@ export default function FarmerDashboard() {
     const newConversation = [...conversation, `You: ${message}`];
     
      // Simulate sending a notification
-    const notifications = JSON.parse(localStorage.getItem('notifications') || '[]');
+    const notifications = JSON.parse(localStorage.getItem('notifications') || '[]'));
     const newNotification = {
       id: Date.now(),
       farmerName: 'Current Farmer', // In a real app, this would be the logged-in farmer's name
       workerName: selectedWorker.name,
-      message,
+      message: `Worker: ${message}`,
       read: false,
     };
     notifications.push(newNotification);
@@ -276,7 +286,12 @@ export default function FarmerDashboard() {
 
   return (
     <div className="min-h-screen w-full bg-secondary/50">
-      <DashboardHeader title="Farmer Dashboard" userType="farmer" onCreatePost={() => setCreatePostOpen(true)} />
+      <DashboardHeader 
+        title="Farmer Dashboard" 
+        userType="farmer" 
+        onCreatePost={() => setCreatePostOpen(true)}
+        onFarmerNotificationClick={handleFarmerNotificationClick} 
+      />
       
       <main className="container mx-auto py-8">
         {Object.entries(workersByDistrict).map(([district, districtWorkers]) => (
