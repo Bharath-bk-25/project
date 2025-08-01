@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link';
-import { Bell, LogOut, Plus, Settings, User, ShoppingCart, Languages } from 'lucide-react';
+import { Bell, LogOut, Plus, Settings, User, ShoppingCart, Languages, MessageSquare } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import {
@@ -15,16 +15,59 @@ import {
 import { Logo } from './logo';
 import { useCart } from '@/context/CartContext';
 import { Badge } from './ui/badge';
+import { useEffect, useState } from 'react';
 
 type DashboardHeaderProps = {
   title: string;
   userType: 'farmer' | 'worker';
   onCreatePost?: () => void;
+  onNotificationClick?: (farmerName: string) => void;
 };
 
-export function DashboardHeader({ title, userType, onCreatePost }: DashboardHeaderProps) {
+type Notification = {
+    farmerName: string;
+    message: string;
+    workerName: string;
+    read: boolean;
+    id: number;
+}
+
+
+export function DashboardHeader({ title, userType, onCreatePost, onNotificationClick }: DashboardHeaderProps) {
   const { cartItems } = useCart();
   const cartItemCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
+  const [notifications, setNotifications] = useState<Notification[]>([]);
+  const unreadCount = notifications.filter(n => !n.read).length;
+  
+  useEffect(() => {
+    if (userType === 'worker') {
+      const interval = setInterval(() => {
+        const storedNotifications = JSON.parse(localStorage.getItem('notifications') || '[]') as Notification[];
+        // Assuming current worker is 'Sangeetha priya' for demonstration
+        // In a real app, you'd get the current user's name
+        const workerNotifications = storedNotifications.filter(n => n.workerName === 'Sangeetha priya');
+        setNotifications(workerNotifications);
+      }, 1000); // Check for new notifications every second
+
+      return () => clearInterval(interval);
+    }
+  }, [userType]);
+
+  const handleNotificationClick = (notification: Notification) => {
+    // Mark as read in local storage
+    const storedNotifications = JSON.parse(localStorage.getItem('notifications') || '[]') as Notification[];
+    const updatedNotifications = storedNotifications.map(n => 
+        n.id === notification.id ? { ...n, read: true } : n
+    );
+    localStorage.setItem('notifications', JSON.stringify(updatedNotifications));
+    setNotifications(updatedNotifications.filter(n => n.workerName === 'Sangeetha priya'));
+    
+    // Trigger the handler to open the message dialog
+    if(onNotificationClick) {
+        onNotificationClick(notification.farmerName);
+    }
+  };
+
 
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-background/80 backdrop-blur-sm">
@@ -67,15 +110,46 @@ export function DashboardHeader({ title, userType, onCreatePost }: DashboardHead
                       <span className="sr-only">Shopping Cart</span>
                    </Link>
                 </Button>
-                 <Button variant="ghost" size="icon">
-                  <Bell className="h-5 w-5" />
-                  <span className="sr-only">Requests</span>
-                </Button>
                 <Button size="sm" onClick={onCreatePost}>
                   <Plus className="-ml-1 mr-2 h-4 w-4" />
                   Create Post
                 </Button>
               </>
+            )}
+            {userType === 'worker' && (
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="ghost" size="icon" className="relative">
+                    <MessageSquare className="h-5 w-5" />
+                    {unreadCount > 0 && (
+                        <Badge variant="destructive" className="absolute -right-2 -top-2 h-5 w-5 justify-center rounded-full p-0">
+                          {unreadCount}
+                        </Badge>
+                    )}
+                    <span className="sr-only">Messages</span>
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="w-80" align="end">
+                  <DropdownMenuLabel>Messages</DropdownMenuLabel>
+                  <DropdownMenuSeparator />
+                   {notifications.length === 0 ? (
+                      <DropdownMenuItem disabled>No new messages</DropdownMenuItem>
+                    ) : (
+                      notifications.map((notification) => (
+                        <DropdownMenuItem 
+                            key={notification.id} 
+                            onSelect={() => handleNotificationClick(notification)}
+                            className={!notification.read ? 'font-bold' : ''}
+                        >
+                          <div className='flex flex-col'>
+                            <span>From: {notification.farmerName}</span>
+                            <span className='text-xs text-muted-foreground truncate'>{notification.message}</span>
+                          </div>
+                        </DropdownMenuItem>
+                      ))
+                    )}
+                </DropdownMenuContent>
+              </DropdownMenu>
             )}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>

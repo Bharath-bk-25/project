@@ -4,7 +4,7 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { DashboardHeader } from '@/components/dashboard-header';
-import { Calendar, DollarSign, MapPin, Tractor, Phone, Mail, Star, Clock, Mountain } from 'lucide-react';
+import { Calendar, DollarSign, MapPin, Tractor, Phone, Mail, Star, Clock, Mountain, MessageSquare } from 'lucide-react';
 import { useState } from 'react';
 import {
   Dialog,
@@ -17,6 +17,8 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { Textarea } from '@/components/ui/textarea';
+import { cn } from '@/lib/utils';
 
 type JobPost = {
   farmerName: string;
@@ -372,12 +374,35 @@ const jobPosts: JobPost[] = [
 
 export default function WorkerDashboard() {
   const [isApplyDialogOpen, setApplyDialogOpen] = useState(false);
+  const [isMessageDialogOpen, setMessageDialogOpen] = useState(false);
   const [selectedJob, setSelectedJob] = useState<JobPost | null>(null);
-
+  const [message, setMessage] = useState('');
+  const [conversation, setConversation] = useState<string[]>([]);
+  
   const handleApplyClick = (job: JobPost) => {
     setSelectedJob(job);
     setApplyDialogOpen(true);
   };
+
+  const handleNotificationClick = (farmerName: string) => {
+    const job = jobPosts.find(p => p.farmerName === farmerName);
+    if(job) {
+      setSelectedJob(job);
+      setMessageDialogOpen(true);
+      setConversation([`Farmer ${farmerName}: Hello! I saw your profile and I'm interested in hiring you.`]);
+    }
+  };
+
+  const handleSendMessage = () => {
+    if (!message.trim() || !selectedJob) return;
+
+    setConversation(prev => [...prev, `You: ${message}`]);
+    setMessage('');
+    // Simulate a reply after a delay
+    setTimeout(() => {
+        setConversation(prev => [...prev, `${selectedJob.farmerName}: Thanks for your reply!`]);
+    }, 1500);
+  }
   
   const jobsByDistrict = jobPosts.reduce((acc, job) => {
     const district = job.location.split(', ')[1].split(' (')[0];
@@ -391,7 +416,7 @@ export default function WorkerDashboard() {
 
   return (
     <div className="min-h-screen w-full bg-secondary/50">
-      <DashboardHeader title="Worker Dashboard" userType="worker" />
+      <DashboardHeader title="Worker Dashboard" userType="worker" onNotificationClick={handleNotificationClick}/>
       
       <main className="container mx-auto py-8">
         <h1 className="text-3xl font-bold mb-6 font-headline">Available Jobs (கிடைக்கும் வேலைகள்)</h1>
@@ -509,9 +534,60 @@ export default function WorkerDashboard() {
           </DialogContent>
         </Dialog>
       )}
+
+      {/* Message Farmer Dialog */}
+      {selectedJob && (
+        <Dialog open={isMessageDialogOpen} onOpenChange={setMessageDialogOpen}>
+          <DialogContent className="sm:max-w-lg">
+            <DialogHeader>
+              <DialogTitle>Message {selectedJob.farmerName}</DialogTitle>
+              <DialogDescription>
+                Your conversation with {selectedJob.farmerName}.
+              </DialogDescription>
+            </DialogHeader>
+            <div className="py-4 space-y-4">
+              <div className="h-[300px] overflow-y-auto p-4 border rounded-md bg-muted/50 space-y-2">
+                {conversation.map((msg, index) => (
+                  <div key={index} className={cn(
+                      "flex",
+                      msg.startsWith('You:') ? 'justify-end' : 'justify-start'
+                  )}>
+                    <p className={cn(
+                        "text-sm p-2 rounded-lg max-w-[80%]",
+                        msg.startsWith('You:') ? 'bg-primary text-primary-foreground' : 'bg-secondary'
+                    )}>
+                        {msg.substring(msg.indexOf(':') + 1).trim()}
+                    </p>
+                  </div>
+                ))}
+              </div>
+              <div className="flex gap-2">
+                <Textarea
+                  placeholder={`Type your message for ${selectedJob.farmerName}...`}
+                  rows={1}
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' && !e.shiftKey) {
+                        e.preventDefault();
+                        handleSendMessage();
+                    }
+                  }}
+                  className="flex-1"
+                />
+                <Button onClick={handleSendMessage} disabled={!message.trim()}>
+                  Send
+                </Button>
+              </div>
+            </div>
+            <DialogFooter>
+              <Button variant="outline" onClick={() => {
+                  setMessageDialogOpen(false);
+              }}>Close</Button>
+            </DialogFooter>
+          </DialogContent>
+        </Dialog>
+      )}
     </div>
   );
 }
-
-
-    

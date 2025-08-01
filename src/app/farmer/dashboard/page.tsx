@@ -172,7 +172,7 @@ export default function FarmerDashboard() {
             name: user.name,
             age: parseInt(user.age, 10) || 0,
             skills: typeof user.skills === 'string' ? user.skills.split(',').map((s: string) => s.trim()) : [],
-            location: `Newly Registered, ${user.location || 'Unknown'}`,
+            location: user.location || 'Newly Registered',
             image: `https://placehold.co/300x300.png?text=${user.name.charAt(0)}`,
             hint: 'worker portrait',
             salary: parseInt(user.expectedSalary, 10) || 0,
@@ -205,6 +205,19 @@ export default function FarmerDashboard() {
 
     const newConversation = [...conversation, `You: ${message}`];
     
+     // Simulate sending a notification
+    const notifications = JSON.parse(localStorage.getItem('notifications') || '[]');
+    const newNotification = {
+      id: Date.now(),
+      farmerName: 'Current Farmer', // In a real app, this would be the logged-in farmer's name
+      workerName: selectedWorker.name,
+      message,
+      read: false,
+    };
+    notifications.push(newNotification);
+    localStorage.setItem('notifications', JSON.stringify(notifications));
+
+
     setTimeout(() => {
         setConversation(conv => [...conv, `${selectedWorker.name}: Thank you for your message. I will get back to you soon.`]);
     }, 1000);
