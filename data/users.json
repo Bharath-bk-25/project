@@ -54,5 +54,13 @@
     "gender": "female",
     "skills": "Irrigation",
     "expectedSalary": "1200"
+  },
+  {
+    "type": "worker",
+    "name": "Sangeetha priya",
+    "age": "23",
+    "gender": "female",
+    "skills": "Irrigation",
+    "expectedSalary": "1200"
   }
 ]

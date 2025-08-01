@@ -161,7 +161,6 @@ export default function FarmerDashboard() {
       try {
         const response = await fetch('/data/users.json');
         if (!response.ok) {
-          // If the file is not found, it might not have been created yet.
           if (response.status === 404) {
             console.log('users.json not found, using static data.');
             return;
@@ -173,18 +172,16 @@ export default function FarmerDashboard() {
             name: user.name,
             age: parseInt(user.age, 10) || 0,
             skills: typeof user.skills === 'string' ? user.skills.split(',').map((s: string) => s.trim()) : [],
-            // These fields are not in user.json, so providing defaults
-            location: 'Unknown',
+            location: 'Newly Registered, ',
             image: `https://placehold.co/300x300.png?text=${user.name.charAt(0)}`,
             hint: 'worker portrait',
             salary: parseInt(user.expectedSalary, 10) || 0,
-            rating: 4.5, // Default rating
-            phone: '123-456-7890' // Default phone
+            rating: 4.5,
+            phone: '123-456-7890'
         }));
         setWorkers(prevWorkers => [...prevWorkers, ...newWorkers]);
       } catch (error) {
         console.error("Could not fetch workers:", error);
-        // Fallback to static workers if fetch fails
         setWorkers(staticWorkers);
       }
     }
@@ -199,7 +196,7 @@ export default function FarmerDashboard() {
   const handleMessageClick = (worker: Worker) => {
     setSelectedWorker(worker);
     setContactWorkerOpen(false);
-    setConversation([]); // Clear conversation when opening for a new worker
+    setConversation([]);
     setMessageWorkerOpen(true);
   };
 
@@ -208,7 +205,6 @@ export default function FarmerDashboard() {
 
     const newConversation = [...conversation, `You: ${message}`];
     
-    // Simulate worker reply
     setTimeout(() => {
         setConversation(conv => [...conv, `${selectedWorker.name}: Thank you for your message. I will get back to you soon.`]);
     }, 1000);
@@ -218,9 +214,8 @@ export default function FarmerDashboard() {
   };
 
   const workersByDistrict = workers.reduce((acc, worker) => {
-    // Handle cases where location might be 'Unknown' or not have a district
     const locationParts = worker.location.split(', ');
-    const district = locationParts.length > 1 ? locationParts[1] : 'Uncategorized';
+    const district = locationParts.length > 1 ? locationParts[1] : 'Newly Registered';
     if (!acc[district]) {
       acc[district] = [];
     }
@@ -241,7 +236,7 @@ export default function FarmerDashboard() {
         <div className="mt-4 space-y-2 text-sm">
           <div className="flex items-center">
             <MapPin className="mr-2 h-4 w-4 text-muted-foreground" />
-            <span>{worker.location}</span>
+            <span>{worker.location.split(', ')[0]}</span>
           </div>
           <div className="flex items-start">
             <Briefcase className="mr-2 mt-1 h-4 w-4 text-muted-foreground" />
