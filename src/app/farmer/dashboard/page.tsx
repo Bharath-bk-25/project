@@ -1,6 +1,6 @@
 
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import {
@@ -35,7 +35,7 @@ type Worker = {
   phone: string;
 };
 
-const workers: Worker[] = [
+const staticWorkers: Worker[] = [
     // Coimbatore
     { name: 'Karthik Raja', age: 40, skills: ['Tractor Operation', 'Coconut Plucking'], location: 'Pollachi, Coimbatore', image: 'https://placehold.co/300x300.png?text=KR', hint: 'man portrait', salary: 750, rating: 4.8, phone: '9876543210' },
     { name: 'Mani Kandan', age: 38, skills: ['Pest Control', 'Irrigation'], location: 'Pollachi, Coimbatore', image: 'https://placehold.co/300x300.png?text=MK', hint: 'farmer smiling', salary: 650, rating: 4.5, phone: '9876543211' },
@@ -147,6 +147,7 @@ const workers: Worker[] = [
 ];
 
 export default function FarmerDashboard() {
+  const [workers, setWorkers] = useState<Worker[]>(staticWorkers);
   const [isCreatePostOpen, setCreatePostOpen] = useState(false);
   const [isContactWorkerOpen, setContactWorkerOpen] = useState(false);
   const [isMessageWorkerOpen, setMessageWorkerOpen] = useState(false);
@@ -154,6 +155,41 @@ export default function FarmerDashboard() {
   const [message, setMessage] = useState('');
   const [conversation, setConversation] = useState<string[]>([]);
   const [date, setDate] = useState<Date | undefined>(new Date());
+
+  useEffect(() => {
+    async function fetchUsers() {
+      try {
+        const response = await fetch('/data/users.json');
+        if (!response.ok) {
+          // If the file is not found, it might not have been created yet.
+          if (response.status === 404) {
+            console.log('users.json not found, using static data.');
+            return;
+          }
+          throw new Error('Failed to fetch user data');
+        }
+        const users = await response.json();
+        const newWorkers = users.filter((user: any) => user.type === 'worker').map((user: any): Worker => ({
+            name: user.name,
+            age: parseInt(user.age, 10) || 0,
+            skills: typeof user.skills === 'string' ? user.skills.split(',').map((s: string) => s.trim()) : [],
+            // These fields are not in user.json, so providing defaults
+            location: 'Unknown',
+            image: `https://placehold.co/300x300.png?text=${user.name.charAt(0)}`,
+            hint: 'worker portrait',
+            salary: parseInt(user.expectedSalary, 10) || 0,
+            rating: 4.5, // Default rating
+            phone: '123-456-7890' // Default phone
+        }));
+        setWorkers(prevWorkers => [...prevWorkers, ...newWorkers]);
+      } catch (error) {
+        console.error("Could not fetch workers:", error);
+        // Fallback to static workers if fetch fails
+        setWorkers(staticWorkers);
+      }
+    }
+    fetchUsers();
+  }, []);
 
   const handleContactClick = (worker: Worker) => {
     setSelectedWorker(worker);
@@ -182,7 +218,9 @@ export default function FarmerDashboard() {
   };
 
   const workersByDistrict = workers.reduce((acc, worker) => {
-    const district = worker.location.split(', ')[1];
+    // Handle cases where location might be 'Unknown' or not have a district
+    const locationParts = worker.location.split(', ');
+    const district = locationParts.length > 1 ? locationParts[1] : 'Uncategorized';
     if (!acc[district]) {
       acc[district] = [];
     }
@@ -343,12 +381,6 @@ export default function FarmerDashboard() {
             <DialogFooter className="sm:justify-between">
                <Button variant="outline" onClick={() => setContactWorkerOpen(false)}>Close</Button>
                 <div className="flex gap-2">
-                    <Button asChild>
-                        <a href={`tel:${selectedWorker.phone}`}>
-                            <Phone className="mr-2 h-4 w-4" />
-                            Call Now
-                        </a>
-                    </Button>
                     <Button onClick={() => handleMessageClick(selectedWorker)}>
                         <MessageSquare className="mr-2 h-4 w-4" />
                         Message
@@ -421,6 +453,3 @@ export default function FarmerDashboard() {
     </div>
   );
 }
-
-
-    

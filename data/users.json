@@ -38,5 +38,21 @@
     "gender": "",
     "location": "",
     "crops": ""
+  },
+  {
+    "type": "farmer",
+    "name": "Bharath kumar",
+    "age": "30",
+    "gender": "male",
+    "location": "Coimbatore",
+    "crops": "Sugarcane"
+  },
+  {
+    "type": "worker",
+    "name": "Sangeetha priya",
+    "age": "23",
+    "gender": "female",
+    "skills": "Irrigation",
+    "expectedSalary": "1200"
   }
 ]
