@@ -15,6 +15,10 @@ import { useToast } from '@/hooks/use-toast';
 import { useRouter } from 'next/navigation';
 import type { CreateUserInput } from '@/ai/schemas/userSchema';
 
+const districts = [
+    "Coimbatore", "Madurai", "Tiruchirappalli", "Salem", "Erode", "Vellore", "Tirunelveli", "Thanjavur", "Dindigul", "Kanyakumari", "Karur", "Tiruppur"
+];
+
 export default function SignupPage() {
   const [userType, setUserType] = useState('farmer');
 
@@ -29,6 +33,7 @@ export default function SignupPage() {
   const [workerGender, setWorkerGender] = useState('');
   const [workerSkills, setWorkerSkills] = useState('');
   const [workerSalary, setWorkerSalary] = useState('');
+  const [workerLocation, setWorkerLocation] = useState('');
   
   const { toast } = useToast();
   const router = useRouter();
@@ -52,6 +57,7 @@ export default function SignupPage() {
         gender: workerGender,
         skills: workerSkills,
         expectedSalary: workerSalary,
+        location: workerLocation,
       };
     }
 
@@ -151,6 +157,19 @@ export default function SignupPage() {
                       <SelectItem value="other">Prefer not to say</SelectItem>
                     </SelectContent>
                   </Select>
+                </div>
+                 <div className="space-y-2">
+                    <Label htmlFor="worker-location">District</Label>
+                    <Select onValueChange={setWorkerLocation}>
+                        <SelectTrigger id="worker-location">
+                        <SelectValue placeholder="Select district" />
+                        </SelectTrigger>
+                        <SelectContent>
+                        {districts.map(district => (
+                            <SelectItem key={district} value={district}>{district}</SelectItem>
+                        ))}
+                        </SelectContent>
+                    </Select>
                 </div>
               </div>
               <div className="space-y-2">

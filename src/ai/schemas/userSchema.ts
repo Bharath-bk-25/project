@@ -16,6 +16,7 @@ const WorkerSchema = z.object({
   gender: z.string(),
   skills: z.string(),
   expectedSalary: z.string(),
+  location: z.string(),
 });
 
 export const CreateUserInputSchema = z.union([FarmerSchema, WorkerSchema]);

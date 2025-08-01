@@ -172,7 +172,7 @@ export default function FarmerDashboard() {
             name: user.name,
             age: parseInt(user.age, 10) || 0,
             skills: typeof user.skills === 'string' ? user.skills.split(',').map((s: string) => s.trim()) : [],
-            location: 'Newly Registered, ',
+            location: `Newly Registered, ${user.location || 'Unknown'}`,
             image: `https://placehold.co/300x300.png?text=${user.name.charAt(0)}`,
             hint: 'worker portrait',
             salary: parseInt(user.expectedSalary, 10) || 0,
