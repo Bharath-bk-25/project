@@ -151,6 +151,7 @@ export default function FarmerDashboard() {
   const [isMessageWorkerOpen, setMessageWorkerOpen] = useState(false);
   const [selectedWorker, setSelectedWorker] = useState<Worker | null>(null);
   const [message, setMessage] = useState('');
+  const [conversation, setConversation] = useState<string[]>([]);
   const [date, setDate] = useState<Date | undefined>(new Date());
 
   const handleContactClick = (worker: Worker) => {
@@ -161,14 +162,22 @@ export default function FarmerDashboard() {
   const handleMessageClick = (worker: Worker) => {
     setSelectedWorker(worker);
     setContactWorkerOpen(false);
+    setConversation([]); // Clear conversation when opening for a new worker
     setMessageWorkerOpen(true);
   };
 
   const handleSendMessage = () => {
-    // Logic to send message will go here
-    console.log(`Sending message to ${selectedWorker?.name}: ${message}`);
+    if (!message.trim() || !selectedWorker) return;
+
+    const newConversation = [...conversation, `You: ${message}`];
+    
+    // Simulate worker reply
+    setTimeout(() => {
+        setConversation(conv => [...conv, `${selectedWorker.name}: Thank you for your message. I will get back to you soon.`]);
+    }, 1000);
+
+    setConversation(newConversation);
     setMessage('');
-    setMessageWorkerOpen(false);
   };
 
   const workersByDistrict = workers.reduce((acc, worker) => {
@@ -344,25 +353,47 @@ export default function FarmerDashboard() {
             <DialogHeader>
               <DialogTitle>Message {selectedWorker.name}</DialogTitle>
               <DialogDescription>
-                Compose your message below. The worker will be notified.
+                Your conversation with {selectedWorker.name}.
               </DialogDescription>
             </DialogHeader>
-            <div className="py-4">
-              <Textarea
-                placeholder={`Type your message for ${selectedWorker.name}...`}
-                rows={5}
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-              />
+            <div className="py-4 space-y-4">
+              <div className="h-[300px] overflow-y-auto p-4 border rounded-md bg-muted/50 space-y-2">
+                {conversation.map((msg, index) => (
+                  <div key={index} className={cn(
+                      "flex",
+                      msg.startsWith('You:') ? 'justify-end' : 'justify-start'
+                  )}>
+                    <p className={cn(
+                        "text-sm p-2 rounded-lg max-w-[80%]",
+                        msg.startsWith('You:') ? 'bg-primary/90 text-primary-foreground' : 'bg-secondary'
+                    )}>
+                        {msg.substring(msg.indexOf(':') + 1).trim()}
+                    </p>
+                  </div>
+                ))}
+              </div>
+              <div className="flex gap-2">
+                <Textarea
+                  placeholder={`Type your message for ${selectedWorker.name}...`}
+                  rows={1}
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  className="flex-1"
+                />
+                <Button onClick={handleSendMessage} disabled={!message.trim()}>
+                  Send
+                </Button>
+              </div>
             </div>
             <DialogFooter>
-              <Button variant="outline" onClick={() => setMessageWorkerOpen(false)}>Cancel</Button>
-              <Button onClick={handleSendMessage} disabled={!message}>
-                Send Message
-              </Button>
+              <Button variant="outline" onClick={() => {
+                  setMessageWorkerOpen(false);
+                  setConversation([]); // Reset conversation when closing
+              }}>Close</Button>
             </DialogFooter>
           </DialogContent>
         </Dialog>
       )}
     </div>
   );
+}
