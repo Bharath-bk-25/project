@@ -385,11 +385,17 @@ export default function WorkerDashboard() {
   };
 
   const handleNotificationClick = (farmerName: string) => {
-    const job = jobPosts.find(p => p.farmerName === farmerName);
+    const job = jobPosts.find(p => p.farmerName.startsWith(farmerName.split(' (')[0]));
     if(job) {
       setSelectedJob(job);
       setMessageDialogOpen(true);
-      setConversation([`Farmer ${farmerName}: Hello! I saw your profile and I'm interested in hiring you.`]);
+      const initialMessage = `Farmer ${job.farmerName}: I saw your profile and I'm interested in hiring you.`;
+      setConversation(prev => {
+        if (!prev.includes(initialMessage)) {
+            return [initialMessage];
+        }
+        return prev;
+      });
     }
   };
 

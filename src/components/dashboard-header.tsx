@@ -1,3 +1,4 @@
+
 'use client';
 import Link from 'next/link';
 import { Bell, LogOut, Plus, Settings, User, ShoppingCart, Languages, MessageSquare } from 'lucide-react';
@@ -46,20 +47,17 @@ export function DashboardHeader({ title, userType, onCreatePost, onNotificationC
       let userNotifications: Notification[];
 
       if (userType === 'worker') {
-        // Assuming current worker is 'Sangeetha priya' for demonstration
-        userNotifications = storedNotifications.filter(n => n.workerName === 'Sangeetha priya');
-      } else { // farmer
-        // Assuming current farmer is 'Current Farmer' for demonstration
+        userNotifications = storedNotifications.filter(n => n.workerName === 'Sangeetha priya' && !n.message.startsWith('Worker:'));
+      } else { 
         userNotifications = storedNotifications.filter(n => n.farmerName === 'Current Farmer' && n.message.startsWith('Worker:'));
       }
       setNotifications(userNotifications);
-    }, 1000); // Check for new notifications every second
+    }, 1000);
 
     return () => clearInterval(interval);
   }, [userType]);
 
   const handleWorkerNotificationClick = (notification: Notification) => {
-    // Mark as read in local storage
     const storedNotifications = JSON.parse(localStorage.getItem('notifications') || '[]') as Notification[];
     const updatedNotifications = storedNotifications.map(n => 
         n.id === notification.id ? { ...n, read: true } : n
@@ -67,7 +65,6 @@ export function DashboardHeader({ title, userType, onCreatePost, onNotificationC
     localStorage.setItem('notifications', JSON.stringify(updatedNotifications));
     setNotifications(updatedNotifications.filter(n => n.workerName === 'Sangeetha priya'));
     
-    // Trigger the handler to open the message dialog
     if(onNotificationClick) {
         onNotificationClick(notification.farmerName);
     }

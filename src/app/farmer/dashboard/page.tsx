@@ -215,13 +215,12 @@ export default function FarmerDashboard() {
 
     const newConversation = [...conversation, `You: ${message}`];
     
-     // Simulate sending a notification
-    const notifications = JSON.parse(localStorage.getItem('notifications') || '[]'));
+    const notifications = JSON.parse(localStorage.getItem('notifications') || '[]');
     const newNotification = {
       id: Date.now(),
-      farmerName: 'Current Farmer', // In a real app, this would be the logged-in farmer's name
+      farmerName: 'Current Farmer', 
       workerName: selectedWorker.name,
-      message: `Worker: ${message}`,
+      message: message,
       read: false,
     };
     notifications.push(newNotification);
