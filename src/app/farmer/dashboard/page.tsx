@@ -15,12 +15,13 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { DashboardHeader } from '@/components/dashboard-header';
 import Image from 'next/image';
-import { Contact, MapPin, Briefcase, Phone, User as UserIcon, Calendar as CalendarIconLucide, Star, DollarSign } from 'lucide-react';
+import { Contact, MapPin, Briefcase, User as UserIcon, Calendar as CalendarIconLucide, Star, DollarSign, MessageSquare } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Calendar } from '@/components/ui/calendar';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { format } from 'date-fns';
 import { cn } from '@/lib/utils';
+import { Textarea } from '@/components/ui/textarea';
 
 type Worker = {
   name: string;
@@ -147,12 +148,27 @@ const workers: Worker[] = [
 export default function FarmerDashboard() {
   const [isCreatePostOpen, setCreatePostOpen] = useState(false);
   const [isContactWorkerOpen, setContactWorkerOpen] = useState(false);
+  const [isMessageWorkerOpen, setMessageWorkerOpen] = useState(false);
   const [selectedWorker, setSelectedWorker] = useState<Worker | null>(null);
+  const [message, setMessage] = useState('');
   const [date, setDate] = useState<Date | undefined>(new Date());
 
   const handleContactClick = (worker: Worker) => {
     setSelectedWorker(worker);
     setContactWorkerOpen(true);
+  };
+  
+  const handleMessageClick = (worker: Worker) => {
+    setSelectedWorker(worker);
+    setContactWorkerOpen(false);
+    setMessageWorkerOpen(true);
+  };
+
+  const handleSendMessage = () => {
+    // Logic to send message will go here
+    console.log(`Sending message to ${selectedWorker?.name}: ${message}`);
+    setMessage('');
+    setMessageWorkerOpen(false);
   };
 
   const workersByDistrict = workers.reduce((acc, worker) => {
@@ -311,13 +327,42 @@ export default function FarmerDashboard() {
               </div>
             </div>
             <DialogFooter>
-               <Button onClick={() => setContactWorkerOpen(false)}>Close</Button>
+               <Button variant="outline" onClick={() => setContactWorkerOpen(false)}>Close</Button>
+                <Button onClick={() => handleMessageClick(selectedWorker)}>
+                  <MessageSquare className="mr-2 h-4 w-4" />
+                  Message
+                </Button>
             </DialogFooter>
           </DialogContent>
         </Dialog>
       )}
 
+      {/* Message Worker Dialog */}
+      {selectedWorker && (
+        <Dialog open={isMessageWorkerOpen} onOpenChange={setMessageWorkerOpen}>
+          <DialogContent className="sm:max-w-lg">
+            <DialogHeader>
+              <DialogTitle>Message {selectedWorker.name}</DialogTitle>
+              <DialogDescription>
+                Compose your message below. The worker will be notified.
+              </DialogDescription>
+            </DialogHeader>
+            <div className="py-4">
+              <Textarea
+                placeholder={`Type your message for ${selectedWorker.name}...`}
+                rows={5}
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+              />
+            </div>
+            <DialogFooter>
+              <Button variant="outline" onClick={() => setMessageWorkerOpen(false)}>Cancel</Button>
+              <Button onClick={handleSendMessage} disabled={!message}>
+                Send Message
+              </Button>
+            </DialogFooter>
+          </DialogContent>
+        </Dialog>
+      )}
     </div>
   );
-
-    
