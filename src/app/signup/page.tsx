@@ -124,8 +124,17 @@ export default function SignupPage() {
                   </Select>
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="farmer-location">Location</Label>
-                  <Input id="farmer-location" placeholder="Chennai, TN" value={farmerLocation} onChange={(e) => setFarmerLocation(e.target.value)} />
+                  <Label htmlFor="farmer-location">District</Label>
+                    <Select onValueChange={setFarmerLocation}>
+                        <SelectTrigger id="farmer-location">
+                        <SelectValue placeholder="Select district" />
+                        </SelectTrigger>
+                        <SelectContent>
+                        {districts.map(district => (
+                            <SelectItem key={district} value={district}>{district}</SelectItem>
+                        ))}
+                        </SelectContent>
+                    </Select>
                 </div>
               </div>
               <div className="space-y-2">
