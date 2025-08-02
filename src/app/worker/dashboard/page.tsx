@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { DashboardHeader } from '@/components/dashboard-header';
 import { Calendar, DollarSign, MapPin, Tractor, Phone, Mail, Star, Clock, Mountain, MessageSquare } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {
   Dialog,
   DialogContent,
@@ -378,24 +378,20 @@ export default function WorkerDashboard() {
   const [selectedJob, setSelectedJob] = useState<JobPost | null>(null);
   const [message, setMessage] = useState('');
   const [conversation, setConversation] = useState<string[]>([]);
-  
+  const [workerUsername] = useState('Sangeetha priya'); // Static username for prototype
+
   const handleApplyClick = (job: JobPost) => {
     setSelectedJob(job);
     setApplyDialogOpen(true);
   };
 
   const handleNotificationClick = (farmerName: string) => {
-    const job = jobPosts.find(p => p.farmerName.startsWith(farmerName.split(' (')[0]));
+    const job = jobPosts.find(p => p.farmerName === farmerName);
     if(job) {
       setSelectedJob(job);
       setMessageDialogOpen(true);
-      const initialMessage = `${job.farmerName}: I saw your profile and I'm interested in hiring you.`;
-      setConversation(prev => {
-        if (!prev.find(m => m.startsWith(job.farmerName))) {
-            return [initialMessage];
-        }
-        return prev;
-      });
+      const storedConversation = JSON.parse(localStorage.getItem(`conversation_${farmerName}_${workerUsername}`) || '[]');
+      setConversation(storedConversation);
     }
   };
 
@@ -403,27 +399,24 @@ export default function WorkerDashboard() {
     if (!message.trim() || !selectedJob) return;
   
     const workerMessage = `You: ${message}`;
-    setConversation(prev => [...prev, workerMessage]);
+    const updatedConversation = [...conversation, workerMessage];
+    setConversation(updatedConversation);
   
-    // Save worker's message to localStorage for the farmer to see
+    // Save full conversation history
+    localStorage.setItem(`conversation_${selectedJob.farmerName}_${workerUsername}`, JSON.stringify(updatedConversation));
+
     const notifications = JSON.parse(localStorage.getItem('notifications') || '[]');
     const newNotification = {
       id: Date.now(),
-      farmerName: selectedJob.farmerName,
-      workerName: 'Sangeetha priya', // This should be dynamic for a real multi-user app
-      message: `Worker: ${message}`,
+      farmerName: selectedJob.farmerName, 
+      workerName: workerUsername, 
+      message: `Worker: ${message}`, // Distinguish sender
       read: false,
     };
     notifications.push(newNotification);
     localStorage.setItem('notifications', JSON.stringify(notifications));
   
     setMessage('');
-  
-    // Simulate a reply from the farmer after a delay
-    setTimeout(() => {
-      const farmerReply = `${selectedJob.farmerName}: Thank you for your reply. I will get back to you shortly.`;
-      setConversation(prev => [...prev, farmerReply]);
-    }, 1500);
   }
   
   const jobsByDistrict = jobPosts.reduce((acc, job) => {

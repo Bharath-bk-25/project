@@ -39,6 +39,8 @@ export function DashboardHeader({ title, userType, onCreatePost, onNotificationC
   const { cartItems } = useCart();
   const cartItemCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
   const [notifications, setNotifications] = useState<Notification[]>([]);
+  const [workerUsername] = useState('Sangeetha priya');
+  const [farmerUsername] = useState('Current Farmer');
   const unreadCount = notifications.filter(n => !n.read).length;
   
   useEffect(() => {
@@ -47,15 +49,15 @@ export function DashboardHeader({ title, userType, onCreatePost, onNotificationC
       let userNotifications: Notification[];
 
       if (userType === 'worker') {
-        userNotifications = storedNotifications.filter(n => n.workerName === 'Sangeetha priya' && !n.message.startsWith('Worker:'));
+        userNotifications = storedNotifications.filter(n => n.workerName === workerUsername && n.message.startsWith('Farmer:'));
       } else { 
-        userNotifications = storedNotifications.filter(n => n.farmerName === 'Current Farmer' && n.message.startsWith('Worker:'));
+        userNotifications = storedNotifications.filter(n => n.farmerName === farmerUsername && n.message.startsWith('Worker:'));
       }
       setNotifications(userNotifications);
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [userType]);
+  }, [userType, workerUsername, farmerUsername]);
 
   const handleWorkerNotificationClick = (notification: Notification) => {
     const storedNotifications = JSON.parse(localStorage.getItem('notifications') || '[]') as Notification[];
@@ -63,7 +65,7 @@ export function DashboardHeader({ title, userType, onCreatePost, onNotificationC
         n.id === notification.id ? { ...n, read: true } : n
     );
     localStorage.setItem('notifications', JSON.stringify(updatedNotifications));
-    setNotifications(updatedNotifications.filter(n => n.workerName === 'Sangeetha priya'));
+    setNotifications(updatedNotifications.filter(n => n.workerName === workerUsername && n.message.startsWith('Farmer:')));
     
     if(onNotificationClick) {
         onNotificationClick(notification.farmerName);
@@ -76,7 +78,7 @@ export function DashboardHeader({ title, userType, onCreatePost, onNotificationC
         n.id === notification.id ? { ...n, read: true } : n
     );
     localStorage.setItem('notifications', JSON.stringify(updatedNotifications));
-    setNotifications(updatedNotifications.filter(n => n.farmerName === 'Current Farmer' && n.message.startsWith('Worker:')));
+    setNotifications(updatedNotifications.filter(n => n.farmerName === farmerUsername && n.message.startsWith('Worker:')));
     
     if (onFarmerNotificationClick) {
         onFarmerNotificationClick(notification.workerName);
@@ -191,7 +193,7 @@ export function DashboardHeader({ title, userType, onCreatePost, onNotificationC
                         >
                           <div className='flex flex-col'>
                             <span>From: {notification.farmerName}</span>
-                            <span className='text-xs text-muted-foreground truncate'>{notification.message}</span>
+                            <span className='text-xs text-muted-foreground truncate'>{notification.message.substring(notification.message.indexOf(':') + 1).trim()}</span>
                           </div>
                         </DropdownMenuItem>
                       ))

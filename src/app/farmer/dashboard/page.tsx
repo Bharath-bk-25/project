@@ -155,6 +155,8 @@ export default function FarmerDashboard() {
   const [message, setMessage] = useState('');
   const [conversation, setConversation] = useState<string[]>([]);
   const [date, setDate] = useState<Date | undefined>(new Date());
+  
+  const [farmerUsername] = useState('Current Farmer'); // Static username for prototype
 
   useEffect(() => {
     async function fetchUsers() {
@@ -200,38 +202,38 @@ export default function FarmerDashboard() {
     setMessageWorkerOpen(true);
   };
   
-  const handleFarmerNotificationClick = (workerName: string) => {
+ const handleFarmerNotificationClick = (workerName: string) => {
     const worker = workers.find(w => w.name === workerName);
     if (worker) {
         setSelectedWorker(worker);
         setMessageWorkerOpen(true);
-        setConversation(prev => [...prev, `${workerName}: I have received your message and will respond shortly.`]);
+        const storedConversation = JSON.parse(localStorage.getItem(`conversation_${farmerUsername}_${workerName}`) || '[]');
+        setConversation(storedConversation);
     }
   };
 
 
-  const handleSendMessage = () => {
+ const handleSendMessage = () => {
     if (!message.trim() || !selectedWorker) return;
 
-    const newConversation = [...conversation, `You: ${message}`];
-    
+    const farmerMessage = `You: ${message}`;
+    const updatedConversation = [...conversation, farmerMessage];
+    setConversation(updatedConversation);
+
+    // Save full conversation history
+    localStorage.setItem(`conversation_${farmerUsername}_${selectedWorker.name}`, JSON.stringify(updatedConversation));
+
     const notifications = JSON.parse(localStorage.getItem('notifications') || '[]');
     const newNotification = {
       id: Date.now(),
-      farmerName: 'Current Farmer', 
+      farmerName: farmerUsername, 
       workerName: selectedWorker.name,
-      message: message,
+      message: `Farmer: ${message}`, // Distinguish sender
       read: false,
     };
     notifications.push(newNotification);
     localStorage.setItem('notifications', JSON.stringify(notifications));
 
-
-    setTimeout(() => {
-        setConversation(conv => [...conv, `${selectedWorker.name}: Thank you for your message. I will get back to you soon.`]);
-    }, 1000);
-
-    setConversation(newConversation);
     setMessage('');
   };
 
