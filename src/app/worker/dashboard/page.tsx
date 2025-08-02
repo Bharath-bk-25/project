@@ -389,9 +389,9 @@ export default function WorkerDashboard() {
     if(job) {
       setSelectedJob(job);
       setMessageDialogOpen(true);
-      const initialMessage = `Farmer ${job.farmerName}: I saw your profile and I'm interested in hiring you.`;
+      const initialMessage = `${job.farmerName}: I saw your profile and I'm interested in hiring you.`;
       setConversation(prev => {
-        if (!prev.includes(initialMessage)) {
+        if (!prev.find(m => m.startsWith(job.farmerName))) {
             return [initialMessage];
         }
         return prev;
@@ -401,12 +401,28 @@ export default function WorkerDashboard() {
 
   const handleSendMessage = () => {
     if (!message.trim() || !selectedJob) return;
-
-    setConversation(prev => [...prev, `You: ${message}`]);
+  
+    const workerMessage = `You: ${message}`;
+    setConversation(prev => [...prev, workerMessage]);
+  
+    // Save worker's message to localStorage for the farmer to see
+    const notifications = JSON.parse(localStorage.getItem('notifications') || '[]');
+    const newNotification = {
+      id: Date.now(),
+      farmerName: selectedJob.farmerName,
+      workerName: 'Sangeetha priya', // This should be dynamic for a real multi-user app
+      message: `Worker: ${message}`,
+      read: false,
+    };
+    notifications.push(newNotification);
+    localStorage.setItem('notifications', JSON.stringify(notifications));
+  
     setMessage('');
-    // Simulate a reply after a delay
+  
+    // Simulate a reply from the farmer after a delay
     setTimeout(() => {
-        setConversation(prev => [...prev, `${selectedJob.farmerName}: Thanks for your reply!`]);
+      const farmerReply = `${selectedJob.farmerName}: Thank you for your reply. I will get back to you shortly.`;
+      setConversation(prev => [...prev, farmerReply]);
     }, 1500);
   }
   
