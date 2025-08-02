@@ -157,6 +157,35 @@ export default function FarmerDashboard() {
   const [date, setDate] = useState<Date | undefined>(new Date());
   
   const [farmerUsername] = useState('Current Farmer'); // Static username for prototype
+  
+  const [jobWorkType, setJobWorkType] = useState('');
+  const [jobSalary, setJobSalary] = useState('');
+
+  const handleCreatePost = () => {
+    // This is a mock function. In a real application, you would save this to a database.
+    const newJob = {
+      farmerName: 'Current Farmer',
+      location: 'Your Location, Your District',
+      acres: 10, // Example data
+      landDetails: 'Newly Posted Job',
+      workerExpectations: jobWorkType,
+      workHours: '8 Hours',
+      salary: Number(jobSalary),
+      farmerEmail: 'farmer@example.com',
+      farmerPhone: '1234567890',
+      farmerRating: 4.5,
+      farmerImage: 'https://placehold.co/100x100.png?text=F',
+      farmerImageHint: 'farmer portrait',
+      date: date ? format(date, "PPP") : 'Any',
+    };
+    console.log('New Job Post:', newJob);
+    // You would typically add this to the `jobPosts` array on the worker dashboard
+    // For this prototype, we'll just close the dialog.
+    setCreatePostOpen(false);
+    setJobWorkType('');
+    setJobSalary('');
+  };
+
 
   useEffect(() => {
     async function fetchUsers() {
@@ -223,7 +252,7 @@ export default function FarmerDashboard() {
     // Save full conversation history
     localStorage.setItem(`conversation_${farmerUsername}_${selectedWorker.name}`, JSON.stringify(updatedConversation));
 
-    const notifications = JSON.parse(localStorage.getItem('notifications') || '[]');
+    const notifications = JSON.parse(localStorage.getItem('notifications') || '[]') as any[];
     const newNotification = {
       id: Date.now(),
       farmerName: farmerUsername, 
@@ -317,11 +346,11 @@ export default function FarmerDashboard() {
           <div className="grid gap-4 py-4">
             <div className="grid grid-cols-4 items-center gap-4">
               <Label htmlFor="work-type" className="text-right">Type of Work</Label>
-              <Input id="work-type" placeholder="e.g., Strawberry Harvesting" className="col-span-3" />
+              <Input id="work-type" placeholder="e.g., Strawberry Harvesting" className="col-span-3" value={jobWorkType} onChange={(e) => setJobWorkType(e.target.value)} />
             </div>
             <div className="grid grid-cols-4 items-center gap-4">
               <Label htmlFor="salary" className="text-right">Salary/Day (₹)</Label>
-              <Input id="salary" type="number" placeholder="500" className="col-span-3" />
+              <Input id="salary" type="number" placeholder="500" className="col-span-3" value={jobSalary} onChange={(e) => setJobSalary(e.target.value)} />
             </div>
             <div className="grid grid-cols-4 items-center gap-4">
               <Label htmlFor="date" className="text-right">Date</Label>
@@ -350,7 +379,7 @@ export default function FarmerDashboard() {
             </div>
           </div>
           <DialogFooter>
-            <Button type="submit" onClick={() => setCreatePostOpen(false)}>Save Post</Button>
+            <Button type="submit" onClick={handleCreatePost}>Save Post</Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>
