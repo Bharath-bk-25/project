@@ -15,7 +15,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { DashboardHeader } from '@/components/dashboard-header';
 import Image from 'next/image';
-import { Contact, MapPin, Briefcase, User as UserIcon, Calendar as CalendarIconLucide, Star, DollarSign, MessageSquare, Phone } from 'lucide-react';
+import { Contact, MapPin, Briefcase, User as UserIcon, Calendar as CalendarIconLucide, Star, MessageSquare, Phone } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Calendar } from '@/components/ui/calendar';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
@@ -403,7 +403,7 @@ export default function FarmerDashboard() {
             </DialogHeader>
             <div className="py-4 space-y-4">
                  <div className="flex items-center">
-                    <DollarSign className="mr-3 h-5 w-5 text-muted-foreground" />
+                    <span className="mr-3 h-5 w-5 text-muted-foreground font-bold">₹</span>
                     <span>Expected Salary: ₹{selectedWorker.salary} / day</span>
                 </div>
                  <div className="flex items-center">

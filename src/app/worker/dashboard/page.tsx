@@ -4,7 +4,7 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { DashboardHeader } from '@/components/dashboard-header';
-import { Calendar, DollarSign, MapPin, Tractor, Phone, Mail, Star, Clock, Mountain, MessageSquare } from 'lucide-react';
+import { Calendar, MapPin, Tractor, Phone, Mail, Star, Clock, Mountain, MessageSquare } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import {
   Dialog,
@@ -311,7 +311,7 @@ const jobPosts: JobPost[] = [
   { farmerName: 'Moopanar (மூப்பனார்)', location: 'Papanasam, Thanjavur (பாபநாசம், தஞ்சாவூர்)', acres: 40, landDetails: 'Paddy and Black Gram (நெல் மற்றும் உளுந்து)', workerExpectations: 'Large-scale harvesting and management (பெரிய அளவிலான அறுவடை மற்றும் மேலாண்மை)', workHours: '9 Hours (9 மணி நேரம்)', salary: 920, farmerEmail: 'moopanar.papanasam@email.com', farmerPhone: '9332211010', farmerRating: 4.8, farmerImage: 'https://placehold.co/100x100.png?text=மூ', farmerImageHint: 'farmer in a vast field' },
   { farmerName: 'Lakshmi (லட்சுமி)', location: 'Papanasam, Thanjavur (பாபநாசம், தஞ்சாவூர்)', acres: 15, landDetails: 'Sugarcane cultivation (கரும்பு சாகுபடி)', workerExpectations: 'Harvesting and loading sugarcane (கரும்பு வெட்டி ஏற்றுதல்)', workHours: '8 Hours (8 மணி நேரம்)', salary: 830, farmerEmail: 'lakshmi.papanasam@email.com', farmerPhone: '9332211011', farmerRating: 4.7, farmerImage: 'https://placehold.co/100x100.png?text=ல', farmerImageHint: 'woman in sugarcane field' },
   { farmerName: 'Ravi (ரவி)', location: 'Papanasam, Thanjavur (பாபநாசம், தஞ்சாவூர்)', acres: 20, landDetails: 'Coconut Grove (தென்னந்தோப்பு)', workerExpectations: 'Coconut plucking and farm maintenance (தேங்காய் பறித்தல் மற்றும் பண்ணை பராமரிப்பு)', workHours: '8 Hours (8 மணி நேரம்)', salary: 800, farmerEmail: 'ravi.papanasam@email.com', farmerPhone: '9332211012', farmerRating: 4.6, farmerImage: 'https://placehold.co/100x100.png?text=ர', farmerImageHint: 'man climbing coconut tree' },
-  { farmerName: 'Saroja (சரோஜா)', location: 'Papanasam, Thanjavur (பாபநாசம், தஞ்சாவூர்)', acres: 10, landDetails: 'Vegetable Farm (காய்கறி பண்ணை)', workerExpectations: 'Weeding, watering, and harvesting (களையெடுத்தல், నీరు பாய்ச்சுதல், அறுவடை)', workHours: '7 Hours (7 மணி நேரம்)', salary: 650, farmerEmail: 'saroja.papanasam@email.com', farmerPhone: '9332211013', farmerRating: 4.9, farmerImage: 'https://placehold.co/100x100.png?text=ச', farmerImageHint: 'woman watering plants' },
+  { farmerName: 'Saroja (சரோஜா)', location: 'Papanasam, Thanjavur (பாபநாசம், தஞ்சாவூர்)', acres: 10, landDetails: 'Vegetable Farm (காய்கறி பண்ணை)', workerExpectations: 'Weeding, watering, and harvesting (களையெடுத்தல், நீரு பாய்ச்சுதல், அறுவடை)', workHours: '7 Hours (7 மணி நேரம்)', salary: 650, farmerEmail: 'saroja.papanasam@email.com', farmerPhone: '9332211013', farmerRating: 4.9, farmerImage: 'https://placehold.co/100x100.png?text=ச', farmerImageHint: 'woman watering plants' },
   { farmerName: 'Ganesan (கணேசன்)', location: 'Papanasam, Thanjavur (பாபநாசம், தஞ்சாவூர்)', acres: 25, landDetails: 'Paddy Seed Farm (நெல் விதை பண்ணை)', workerExpectations: 'Producing quality paddy seeds (தரமான நெல் விதைகளை உற்பத்தி செய்தல்)', workHours: '8 Hours (8 மணி நேரம்)', salary: 780, farmerEmail: 'ganesan.papanasam@email.com', farmerPhone: '9332211014', farmerRating: 4.8, farmerImage: 'https://placehold.co/100x100.png?text=க', farmerImageHint: 'farmer with paddy seeds' },
 
   { farmerName: 'Pattukkottai Azhagiri (பட்டுக்கோட்டை அழகிரி)', location: 'Pattukkottai, Thanjavur (பட்டுக்கோட்டை, தஞ்சாவூர்)', acres: 35, landDetails: 'Coconut and Cashew (தென்னை மற்றும் முந்திரி)', workerExpectations: 'Harvesting and processing nuts (கொட்டைகளை அறுவடை செய்து பதப்படுத்துதல்)', workHours: '8 Hours (8 மணி நேரம்)', salary: 850, farmerEmail: 'azhagiri.pattukkottai@email.com', farmerPhone: '9332211015', farmerRating: 4.7, farmerImage: 'https://placehold.co/100x100.png?text=ப', farmerImageHint: 'man with cashews' },
@@ -478,7 +478,7 @@ export default function WorkerDashboard() {
                                               <span>Work Hours: {post.workHours}</span>
                                             </div>
                                             <div className="flex items-center text-sm font-semibold text-primary">
-                                              <DollarSign className="mr-2 h-4 w-4" />
+                                              <span className="mr-2 h-4 w-4 font-bold">₹</span>
                                               <span>Salary: ₹{post.salary} / day</span>
                                             </div>
                                           </CardContent>
@@ -521,7 +521,7 @@ export default function WorkerDashboard() {
                   <span>Farmer's Expectation: {selectedJob.workerExpectations}</span>
                 </div>
                <div className="flex items-center">
-                  <DollarSign className="mr-3 h-5 w-5 text-muted-foreground" />
+                  <span className="mr-3 h-5 w-5 text-muted-foreground font-bold">₹</span>
                   <span>Salary: ₹{selectedJob.salary} / day (சம்பளம்: ₹{selectedJob.salary} / நாள்)</span>
                 </div>
                 <div className="flex items-center">
